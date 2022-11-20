@@ -1,0 +1,18 @@
+﻿@using IhaleProject.Application.Contracts.Birim;
+@model IEnumerable<BirimDto>
+@*
+    
+*@
+@{
+}
+
+@{
+	foreach (var item in Model as IEnumerable<BirimDto>)
+	{
+		<div>
+			@item.Id
+			@item.BirimAdi
+		</div>
+		<br />
+	}
+}
