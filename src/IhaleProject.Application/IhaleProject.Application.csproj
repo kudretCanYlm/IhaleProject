@@ -12,6 +12,11 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Abp.FluentValidation" Version="7.4.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\IhaleProject.Application.Contracts\IhaleProject.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\IhaleProject.Domain\IhaleProject.Domain.csproj" />
     <ProjectReference Include="..\IhaleProject.Core\IhaleProject.Core.csproj" />
   </ItemGroup>
 </Project>

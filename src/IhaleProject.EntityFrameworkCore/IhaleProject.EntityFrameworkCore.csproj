@@ -24,6 +24,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\IhaleProject.Domain\IhaleProject.Domain.csproj" />
     <ProjectReference Include="..\IhaleProject.Core\IhaleProject.Core.csproj" />
   </ItemGroup>
 </Project>
