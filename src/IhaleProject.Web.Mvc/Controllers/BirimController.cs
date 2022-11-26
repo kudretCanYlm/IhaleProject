@@ -9,8 +9,8 @@ namespace IhaleProject.Web.Controllers
     public class BirimController : IhaleProjectControllerBase
     {
         private readonly IBirimAppService birimAppService;
-        //will access with interface
-        private readonly CreateBirimDtoValidator birimValidator = new CreateBirimDtoValidator();
+		//will access with ICreateBirimDtoValidator interface
+		private readonly CreateBirimDtoValidator birimValidator = new CreateBirimDtoValidator();
 
 
         public BirimController(IBirimAppService birimAppService)

@@ -12004,3 +12004,699 @@ SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAba
 FROM [AbpBackgroundJobs] AS [a]
 WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
 ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+DEBUG 2022-11-26 15:52:20,626 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2022-11-26 15:52:21,063 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2022-11-26 15:52:21,074 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IhaleProject.Web.Startup.IhaleProjectWebMvcModule, IhaleProject.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2022-11-26 15:52:21,077 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IhaleProject.IhaleProjectWebCoreModule, IhaleProject.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2022-11-26 15:52:21,077 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IhaleProject.IhaleProjectApplicationModule, IhaleProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2022-11-26 15:52:21,077 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IhaleProject.IhaleProjectCoreModule, IhaleProject.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2022-11-26 15:52:21,077 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=7.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2022-11-26 15:52:21,078 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=7.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2022-11-26 15:52:21,078 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=7.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2022-11-26 15:52:21,078 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=7.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2022-11-26 15:52:21,078 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.FluentValidation.AbpFluentValidationModule, Abp.FluentValidation, Version=7.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2022-11-26 15:52:21,079 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IhaleProject.EntityFrameworkCore.IhaleProjectEntityFrameworkModule, IhaleProject.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2022-11-26 15:52:21,079 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=7.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2022-11-26 15:52:21,080 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=7.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2022-11-26 15:52:21,080 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=7.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2022-11-26 15:52:21,080 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=7.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2022-11-26 15:52:21,080 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=7.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2022-11-26 15:52:21,080 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=7.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2022-11-26 15:52:21,083 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2022-11-26 15:52:21,461 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2022-11-26 15:52:21,461 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2022-11-26 15:52:21,461 [1    ] o.Configuration.LanguageManagementConfig - Converted IhaleProject (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2022-11-26 15:52:21,461 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2022-11-26 15:52:21,979 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: IhaleProject.EntityFrameworkCore.IhaleProjectDbContext, IhaleProject.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2022-11-26 15:52:22,134 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2022-11-26 15:52:22,194 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2022-11-26 15:52:22,242 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2022-11-26 15:52:22,267 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: IhaleProject
+DEBUG 2022-11-26 15:52:22,307 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2022-11-26 15:52:22,317 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2022-11-26 15:52:22,321 [1    ] , Culture=neutral, PublicKeyToken=null]] - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker`2[[IhaleProject.MultiTenancy.Tenant, IhaleProject.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[IhaleProject.Authorization.Users.User, IhaleProject.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+DEBUG 2022-11-26 15:52:22,384 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 10 classes define auto mapping attributes
+DEBUG 2022-11-26 15:52:22,384 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IhaleProject.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2022-11-26 15:52:22,390 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IhaleProject.Users.Dto.CreateUserDto
+DEBUG 2022-11-26 15:52:22,390 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IhaleProject.Users.Dto.UserDto
+DEBUG 2022-11-26 15:52:22,390 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IhaleProject.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2022-11-26 15:52:22,390 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IhaleProject.Sessions.Dto.UserLoginInfoDto
+DEBUG 2022-11-26 15:52:22,390 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IhaleProject.Roles.Dto.PermissionDto
+DEBUG 2022-11-26 15:52:22,391 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IhaleProject.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2022-11-26 15:52:22,391 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IhaleProject.MultiTenancy.Dto.TenantDto
+DEBUG 2022-11-26 15:52:22,391 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IhaleProject.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2022-11-26 15:52:22,391 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IhaleProject.Web.Models.Roles.EditRoleModalViewModel
+WARN  2022-11-26 15:52:23,982 [1    ] oft.EntityFrameworkCore.Model.Validation - Entity 'Edition' has a global query filter defined and is the required end of a relationship with the entity 'EditionFeatureSetting'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+INFO  2022-11-26 15:52:24,292 [1    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:25,405 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (37ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[DeleterUserId], [a].[DeletionTime], [a].[DisplayName], [a].[IsDeleted], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[Name]
+FROM [AbpEditions] AS [a]
+WHERE [a].[Name] = N'Standard'
+INFO  2022-11-26 15:52:25,603 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (39ms) [Parameters=[@__language_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AbpLanguages] AS [a]
+        WHERE ([a].[TenantId] IS NULL) AND ([a].[Name] = @__language_Name_1)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFO  2022-11-26 15:52:25,611 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__language_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AbpLanguages] AS [a]
+        WHERE ([a].[TenantId] IS NULL) AND ([a].[Name] = @__language_Name_1)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFO  2022-11-26 15:52:25,613 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__language_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AbpLanguages] AS [a]
+        WHERE ([a].[TenantId] IS NULL) AND ([a].[Name] = @__language_Name_1)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFO  2022-11-26 15:52:25,616 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__language_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AbpLanguages] AS [a]
+        WHERE ([a].[TenantId] IS NULL) AND ([a].[Name] = @__language_Name_1)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFO  2022-11-26 15:52:25,618 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__language_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AbpLanguages] AS [a]
+        WHERE ([a].[TenantId] IS NULL) AND ([a].[Name] = @__language_Name_1)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFO  2022-11-26 15:52:25,621 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__language_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AbpLanguages] AS [a]
+        WHERE ([a].[TenantId] IS NULL) AND ([a].[Name] = @__language_Name_1)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFO  2022-11-26 15:52:25,624 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__language_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AbpLanguages] AS [a]
+        WHERE ([a].[TenantId] IS NULL) AND ([a].[Name] = @__language_Name_1)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFO  2022-11-26 15:52:25,627 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__language_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AbpLanguages] AS [a]
+        WHERE ([a].[TenantId] IS NULL) AND ([a].[Name] = @__language_Name_1)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFO  2022-11-26 15:52:25,630 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__language_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AbpLanguages] AS [a]
+        WHERE ([a].[TenantId] IS NULL) AND ([a].[Name] = @__language_Name_1)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFO  2022-11-26 15:52:25,633 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__language_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AbpLanguages] AS [a]
+        WHERE ([a].[TenantId] IS NULL) AND ([a].[Name] = @__language_Name_1)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFO  2022-11-26 15:52:25,636 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__language_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AbpLanguages] AS [a]
+        WHERE ([a].[TenantId] IS NULL) AND ([a].[Name] = @__language_Name_1)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFO  2022-11-26 15:52:25,638 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__language_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AbpLanguages] AS [a]
+        WHERE ([a].[TenantId] IS NULL) AND ([a].[Name] = @__language_Name_1)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFO  2022-11-26 15:52:25,640 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__language_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AbpLanguages] AS [a]
+        WHERE ([a].[TenantId] IS NULL) AND ([a].[Name] = @__language_Name_1)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFO  2022-11-26 15:52:25,657 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[CreationTime], [a].[CreatorUserId], [a].[DeleterUserId], [a].[DeletionTime], [a].[Description], [a].[DisplayName], [a].[IsDefault], [a].[IsDeleted], [a].[IsStatic], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[Name], [a].[NormalizedName], [a].[TenantId]
+FROM [AbpRoles] AS [a]
+WHERE ([a].[TenantId] IS NULL) AND ([a].[Name] = N'Admin')
+INFO  2022-11-26 15:52:25,735 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (8ms) [Parameters=[@__adminRoleForHost_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Name]
+FROM [AbpPermissions] AS [a]
+WHERE ([a].[Discriminator] = N'RolePermissionSetting') AND (([a].[TenantId] IS NULL) AND ([a].[RoleId] = @__adminRoleForHost_Id_0))
+INFO  2022-11-26 15:52:25,747 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[AuthenticationSource], [a].[ConcurrencyStamp], [a].[CreationTime], [a].[CreatorUserId], [a].[DeleterUserId], [a].[DeletionTime], [a].[EmailAddress], [a].[EmailConfirmationCode], [a].[IsActive], [a].[IsDeleted], [a].[IsEmailConfirmed], [a].[IsLockoutEnabled], [a].[IsPhoneNumberConfirmed], [a].[IsTwoFactorEnabled], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[LockoutEndDateUtc], [a].[Name], [a].[NormalizedEmailAddress], [a].[NormalizedUserName], [a].[Password], [a].[PasswordResetCode], [a].[PhoneNumber], [a].[SecurityStamp], [a].[Surname], [a].[TenantId], [a].[UserName]
+FROM [AbpUsers] AS [a]
+WHERE ([a].[TenantId] IS NULL) AND ([a].[UserName] = N'admin')
+INFO  2022-11-26 15:52:25,832 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AbpSettings] AS [a]
+        WHERE (([a].[Name] = @__name_0) AND ([a].[TenantId] IS NULL)) AND ([a].[UserId] IS NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFO  2022-11-26 15:52:25,834 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AbpSettings] AS [a]
+        WHERE (([a].[Name] = @__name_0) AND ([a].[TenantId] IS NULL)) AND ([a].[UserId] IS NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFO  2022-11-26 15:52:25,837 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__name_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AbpSettings] AS [a]
+        WHERE (([a].[Name] = @__name_0) AND ([a].[TenantId] IS NULL)) AND ([a].[UserId] IS NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFO  2022-11-26 15:52:25,929 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConnectionString], [a].[CreationTime], [a].[CreatorUserId], [a].[DeleterUserId], [a].[DeletionTime], [a].[EditionId], [a].[IsActive], [a].[IsDeleted], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[Name], [a].[TenancyName]
+FROM [AbpTenants] AS [a]
+WHERE [a].[TenancyName] = N'Default'
+INFO  2022-11-26 15:52:25,982 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@___tenantId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[CreationTime], [a].[CreatorUserId], [a].[DeleterUserId], [a].[DeletionTime], [a].[Description], [a].[DisplayName], [a].[IsDefault], [a].[IsDeleted], [a].[IsStatic], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[Name], [a].[NormalizedName], [a].[TenantId]
+FROM [AbpRoles] AS [a]
+WHERE ([a].[TenantId] = @___tenantId_0) AND ([a].[Name] = N'Admin')
+INFO  2022-11-26 15:52:25,989 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@___tenantId_0='?' (DbType = Int32), @__adminRole_Id_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Name]
+FROM [AbpPermissions] AS [a]
+WHERE ([a].[Discriminator] = N'RolePermissionSetting') AND (([a].[TenantId] = @___tenantId_0) AND ([a].[RoleId] = @__adminRole_Id_1))
+INFO  2022-11-26 15:52:25,997 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@___tenantId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[AuthenticationSource], [a].[ConcurrencyStamp], [a].[CreationTime], [a].[CreatorUserId], [a].[DeleterUserId], [a].[DeletionTime], [a].[EmailAddress], [a].[EmailConfirmationCode], [a].[IsActive], [a].[IsDeleted], [a].[IsEmailConfirmed], [a].[IsLockoutEnabled], [a].[IsPhoneNumberConfirmed], [a].[IsTwoFactorEnabled], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[LockoutEndDateUtc], [a].[Name], [a].[NormalizedEmailAddress], [a].[NormalizedUserName], [a].[Password], [a].[PasswordResetCode], [a].[PhoneNumber], [a].[SecurityStamp], [a].[Surname], [a].[TenantId], [a].[UserName]
+FROM [AbpUsers] AS [a]
+WHERE ([a].[TenantId] = @___tenantId_0) AND ([a].[UserName] = N'admin')
+INFO  2022-11-26 15:52:26,074 [1    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:26,139 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @__ef_filter__p_1='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[DeleterUserId], [a].[DeletionTime], [a].[DisplayName], [a].[Icon], [a].[IsDeleted], [a].[IsDisabled], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[Name], [a].[TenantId]
+FROM [AbpLanguages] AS [a]
+WHERE ((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[IsDeleted] = CAST(0 AS bit))) AND ((@__ef_filter__p_1 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL))
+INFO  2022-11-26 15:52:26,240 [1    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:26,256 [1    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[Name], [a].[TenantId], [a].[UserId], [a].[Value]
+FROM [AbpSettings] AS [a]
+WHERE ((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL)) AND (([a].[UserId] IS NULL) AND ([a].[TenantId] IS NULL))
+INFO  2022-11-26 15:52:26,287 [1    ] tCore.Builder.RequestLocalizationOptions - Supported Request Localization Cultures: en,es-MX,fr,de,it,nl,pt-BR,tr,ru,ar,fa,ja,zh-Hans
+INFO  2022-11-26 15:52:26,888 [1    ] Microsoft.Hosting.Lifetime               - Application started. Press Ctrl+C to shut down.
+INFO  2022-11-26 15:52:26,896 [1    ] Microsoft.Hosting.Lifetime               - Hosting environment: Development
+INFO  2022-11-26 15:52:26,897 [1    ] Microsoft.Hosting.Lifetime               - Content root path: C:\Users\kudret\Desktop\ihale proje\7.3.0\aspnet-core\src\IhaleProject.Web.Mvc
+INFO  2022-11-26 15:52:26,922 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/ - -
+INFO  2022-11-26 15:52:27,068 [3    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:27,145 [15   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (26ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @__ef_filter__p_1='?' (DbType = Boolean), @__p_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[AuthenticationSource], [a].[ConcurrencyStamp], [a].[CreationTime], [a].[CreatorUserId], [a].[DeleterUserId], [a].[DeletionTime], [a].[EmailAddress], [a].[EmailConfirmationCode], [a].[IsActive], [a].[IsDeleted], [a].[IsEmailConfirmed], [a].[IsLockoutEnabled], [a].[IsPhoneNumberConfirmed], [a].[IsTwoFactorEnabled], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[LockoutEndDateUtc], [a].[Name], [a].[NormalizedEmailAddress], [a].[NormalizedUserName], [a].[Password], [a].[PasswordResetCode], [a].[PhoneNumber], [a].[SecurityStamp], [a].[Surname], [a].[TenantId], [a].[UserName]
+FROM [AbpUsers] AS [a]
+WHERE (((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[IsDeleted] = CAST(0 AS bit))) AND ((@__ef_filter__p_1 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL))) AND ([a].[Id] = @__p_0)
+INFO  2022-11-26 15:52:27,270 [3    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @__p_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[CreationTime], [a].[CreatorUserId], [a].[TenantId], [a].[UserId]
+FROM [AbpUserClaims] AS [a]
+WHERE ((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL)) AND ([a].[UserId] = @__p_0)
+INFO  2022-11-26 15:52:27,355 [5    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:27,398 [14   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[@__ef_filter__p_2='?' (DbType = Boolean), @__ef_filter__p_3='?' (DbType = Boolean), @__ef_filter__p_0='?' (DbType = Boolean), @__user_Id_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Name]
+FROM [AbpUserRoles] AS [a]
+INNER JOIN (
+    SELECT [a0].[Id], [a0].[Name]
+    FROM [AbpRoles] AS [a0]
+    WHERE ((@__ef_filter__p_2 = CAST(1 AS bit)) OR ([a0].[IsDeleted] = CAST(0 AS bit))) AND ((@__ef_filter__p_3 = CAST(1 AS bit)) OR ([a0].[TenantId] IS NULL))
+) AS [t] ON [a].[RoleId] = [t].[Id]
+WHERE ((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL)) AND ([a].[UserId] = @__user_Id_0)
+INFO  2022-11-26 15:52:27,400 [5    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (10ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+INFO  2022-11-26 15:52:27,427 [14   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (9ms) [Parameters=[@__ef_filter__p_3='?' (DbType = Boolean), @__ef_filter__p_4='?' (DbType = Boolean), @__ef_filter__p_6='?' (DbType = Boolean), @__ef_filter__p_7='?' (DbType = Boolean), @__ef_filter__p_0='?' (DbType = Boolean), @__ef_filter__p_1='?' (DbType = Boolean), @__user_Id_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Name]
+FROM [AbpUserOrganizationUnits] AS [a]
+INNER JOIN (
+    SELECT [a0].[OrganizationUnitId], [a0].[RoleId]
+    FROM [AbpOrganizationUnitRoles] AS [a0]
+    WHERE ((@__ef_filter__p_3 = CAST(1 AS bit)) OR ([a0].[IsDeleted] = CAST(0 AS bit))) AND ((@__ef_filter__p_4 = CAST(1 AS bit)) OR ([a0].[TenantId] IS NULL))
+) AS [t] ON [a].[OrganizationUnitId] = [t].[OrganizationUnitId]
+INNER JOIN (
+    SELECT [a1].[Id], [a1].[Name]
+    FROM [AbpRoles] AS [a1]
+    WHERE ((@__ef_filter__p_6 = CAST(1 AS bit)) OR ([a1].[IsDeleted] = CAST(0 AS bit))) AND ((@__ef_filter__p_7 = CAST(1 AS bit)) OR ([a1].[TenantId] IS NULL))
+) AS [t0] ON [t].[RoleId] = [t0].[Id]
+WHERE (((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[IsDeleted] = CAST(0 AS bit))) AND ((@__ef_filter__p_1 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL))) AND ([a].[UserId] = @__user_Id_0)
+INFO  2022-11-26 15:52:27,460 [3    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @__ef_filter__p_1='?' (DbType = Boolean), @__normalizedName_0='?' (Size = 32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[CreationTime], [a].[CreatorUserId], [a].[DeleterUserId], [a].[DeletionTime], [a].[Description], [a].[DisplayName], [a].[IsDefault], [a].[IsDeleted], [a].[IsStatic], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[Name], [a].[NormalizedName], [a].[TenantId]
+FROM [AbpRoles] AS [a]
+WHERE (((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[IsDeleted] = CAST(0 AS bit))) AND ((@__ef_filter__p_1 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL))) AND ([a].[NormalizedName] = @__normalizedName_0)
+INFO  2022-11-26 15:52:27,486 [3    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[CreationTime], [a].[CreatorUserId], [a].[RoleId], [a].[TenantId]
+FROM [AbpRoleClaims] AS [a]
+WHERE ((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL)) AND ([a].[RoleId] = @__p_0)
+INFO  2022-11-26 15:52:27,542 [3    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'IhaleProject.Web.Controllers.HomeController.Index (IhaleProject.Web.Mvc)'
+INFO  2022-11-26 15:52:27,563 [3    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Index() on controller IhaleProject.Web.Controllers.HomeController (IhaleProject.Web.Mvc).
+INFO  2022-11-26 15:52:27,626 [3    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:27,794 [9    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (12ms) [Parameters=[@p0='?' (Size = 512), @p1='?' (Size = 64), @p2='?' (Size = 128), @p3='?' (Size = 2000), @p4='?' (Size = 2000), @p5='?' (Size = 1024), @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime2), @p8='?' (DbType = Int32), @p9='?' (DbType = Int64), @p10='?' (Size = 256), @p11='?' (Size = 1024), @p12='?' (Size = 4000), @p13='?' (Size = 256), @p14='?' (DbType = Int32), @p15='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AbpAuditLogs] ([BrowserInfo], [ClientIpAddress], [ClientName], [CustomData], [Exception], [ExceptionMessage], [ExecutionDuration], [ExecutionTime], [ImpersonatorTenantId], [ImpersonatorUserId], [MethodName], [Parameters], [ReturnValue], [ServiceName], [TenantId], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+SELECT [Id]
+FROM [AbpAuditLogs]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+INFO  2022-11-26 15:52:32,422 [8    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:32,425 [8    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+INFO  2022-11-26 15:52:34,448 [9    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2022-11-26 15:52:34,525 [9    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:34,535 [9    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @___sourceName_0='?' (Size = 128), @__CultureInfo_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[Key], [a].[LanguageName], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[Source], [a].[TenantId], [a].[Value]
+FROM [AbpLanguageTexts] AS [a]
+WHERE ((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL)) AND (([a].[Source] = @___sourceName_0) AND ([a].[LanguageName] = @__CultureInfo_Name_1))
+INFO  2022-11-26 15:52:36,016 [9    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:36,041 [3    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @__ef_filter__p_1='?' (DbType = Boolean), @__p_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[AuthenticationSource], [a].[ConcurrencyStamp], [a].[CreationTime], [a].[CreatorUserId], [a].[DeleterUserId], [a].[DeletionTime], [a].[EmailAddress], [a].[EmailConfirmationCode], [a].[IsActive], [a].[IsDeleted], [a].[IsEmailConfirmed], [a].[IsLockoutEnabled], [a].[IsPhoneNumberConfirmed], [a].[IsTwoFactorEnabled], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[LockoutEndDateUtc], [a].[Name], [a].[NormalizedEmailAddress], [a].[NormalizedUserName], [a].[Password], [a].[PasswordResetCode], [a].[PhoneNumber], [a].[SecurityStamp], [a].[Surname], [a].[TenantId], [a].[UserName]
+FROM [AbpUsers] AS [a]
+WHERE (((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[IsDeleted] = CAST(0 AS bit))) AND ((@__ef_filter__p_1 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL))) AND ([a].[Id] = @__p_0)
+INFO  2022-11-26 15:52:36,363 [3    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:36,366 [5    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @__ef_filter__p_1='?' (DbType = Boolean), @__p_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[AuthenticationSource], [a].[ConcurrencyStamp], [a].[CreationTime], [a].[CreatorUserId], [a].[DeleterUserId], [a].[DeletionTime], [a].[EmailAddress], [a].[EmailConfirmationCode], [a].[IsActive], [a].[IsDeleted], [a].[IsEmailConfirmed], [a].[IsLockoutEnabled], [a].[IsPhoneNumberConfirmed], [a].[IsTwoFactorEnabled], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[LockoutEndDateUtc], [a].[Name], [a].[NormalizedEmailAddress], [a].[NormalizedUserName], [a].[Password], [a].[PasswordResetCode], [a].[PhoneNumber], [a].[SecurityStamp], [a].[Surname], [a].[TenantId], [a].[UserName]
+FROM [AbpUsers] AS [a]
+WHERE (((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[IsDeleted] = CAST(0 AS bit))) AND ((@__ef_filter__p_1 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL))) AND ([a].[Id] = @__p_0)
+INFO  2022-11-26 15:52:36,480 [5    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:36,483 [5    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @___sourceName_0='?' (Size = 128), @__CultureInfo_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[Key], [a].[LanguageName], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[Source], [a].[TenantId], [a].[Value]
+FROM [AbpLanguageTexts] AS [a]
+WHERE ((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL)) AND (([a].[Source] = @___sourceName_0) AND ([a].[LanguageName] = @__CultureInfo_Name_1))
+INFO  2022-11-26 15:52:36,530 [5    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:36,534 [14   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @__ef_filter__p_1='?' (DbType = Boolean), @__p_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[AuthenticationSource], [a].[ConcurrencyStamp], [a].[CreationTime], [a].[CreatorUserId], [a].[DeleterUserId], [a].[DeletionTime], [a].[EmailAddress], [a].[EmailConfirmationCode], [a].[IsActive], [a].[IsDeleted], [a].[IsEmailConfirmed], [a].[IsLockoutEnabled], [a].[IsPhoneNumberConfirmed], [a].[IsTwoFactorEnabled], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[LockoutEndDateUtc], [a].[Name], [a].[NormalizedEmailAddress], [a].[NormalizedUserName], [a].[Password], [a].[PasswordResetCode], [a].[PhoneNumber], [a].[SecurityStamp], [a].[Surname], [a].[TenantId], [a].[UserName]
+FROM [AbpUsers] AS [a]
+WHERE (((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[IsDeleted] = CAST(0 AS bit))) AND ((@__ef_filter__p_1 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL))) AND ([a].[Id] = @__p_0)
+INFO  2022-11-26 15:52:36,543 [9    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__ef_filter__p_2='?' (DbType = Boolean), @__ef_filter__p_3='?' (DbType = Boolean), @__ef_filter__p_0='?' (DbType = Boolean), @__user_Id_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Name]
+FROM [AbpUserRoles] AS [a]
+INNER JOIN (
+    SELECT [a0].[Id], [a0].[Name]
+    FROM [AbpRoles] AS [a0]
+    WHERE ((@__ef_filter__p_2 = CAST(1 AS bit)) OR ([a0].[IsDeleted] = CAST(0 AS bit))) AND ((@__ef_filter__p_3 = CAST(1 AS bit)) OR ([a0].[TenantId] IS NULL))
+) AS [t] ON [a].[RoleId] = [t].[Id]
+WHERE ((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL)) AND ([a].[UserId] = @__user_Id_0)
+INFO  2022-11-26 15:52:36,547 [9    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__ef_filter__p_3='?' (DbType = Boolean), @__ef_filter__p_4='?' (DbType = Boolean), @__ef_filter__p_6='?' (DbType = Boolean), @__ef_filter__p_7='?' (DbType = Boolean), @__ef_filter__p_0='?' (DbType = Boolean), @__ef_filter__p_1='?' (DbType = Boolean), @__user_Id_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Name]
+FROM [AbpUserOrganizationUnits] AS [a]
+INNER JOIN (
+    SELECT [a0].[OrganizationUnitId], [a0].[RoleId]
+    FROM [AbpOrganizationUnitRoles] AS [a0]
+    WHERE ((@__ef_filter__p_3 = CAST(1 AS bit)) OR ([a0].[IsDeleted] = CAST(0 AS bit))) AND ((@__ef_filter__p_4 = CAST(1 AS bit)) OR ([a0].[TenantId] IS NULL))
+) AS [t] ON [a].[OrganizationUnitId] = [t].[OrganizationUnitId]
+INNER JOIN (
+    SELECT [a1].[Id], [a1].[Name]
+    FROM [AbpRoles] AS [a1]
+    WHERE ((@__ef_filter__p_6 = CAST(1 AS bit)) OR ([a1].[IsDeleted] = CAST(0 AS bit))) AND ((@__ef_filter__p_7 = CAST(1 AS bit)) OR ([a1].[TenantId] IS NULL))
+) AS [t0] ON [t].[RoleId] = [t0].[Id]
+WHERE (((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[IsDeleted] = CAST(0 AS bit))) AND ((@__ef_filter__p_1 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL))) AND ([a].[UserId] = @__user_Id_0)
+INFO  2022-11-26 15:52:36,553 [19   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @__ef_filter__p_1='?' (DbType = Boolean), @__normalizedName_0='?' (Size = 32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[CreationTime], [a].[CreatorUserId], [a].[DeleterUserId], [a].[DeletionTime], [a].[Description], [a].[DisplayName], [a].[IsDefault], [a].[IsDeleted], [a].[IsStatic], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[Name], [a].[NormalizedName], [a].[TenantId]
+FROM [AbpRoles] AS [a]
+WHERE (((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[IsDeleted] = CAST(0 AS bit))) AND ((@__ef_filter__p_1 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL))) AND ([a].[NormalizedName] = @__normalizedName_0)
+INFO  2022-11-26 15:52:36,579 [8    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @__userId_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[Discriminator], [a].[IsGranted], [a].[Name], [a].[TenantId], [a].[UserId]
+FROM [AbpPermissions] AS [a]
+WHERE (([a].[Discriminator] = N'UserPermissionSetting') AND ((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL))) AND ([a].[UserId] = @__userId_0)
+INFO  2022-11-26 15:52:36,617 [3    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @__ef_filter__p_1='?' (DbType = Boolean), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[CreationTime], [a].[CreatorUserId], [a].[DeleterUserId], [a].[DeletionTime], [a].[Description], [a].[DisplayName], [a].[IsDefault], [a].[IsDeleted], [a].[IsStatic], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[Name], [a].[NormalizedName], [a].[TenantId]
+FROM [AbpRoles] AS [a]
+WHERE (((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[IsDeleted] = CAST(0 AS bit))) AND ((@__ef_filter__p_1 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL))) AND ([a].[Id] = @__p_0)
+INFO  2022-11-26 15:52:36,640 [9    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @__roleId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[Discriminator], [a].[IsGranted], [a].[Name], [a].[TenantId], [a].[RoleId]
+FROM [AbpPermissions] AS [a]
+WHERE (([a].[Discriminator] = N'RolePermissionSetting') AND ((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL))) AND ([a].[RoleId] = @__roleId_0)
+INFO  2022-11-26 15:52:37,439 [3    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:37,442 [3    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+INFO  2022-11-26 15:52:38,393 [6    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 10490.8466ms.
+INFO  2022-11-26 15:52:38,400 [6    ] c.Infrastructure.ControllerActionInvoker - Executed action IhaleProject.Web.Controllers.HomeController.Index (IhaleProject.Web.Mvc) in 10835.0819ms
+INFO  2022-11-26 15:52:38,403 [6    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'IhaleProject.Web.Controllers.HomeController.Index (IhaleProject.Web.Mvc)'
+INFO  2022-11-26 15:52:38,488 [22   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/ - - - 200 - text/html;+charset=utf-8 11567.6317ms
+INFO  2022-11-26 15:52:38,515 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/font-awesome/css/all.min.css?v=2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y - -
+INFO  2022-11-26 15:52:38,517 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/icheck-bootstrap/icheck-bootstrap.css?v=nGN1DgpDTrAS3DS7E5J0cL-gblWBKAMSoU_LSuY8gu8 - -
+INFO  2022-11-26 15:52:38,533 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/icheck-bootstrap/icheck-bootstrap.css was not modified
+INFO  2022-11-26 15:52:38,534 [8    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/font-awesome/css/all.min.css was not modified
+INFO  2022-11-26 15:52:38,540 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/icheck-bootstrap/icheck-bootstrap.css?v=nGN1DgpDTrAS3DS7E5J0cL-gblWBKAMSoU_LSuY8gu8 - - - 304 - text/css 23.6202ms
+INFO  2022-11-26 15:52:38,548 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/font-awesome/css/all.min.css?v=2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y - - - 304 - text/css 23.6202ms
+INFO  2022-11-26 15:52:38,619 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/datatables/css/dataTables.bootstrap4.min.css?v=STpv7j93gE6HYVfZWhvyWXNR720RedyFu67Is9RbBYk - -
+INFO  2022-11-26 15:52:38,621 [8    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/datatables/css/dataTables.bootstrap4.min.css was not modified
+INFO  2022-11-26 15:52:38,624 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/datatables/css/dataTables.bootstrap4.min.css?v=STpv7j93gE6HYVfZWhvyWXNR720RedyFu67Is9RbBYk - - - 304 - text/css 5.4483ms
+INFO  2022-11-26 15:52:38,646 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/datatables/css/responsive.bootstrap4.min.css?v=U7cKvBF96CeSqpzNEnxO6RH_hOJb5Xw885tusTTX6wI - -
+INFO  2022-11-26 15:52:38,648 [3    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/datatables/css/responsive.bootstrap4.min.css was not modified
+INFO  2022-11-26 15:52:38,653 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/datatables/css/responsive.bootstrap4.min.css?v=U7cKvBF96CeSqpzNEnxO6RH_hOJb5Xw885tusTTX6wI - - - 304 - text/css 4.5807ms
+INFO  2022-11-26 15:52:38,656 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/datatables/css/buttons.bootstrap4.min.css?v=gG7aI_E7q8bkMZWEAjius-llVl-GPTpsfccS1s2UF5w - -
+INFO  2022-11-26 15:52:38,659 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/admin-lte/dist/css/adminlte.min.css?v=FQ-k0mIFfWXVTaW1arh3qKx8IXX5Bm5f6QG-0pkUjaE - -
+INFO  2022-11-26 15:52:38,661 [3    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/datatables/css/buttons.bootstrap4.min.css was not modified
+INFO  2022-11-26 15:52:38,663 [8    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/admin-lte/dist/css/adminlte.min.css was not modified
+INFO  2022-11-26 15:52:38,665 [15   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/toastr/toastr.css?v=He3QEBKoL_nMXlVsoM7S2C2kjFQqS5L-mgA-F8LpG-U - -
+INFO  2022-11-26 15:52:38,667 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/datatables/css/buttons.bootstrap4.min.css?v=gG7aI_E7q8bkMZWEAjius-llVl-GPTpsfccS1s2UF5w - - - 304 - text/css 8.2192ms
+INFO  2022-11-26 15:52:38,669 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/admin-lte/dist/css/adminlte.min.css?v=FQ-k0mIFfWXVTaW1arh3qKx8IXX5Bm5f6QG-0pkUjaE - - - 304 - text/css 8.4694ms
+INFO  2022-11-26 15:52:38,673 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/toastr/toastr.css was not modified
+INFO  2022-11-26 15:52:38,675 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/view-resources/Views/Shared/_Layout.css?v=BQOnwVGj0YV0ekFeeHcJNzH2FKvW2PJm9V1buxmoWCU - -
+INFO  2022-11-26 15:52:38,677 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs-ext/famfamfam-flags/dist/sprite/famfamfam-flags.min.css?v=D9O-28vCF-qJh2qZSFIXxXc30hTED8RmnKeZRyvVEpA - -
+INFO  2022-11-26 15:52:38,678 [15   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/toastr/toastr.css?v=He3QEBKoL_nMXlVsoM7S2C2kjFQqS5L-mgA-F8LpG-U - - - 304 - text/css 12.3469ms
+INFO  2022-11-26 15:52:38,680 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs-ext/famfamfam-flags/dist/sprite/famfamfam-flags.min.css was not modified
+INFO  2022-11-26 15:52:38,682 [3    ] NetCore.StaticFiles.StaticFileMiddleware - The file /view-resources/Views/Shared/_Layout.css was not modified
+INFO  2022-11-26 15:52:38,684 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs-ext/famfamfam-flags/dist/sprite/famfamfam-flags.min.css?v=D9O-28vCF-qJh2qZSFIXxXc30hTED8RmnKeZRyvVEpA - - - 304 - text/css 9.0492ms
+INFO  2022-11-26 15:52:38,687 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/view-resources/Views/Shared/_Layout.css?v=BQOnwVGj0YV0ekFeeHcJNzH2FKvW2PJm9V1buxmoWCU - - - 304 - text/css 10.0690ms
+INFO  2022-11-26 15:52:38,705 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/css/style.css?v=xKbbeRspeJ53pjKRA3Bh5ZJLItu8Y58wlf6cER1IiIk - -
+INFO  2022-11-26 15:52:38,708 [3    ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/style.css was not modified
+INFO  2022-11-26 15:52:38,710 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/jquery/jquery.js?v=WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU - -
+INFO  2022-11-26 15:52:38,712 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/bootstrap/dist/js/bootstrap.bundle.js?v=Qesn0fIyfJA0VfGtzm0Kga5Ro9eCzokdNoMPke7bSxE - -
+INFO  2022-11-26 15:52:38,713 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/css/style.css?v=xKbbeRspeJ53pjKRA3Bh5ZJLItu8Y58wlf6cER1IiIk - - - 304 - text/css 8.2448ms
+INFO  2022-11-26 15:52:38,715 [9    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/bootstrap/dist/js/bootstrap.bundle.js was not modified
+INFO  2022-11-26 15:52:38,717 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/jquery/jquery.js was not modified
+INFO  2022-11-26 15:52:38,719 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/bootstrap/dist/js/bootstrap.bundle.js?v=Qesn0fIyfJA0VfGtzm0Kga5Ro9eCzokdNoMPke7bSxE - - - 304 - application/javascript 7.8913ms
+INFO  2022-11-26 15:52:38,721 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/jquery/jquery.js?v=WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU - - - 304 - application/javascript 11.4813ms
+INFO  2022-11-26 15:52:38,722 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/datatables/js/jquery.dataTables.min.js?v=itm1F-qFhcjfGnrv-v18AA-Fa7sA8rQIT7J0YenNH64 - -
+INFO  2022-11-26 15:52:38,724 [3    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/datatables/js/jquery.dataTables.min.js was not modified
+INFO  2022-11-26 15:52:38,727 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/datatables/js/jquery.dataTables.min.js?v=itm1F-qFhcjfGnrv-v18AA-Fa7sA8rQIT7J0YenNH64 - - - 304 - application/javascript 6.9688ms
+INFO  2022-11-26 15:52:38,730 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/view-resources/Views/_Bundles/helpers.min.js?v=kSjRuWZBH1TVTvCfVxaAQlKq_JbwxeM864-Qq1bEPUE - -
+INFO  2022-11-26 15:52:38,732 [3    ] NetCore.StaticFiles.StaticFileMiddleware - The file /view-resources/Views/_Bundles/helpers.min.js was not modified
+INFO  2022-11-26 15:52:38,734 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/view-resources/Views/_Bundles/datatables.ajax.min.js?v=5j2eOMHYIMF79je8GeR2DyqDip36ydsldEMjOB-7Wvg - -
+INFO  2022-11-26 15:52:38,736 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/view-resources/Views/_Bundles/helpers.min.js?v=kSjRuWZBH1TVTvCfVxaAQlKq_JbwxeM864-Qq1bEPUE - - - 304 - application/javascript 6.9212ms
+INFO  2022-11-26 15:52:38,738 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /view-resources/Views/_Bundles/datatables.ajax.min.js was not modified
+INFO  2022-11-26 15:52:38,740 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/view-resources/Views/_Bundles/datatables.ajax.min.js?v=5j2eOMHYIMF79je8GeR2DyqDip36ydsldEMjOB-7Wvg - - - 304 - application/javascript 6.1419ms
+INFO  2022-11-26 15:52:38,752 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/datatables/js/dataTables.responsive.min.js?v=lNhDn9rWCvb7iB-apRL-bi4SsUrHKLopvY8lE5nscyI - -
+INFO  2022-11-26 15:52:38,753 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/datatables/js/dataTables.bootstrap4.min.js?v=x7er9UzDxtTEVMCQ77BEYIazL0OYvR0Xs5gRbC9a7FM - -
+INFO  2022-11-26 15:52:38,756 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/datatables/js/dataTables.bootstrap4.min.js was not modified
+INFO  2022-11-26 15:52:38,758 [8    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/datatables/js/dataTables.responsive.min.js was not modified
+INFO  2022-11-26 15:52:38,760 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/datatables/js/dataTables.bootstrap4.min.js?v=x7er9UzDxtTEVMCQ77BEYIazL0OYvR0Xs5gRbC9a7FM - - - 304 - application/javascript 8.3330ms
+INFO  2022-11-26 15:52:38,763 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/datatables/js/responsive.bootstrap4.min.js?v=aXVO47Rb7s58FhMTCwbM39en_1XcmzGkClRzBe5txKs - -
+INFO  2022-11-26 15:52:38,765 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/datatables/js/dataTables.responsive.min.js?v=lNhDn9rWCvb7iB-apRL-bi4SsUrHKLopvY8lE5nscyI - - - 304 - application/javascript 10.7072ms
+INFO  2022-11-26 15:52:38,767 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/datatables/js/dataTables.buttons.js?v=V3De_o3VaP1FNTaXK01qIZqHnD0eZJd0XniW_x9Aa3Y - -
+INFO  2022-11-26 15:52:38,769 [3    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/datatables/js/responsive.bootstrap4.min.js was not modified
+INFO  2022-11-26 15:52:38,771 [16   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/datatables/js/buttons.bootstrap4.js?v=7tPJL63hI4QnZbV489_5KEpe7k6W5RzPTZkP8m6kzEE - -
+INFO  2022-11-26 15:52:38,774 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/datatables/js/responsive.bootstrap4.min.js?v=aXVO47Rb7s58FhMTCwbM39en_1XcmzGkClRzBe5txKs - - - 304 - application/javascript 13.9197ms
+INFO  2022-11-26 15:52:38,776 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/datatables/js/buttons.bootstrap4.js was not modified
+INFO  2022-11-26 15:52:38,778 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/datatables/js/dataTables.buttons.js was not modified
+INFO  2022-11-26 15:52:38,781 [16   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/datatables/js/buttons.bootstrap4.js?v=7tPJL63hI4QnZbV489_5KEpe7k6W5RzPTZkP8m6kzEE - - - 304 - application/javascript 9.2540ms
+INFO  2022-11-26 15:52:38,783 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/datatables/js/dataTables.buttons.js?v=V3De_o3VaP1FNTaXK01qIZqHnD0eZJd0XniW_x9Aa3Y - - - 304 - application/javascript 15.6710ms
+INFO  2022-11-26 15:52:38,786 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/admin-lte/dist/js/adminlte.js?v=u48IADL1yBFYTA8PqnxogL0B9HfOVI3frq0ow7V5r_M - -
+INFO  2022-11-26 15:52:38,789 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/block-ui/jquery.blockUI.js?v=oQaw-JJuUcJQ9QVYMcFnPxICDT-hv8-kuxT2FNzTGhc - -
+INFO  2022-11-26 15:52:38,792 [3    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/admin-lte/dist/js/adminlte.js was not modified
+INFO  2022-11-26 15:52:38,794 [15   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/spin/spin.js?v=GySbz3oZXNlwoawo5PpYy0iM38B-q3jyi_HLw00uxy0 - -
+INFO  2022-11-26 15:52:38,796 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/admin-lte/dist/js/adminlte.js?v=u48IADL1yBFYTA8PqnxogL0B9HfOVI3frq0ow7V5r_M - - - 304 - application/javascript 11.7887ms
+INFO  2022-11-26 15:52:38,798 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/block-ui/jquery.blockUI.js was not modified
+INFO  2022-11-26 15:52:38,800 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/spin/spin.js was not modified
+INFO  2022-11-26 15:52:38,802 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/block-ui/jquery.blockUI.js?v=oQaw-JJuUcJQ9QVYMcFnPxICDT-hv8-kuxT2FNzTGhc - - - 304 - application/javascript 13.3617ms
+INFO  2022-11-26 15:52:38,805 [15   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/spin/spin.js?v=GySbz3oZXNlwoawo5PpYy0iM38B-q3jyi_HLw00uxy0 - - - 304 - application/javascript 8.3238ms
+INFO  2022-11-26 15:52:38,807 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs-ext/spin/jquery.spin.js?v=EG38bUU5b2M64hy9cNAzu_cQBEsiBYsDifOcoHqNd2k - -
+INFO  2022-11-26 15:52:38,810 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs-ext/spin/jquery.spin.js was not modified
+INFO  2022-11-26 15:52:38,813 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs-ext/spin/jquery.spin.js?v=EG38bUU5b2M64hy9cNAzu_cQBEsiBYsDifOcoHqNd2k - - - 304 - application/javascript 7.0175ms
+INFO  2022-11-26 15:52:38,819 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/sweetalert/sweetalert.min.js?v=KsRuvuRtUVvobe66OFtOQfjP8WA2SzYsmm4VPfMnxms - -
+INFO  2022-11-26 15:52:38,822 [19   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/toastr/toastr.min.js?v=yNbKY1y6h2rbVcQtf0b8lq4a-xpktyFc3pSYoGAY1qQ - -
+INFO  2022-11-26 15:52:38,824 [9    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/sweetalert/sweetalert.min.js was not modified
+INFO  2022-11-26 15:52:38,826 [19   ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/toastr/toastr.min.js was not modified
+INFO  2022-11-26 15:52:38,828 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/sweetalert/sweetalert.min.js?v=KsRuvuRtUVvobe66OFtOQfjP8WA2SzYsmm4VPfMnxms - - - 304 - application/javascript 8.7278ms
+INFO  2022-11-26 15:52:38,830 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/moment/moment-with-locales.js?v=dgFbqbQVzjkZPQxWd8PBtzGiRBhChc4I2wO_q_s-Xeo - -
+INFO  2022-11-26 15:52:38,833 [19   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/toastr/toastr.min.js?v=yNbKY1y6h2rbVcQtf0b8lq4a-xpktyFc3pSYoGAY1qQ - - - 304 - application/javascript 8.3104ms
+INFO  2022-11-26 15:52:38,835 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/moment/moment-with-locales.js was not modified
+INFO  2022-11-26 15:52:38,839 [19   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/signalr/dist/browser/signalr.js?v=s5ortbhB2C3h17nHMtXwbCSN9YncRIZH6XrFTSO9vmk - -
+INFO  2022-11-26 15:52:38,841 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/moment/moment-with-locales.js?v=dgFbqbQVzjkZPQxWd8PBtzGiRBhChc4I2wO_q_s-Xeo - - - 304 - application/javascript 11.6999ms
+INFO  2022-11-26 15:52:38,843 [19   ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/signalr/dist/browser/signalr.js was not modified
+INFO  2022-11-26 15:52:38,845 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/abp-web-resources/Abp/Framework/scripts/abp.js?v=3lLIPNQoGBxv9DWxtKwnvHr7Wlov-D0jo-NtjAdTenA - -
+INFO  2022-11-26 15:52:38,848 [19   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/signalr/dist/browser/signalr.js?v=s5ortbhB2C3h17nHMtXwbCSN9YncRIZH6XrFTSO9vmk - - - 304 - application/javascript 8.5710ms
+INFO  2022-11-26 15:52:38,850 [3    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/abp-web-resources/Abp/Framework/scripts/abp.js was not modified
+INFO  2022-11-26 15:52:38,853 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/abp-web-resources/Abp/Framework/scripts/abp.js?v=3lLIPNQoGBxv9DWxtKwnvHr7Wlov-D0jo-NtjAdTenA - - - 304 - application/javascript 7.7301ms
+INFO  2022-11-26 15:52:38,858 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js?v=MEOC0fqxBbFCeeJ6VHFuw8-2C710gCRqjbvYcHoBdHU - -
+INFO  2022-11-26 15:52:38,860 [3    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js was not modified
+INFO  2022-11-26 15:52:38,862 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js?v=i3fsIGh0z3DXDbSa7f6TwsWonuZ8-OwELSrtH1jHbDA - -
+INFO  2022-11-26 15:52:38,864 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js?v=MEOC0fqxBbFCeeJ6VHFuw8-2C710gCRqjbvYcHoBdHU - - - 304 - application/javascript 6.6339ms
+INFO  2022-11-26 15:52:38,866 [16   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js?v=vMuHbqHh635SKL2RG2qsGGCDyHg1yFeGqhPKpS34g4k - -
+INFO  2022-11-26 15:52:38,868 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js was not modified
+INFO  2022-11-26 15:52:38,870 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js was not modified
+INFO  2022-11-26 15:52:38,871 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js?v=i3fsIGh0z3DXDbSa7f6TwsWonuZ8-OwELSrtH1jHbDA - - - 304 - application/javascript 10.7632ms
+INFO  2022-11-26 15:52:38,873 [16   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js?v=vMuHbqHh635SKL2RG2qsGGCDyHg1yFeGqhPKpS34g4k - - - 304 - application/javascript 6.3364ms
+INFO  2022-11-26 15:52:38,887 [16   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js?v=djoKib6ssm5DDzbXLe5pD7ayfFg3siaoEk-BFYzQlvI - -
+INFO  2022-11-26 15:52:38,889 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js?v=Ta7OYgm62iNXMvVrH3f4y3WqUbGsHGBNvt0Zu0eIKtk - -
+INFO  2022-11-26 15:52:38,891 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.signalr-client.js?v=7OzpM5utNWYP8ne_218zbUCD3Xj_R1GqM6AzwpgQktg - -
+INFO  2022-11-26 15:52:38,892 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js was not modified
+INFO  2022-11-26 15:52:38,895 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js was not modified
+INFO  2022-11-26 15:52:38,897 [16   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js?v=djoKib6ssm5DDzbXLe5pD7ayfFg3siaoEk-BFYzQlvI - - - 304 - application/javascript 7.6610ms
+INFO  2022-11-26 15:52:38,901 [3    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/abp-web-resources/Abp/Framework/scripts/libs/abp.signalr-client.js was not modified
+INFO  2022-11-26 15:52:38,903 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js?v=Ta7OYgm62iNXMvVrH3f4y3WqUbGsHGBNvt0Zu0eIKtk - - - 304 - application/javascript 10.0651ms
+INFO  2022-11-26 15:52:38,906 [16   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/jquery-validate/jquery.validate.js?v=xLhce0FUawd11QSwrvXSwST0oHhOolNoH9cUXAcsIAg - -
+INFO  2022-11-26 15:52:38,908 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.signalr-client.js?v=7OzpM5utNWYP8ne_218zbUCD3Xj_R1GqM6AzwpgQktg - - - 304 - application/javascript 15.9894ms
+INFO  2022-11-26 15:52:38,910 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/jquery-validate/jquery.validate.unobtrusive.js?v=XNNC8ESw29iopRLukVRazlP44TxnjGmEQanHJ5kHmtk - -
+INFO  2022-11-26 15:52:38,914 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/jquery-validate/jquery.validate.js was not modified
+INFO  2022-11-26 15:52:38,917 [19   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/push.js/push.js?v=S20KyuznGr0nK1qmIqJ9HA-w2vA057YmagmOfkSmblw - -
+INFO  2022-11-26 15:52:38,919 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/jquery-validate/jquery.validate.unobtrusive.js was not modified
+INFO  2022-11-26 15:52:38,921 [16   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/jquery-validate/jquery.validate.js?v=xLhce0FUawd11QSwrvXSwST0oHhOolNoH9cUXAcsIAg - - - 304 - application/javascript 12.3122ms
+INFO  2022-11-26 15:52:38,924 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 POST https://localhost:44312/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2022-11-26 15:52:38,926 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/jquery-validate/jquery.validate.unobtrusive.js?v=XNNC8ESw29iopRLukVRazlP44TxnjGmEQanHJ5kHmtk - - - 304 - application/javascript 11.2797ms
+INFO  2022-11-26 15:52:38,928 [15   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/js/abp.dataTable.js?v=at_GoRuvlzOyeX2WPmexXSYYQM7kHvo6aPi1rPWxJVs - -
+INFO  2022-11-26 15:52:38,930 [19   ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/push.js/push.js was not modified
+INFO  2022-11-26 15:52:38,931 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/js/main.js?v=5uFQeg2sxma3Jk62Vdw4PZ3JT0y6cqwT26ZnpUOvVp8 - -
+INFO  2022-11-26 15:52:38,933 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /js/abp.dataTable.js was not modified
+INFO  2022-11-26 15:52:38,936 [19   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/push.js/push.js?v=S20KyuznGr0nK1qmIqJ9HA-w2vA057YmagmOfkSmblw - - - 304 - application/javascript 16.5180ms
+INFO  2022-11-26 15:52:38,938 [15   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/js/abp.dataTable.js?v=at_GoRuvlzOyeX2WPmexXSYYQM7kHvo6aPi1rPWxJVs - - - 304 - application/javascript 9.7857ms
+INFO  2022-11-26 15:52:38,942 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /js/main.js was not modified
+INFO  2022-11-26 15:52:38,944 [15   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/jquery-validate/localization/messages_tr.min.js?v=HoTG27eUfwSS2PWatN00Y4o5CqwnHSYTzqbG4p2M7iM - -
+INFO  2022-11-26 15:52:38,947 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/AbpServiceProxies/GetAll?v=638050747423231021 - -
+INFO  2022-11-26 15:52:38,948 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/js/main.js?v=5uFQeg2sxma3Jk62Vdw4PZ3JT0y6cqwT26ZnpUOvVp8 - - - 304 - application/javascript 15.5151ms
+INFO  2022-11-26 15:52:38,951 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/jquery-validate/localization/messages_tr.min.js was not modified
+INFO  2022-11-26 15:52:38,953 [15   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/jquery-validate/localization/messages_tr.min.js?v=HoTG27eUfwSS2PWatN00Y4o5CqwnHSYTzqbG4p2M7iM - - - 304 - application/javascript 10.8059ms
+INFO  2022-11-26 15:52:38,955 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/AbpScripts/GetScripts?v=638050747423231021 - -
+INFO  2022-11-26 15:52:38,960 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/chartjs/dist/Chart.js?v=dChmkTPsPsTV13HU145uFtyThdb6GJpTcnYka2efamM - -
+INFO  2022-11-26 15:52:38,962 [9    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/chartjs/dist/Chart.js was not modified
+INFO  2022-11-26 15:52:38,967 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/chartjs/dist/Chart.js?v=dChmkTPsPsTV13HU145uFtyThdb6GJpTcnYka2efamM - - - 304 - application/javascript 4.8537ms
+INFO  2022-11-26 15:52:38,970 [8    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2022-11-26 15:52:38,973 [3    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr/negotiate'
+INFO  2022-11-26 15:52:38,976 [14   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2022-11-26 15:52:38,995 [3    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint '/signalr/negotiate'
+INFO  2022-11-26 15:52:38,998 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 POST https://localhost:44312/signalr/negotiate text/plain;charset=UTF-8 0 - 200 273 application/json 74.3049ms
+INFO  2022-11-26 15:52:39,002 [14   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetScripts(System.String, Boolean) on controller Abp.AspNetCore.Mvc.Controllers.AbpScriptsController (Abp.AspNetCore).
+INFO  2022-11-26 15:52:39,010 [8    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ContentResult GetAll(Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) on controller Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController (Abp.AspNetCore).
+INFO  2022-11-26 15:52:39,014 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET https://localhost:44312/signalr?id=wTk1U-jXX9mfSKWdCBgZyA - -
+INFO  2022-11-26 15:52:39,026 [3    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr'
+INFO  2022-11-26 15:52:39,029 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/view-resources/Views/Home/Index.js?v=K0D6HsrS69XXLRtWKoTtWGYinGZNmmZF6gpiRobQkK4 - -
+INFO  2022-11-26 15:52:39,031 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /view-resources/Views/Home/Index.js was not modified
+INFO  2022-11-26 15:52:39,034 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/view-resources/Views/Home/Index.js?v=K0D6HsrS69XXLRtWKoTtWGYinGZNmmZF6gpiRobQkK4 - - - 304 - application/javascript 4.3889ms
+INFO  2022-11-26 15:52:39,041 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/_framework/aspnetcore-browser-refresh.js - -
+INFO  2022-11-26 15:52:39,049 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/_framework/aspnetcore-browser-refresh.js - - - 200 12010 application/javascript;+charset=utf-8 7.0599ms
+INFO  2022-11-26 15:52:39,056 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/admin-lte/dist/img/avatar5.png - -
+INFO  2022-11-26 15:52:39,058 [9    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/admin-lte/dist/img/avatar5.png was not modified
+INFO  2022-11-26 15:52:39,060 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/admin-lte/dist/img/avatar5.png - - - 304 - image/png 4.8673ms
+INFO  2022-11-26 15:52:39,074 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/img/logo.png - -
+INFO  2022-11-26 15:52:39,077 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /img/logo.png was not modified
+INFO  2022-11-26 15:52:39,079 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/img/logo.png - - - 304 - image/png 5.1548ms
+INFO  2022-11-26 15:52:39,085 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/_vs/browserLink - -
+INFO  2022-11-26 15:52:39,091 [14   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:39,097 [14   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @___sourceName_0='?' (Size = 128), @__CultureInfo_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[Key], [a].[LanguageName], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[Source], [a].[TenantId], [a].[Value]
+FROM [AbpLanguageTexts] AS [a]
+WHERE ((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL)) AND (([a].[Source] = @___sourceName_0) AND ([a].[LanguageName] = @__CultureInfo_Name_1))
+INFO  2022-11-26 15:52:39,169 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 83.4212ms
+INFO  2022-11-26 15:52:39,199 [14   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @___sourceName_0='?' (Size = 128), @__CultureInfo_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[Key], [a].[LanguageName], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[Source], [a].[TenantId], [a].[Value]
+FROM [AbpLanguageTexts] AS [a]
+WHERE ((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL)) AND (([a].[Source] = @___sourceName_0) AND ([a].[LanguageName] = @__CultureInfo_Name_1))
+INFO  2022-11-26 15:52:39,202 [14   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @___sourceName_0='?' (Size = 128), @__CultureInfo_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[Key], [a].[LanguageName], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[Source], [a].[TenantId], [a].[Value]
+FROM [AbpLanguageTexts] AS [a]
+WHERE ((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL)) AND (([a].[Source] = @___sourceName_0) AND ([a].[LanguageName] = @__CultureInfo_Name_1))
+INFO  2022-11-26 15:52:39,207 [14   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @___sourceName_0='?' (Size = 128), @__CultureInfo_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[Key], [a].[LanguageName], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[Source], [a].[TenantId], [a].[Value]
+FROM [AbpLanguageTexts] AS [a]
+WHERE ((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL)) AND (([a].[Source] = @___sourceName_0) AND ([a].[LanguageName] = @__CultureInfo_Name_1))
+INFO  2022-11-26 15:52:39,210 [14   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @___sourceName_0='?' (Size = 128), @__CultureInfo_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[Key], [a].[LanguageName], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[Source], [a].[TenantId], [a].[Value]
+FROM [AbpLanguageTexts] AS [a]
+WHERE ((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL)) AND (([a].[Source] = @___sourceName_0) AND ([a].[LanguageName] = @__CultureInfo_Name_1))
+INFO  2022-11-26 15:52:39,213 [14   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @___sourceName_0='?' (Size = 128), @__CultureInfo_Name_1='?' (Size = 128)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[Key], [a].[LanguageName], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[Source], [a].[TenantId], [a].[Value]
+FROM [AbpLanguageTexts] AS [a]
+WHERE ((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL)) AND (([a].[Source] = @___sourceName_0) AND ([a].[LanguageName] = @__CultureInfo_Name_1))
+DEBUG 2022-11-26 15:52:39,214 [15   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"wTk1U-jXX9mfSKWdCBgZyA","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2022-11-26T15:52:39.1371488+03:00","Properties":{}}
+DEBUG 2022-11-26 15:52:39,224 [15   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: wTk1U-jXX9mfSKWdCBgZyA
+INFO  2022-11-26 15:52:39,270 [3    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @__userId_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[Name], [a].[TenantId], [a].[UserId], [a].[Value]
+FROM [AbpSettings] AS [a]
+WHERE ((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL)) AND (([a].[UserId] = @__userId_0) AND ([a].[TenantId] IS NULL))
+INFO  2022-11-26 15:52:39,306 [3    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2022-11-26 15:52:39,310 [3    ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 305.5546ms
+INFO  2022-11-26 15:52:39,312 [3    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2022-11-26 15:52:39,315 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/AbpScripts/GetScripts?v=638050747423231021 - - - 200 23454 application/x-javascript;+charset=utf-8 360.7451ms
+INFO  2022-11-26 15:52:40,418 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs-ext/famfamfam-flags/dist/sprite/famfamfam-flags.png - -
+INFO  2022-11-26 15:52:40,423 [3    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs-ext/famfamfam-flags/dist/sprite/famfamfam-flags.png was not modified
+INFO  2022-11-26 15:52:40,426 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs-ext/famfamfam-flags/dist/sprite/famfamfam-flags.png - - - 304 - image/png 10.7416ms
+INFO  2022-11-26 15:52:40,568 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/libs/font-awesome/webfonts/fa-solid-900.woff2 - -
+INFO  2022-11-26 15:52:40,572 [3    ] NetCore.StaticFiles.StaticFileMiddleware - The file /libs/font-awesome/webfonts/fa-solid-900.woff2 was not modified
+INFO  2022-11-26 15:52:40,577 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/libs/font-awesome/webfonts/fa-solid-900.woff2 - - - 304 - font/woff2 27.1920ms
+INFO  2022-11-26 15:52:42,453 [5    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:42,459 [5    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+INFO  2022-11-26 15:52:47,585 [3    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:47,595 [3    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+INFO  2022-11-26 15:52:52,649 [3    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:52,656 [3    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+INFO  2022-11-26 15:52:53,629 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/birim/index - -
+INFO  2022-11-26 15:52:53,636 [3    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'IhaleProject.Web.Controllers.BirimController.Index (IhaleProject.Web.Mvc)'
+INFO  2022-11-26 15:52:53,643 [3    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Birim", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller IhaleProject.Web.Controllers.BirimController (IhaleProject.Web.Mvc).
+INFO  2022-11-26 15:52:53,689 [3    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:53,714 [5    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[BirimAdi], [b].[CreationTime], [b].[CreatorUserId], [b].[DeleterUserId], [b].[DeletionTime], [b].[IsDeleted], [b].[LastModificationTime], [b].[LastModifierUserId]
+FROM [Birim] AS [b]
+WHERE (@__ef_filter__p_0 = CAST(1 AS bit)) OR ([b].[IsDeleted] = CAST(0 AS bit))
+INFO  2022-11-26 15:52:53,930 [5    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:53,937 [3    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 512), @p1='?' (Size = 64), @p2='?' (Size = 128), @p3='?' (Size = 2000), @p4='?' (Size = 2000), @p5='?' (Size = 1024), @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime2), @p8='?' (DbType = Int32), @p9='?' (DbType = Int64), @p10='?' (Size = 256), @p11='?' (Size = 1024), @p12='?' (Size = 4000), @p13='?' (Size = 256), @p14='?' (DbType = Int32), @p15='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AbpAuditLogs] ([BrowserInfo], [ClientIpAddress], [ClientName], [CustomData], [Exception], [ExceptionMessage], [ExecutionDuration], [ExecutionTime], [ImpersonatorTenantId], [ImpersonatorUserId], [MethodName], [Parameters], [ReturnValue], [ServiceName], [TenantId], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+SELECT [Id]
+FROM [AbpAuditLogs]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+INFO  2022-11-26 15:52:54,177 [3    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2022-11-26 15:52:54,186 [3    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:54,193 [15   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @__ef_filter__p_1='?' (DbType = Boolean), @__p_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[AuthenticationSource], [a].[ConcurrencyStamp], [a].[CreationTime], [a].[CreatorUserId], [a].[DeleterUserId], [a].[DeletionTime], [a].[EmailAddress], [a].[EmailConfirmationCode], [a].[IsActive], [a].[IsDeleted], [a].[IsEmailConfirmed], [a].[IsLockoutEnabled], [a].[IsPhoneNumberConfirmed], [a].[IsTwoFactorEnabled], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[LockoutEndDateUtc], [a].[Name], [a].[NormalizedEmailAddress], [a].[NormalizedUserName], [a].[Password], [a].[PasswordResetCode], [a].[PhoneNumber], [a].[SecurityStamp], [a].[Surname], [a].[TenantId], [a].[UserName]
+FROM [AbpUsers] AS [a]
+WHERE (((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[IsDeleted] = CAST(0 AS bit))) AND ((@__ef_filter__p_1 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL))) AND ([a].[Id] = @__p_0)
+INFO  2022-11-26 15:52:54,198 [15   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:54,203 [5    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @__ef_filter__p_1='?' (DbType = Boolean), @__p_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[AuthenticationSource], [a].[ConcurrencyStamp], [a].[CreationTime], [a].[CreatorUserId], [a].[DeleterUserId], [a].[DeletionTime], [a].[EmailAddress], [a].[EmailConfirmationCode], [a].[IsActive], [a].[IsDeleted], [a].[IsEmailConfirmed], [a].[IsLockoutEnabled], [a].[IsPhoneNumberConfirmed], [a].[IsTwoFactorEnabled], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[LockoutEndDateUtc], [a].[Name], [a].[NormalizedEmailAddress], [a].[NormalizedUserName], [a].[Password], [a].[PasswordResetCode], [a].[PhoneNumber], [a].[SecurityStamp], [a].[Surname], [a].[TenantId], [a].[UserName]
+FROM [AbpUsers] AS [a]
+WHERE (((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[IsDeleted] = CAST(0 AS bit))) AND ((@__ef_filter__p_1 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL))) AND ([a].[Id] = @__p_0)
+INFO  2022-11-26 15:52:54,230 [6    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 288.3361ms.
+INFO  2022-11-26 15:52:54,232 [6    ] c.Infrastructure.ControllerActionInvoker - Executed action IhaleProject.Web.Controllers.BirimController.Index (IhaleProject.Web.Mvc) in 586.8707ms
+INFO  2022-11-26 15:52:54,234 [6    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'IhaleProject.Web.Controllers.BirimController.Index (IhaleProject.Web.Mvc)'
+INFO  2022-11-26 15:52:54,241 [20   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/birim/index - - - 200 - text/html;+charset=utf-8 612.3107ms
+INFO  2022-11-26 15:52:54,362 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/favicon.ico - -
+INFO  2022-11-26 15:52:54,364 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/AbpScripts/GetScripts?v=638050747423231021 - -
+INFO  2022-11-26 15:52:54,369 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/_vs/browserLink - -
+INFO  2022-11-26 15:52:54,373 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/_framework/aspnetcore-browser-refresh.js - -
+INFO  2022-11-26 15:52:54,385 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/_framework/aspnetcore-browser-refresh.js - - - 200 12010 application/javascript;+charset=utf-8 14.9082ms
+INFO  2022-11-26 15:52:54,389 [14   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2022-11-26 15:52:54,392 [14   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetScripts(System.String, Boolean) on controller Abp.AspNetCore.Mvc.Controllers.AbpScriptsController (Abp.AspNetCore).
+INFO  2022-11-26 15:52:54,397 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/favicon.ico - - - 404 - - 35.1014ms
+INFO  2022-11-26 15:52:54,409 [14   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2022-11-26 15:52:54,413 [14   ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 17.8753ms
+INFO  2022-11-26 15:52:54,415 [14   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2022-11-26 15:52:54,419 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/AbpScripts/GetScripts?v=638050747423231021 - - - 200 23454 application/x-javascript;+charset=utf-8 55.8506ms
+INFO  2022-11-26 15:52:54,427 [15   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 60.1340ms
+INFO  2022-11-26 15:52:55,461 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/birim/index - -
+INFO  2022-11-26 15:52:55,473 [3    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'IhaleProject.Web.Controllers.BirimController.Index (IhaleProject.Web.Mvc)'
+INFO  2022-11-26 15:52:55,476 [3    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Birim", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller IhaleProject.Web.Controllers.BirimController (IhaleProject.Web.Mvc).
+INFO  2022-11-26 15:52:55,481 [3    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:55,486 [5    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[BirimAdi], [b].[CreationTime], [b].[CreatorUserId], [b].[DeleterUserId], [b].[DeletionTime], [b].[IsDeleted], [b].[LastModificationTime], [b].[LastModifierUserId]
+FROM [Birim] AS [b]
+WHERE (@__ef_filter__p_0 = CAST(1 AS bit)) OR ([b].[IsDeleted] = CAST(0 AS bit))
+INFO  2022-11-26 15:52:55,491 [5    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:55,498 [5    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 512), @p1='?' (Size = 64), @p2='?' (Size = 128), @p3='?' (Size = 2000), @p4='?' (Size = 2000), @p5='?' (Size = 1024), @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime2), @p8='?' (DbType = Int32), @p9='?' (DbType = Int64), @p10='?' (Size = 256), @p11='?' (Size = 1024), @p12='?' (Size = 4000), @p13='?' (Size = 256), @p14='?' (DbType = Int32), @p15='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AbpAuditLogs] ([BrowserInfo], [ClientIpAddress], [ClientName], [CustomData], [Exception], [ExceptionMessage], [ExecutionDuration], [ExecutionTime], [ImpersonatorTenantId], [ImpersonatorUserId], [MethodName], [Parameters], [ReturnValue], [ServiceName], [TenantId], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+SELECT [Id]
+FROM [AbpAuditLogs]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+INFO  2022-11-26 15:52:55,501 [5    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2022-11-26 15:52:55,507 [5    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:55,568 [3    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @__ef_filter__p_1='?' (DbType = Boolean), @__p_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[AuthenticationSource], [a].[ConcurrencyStamp], [a].[CreationTime], [a].[CreatorUserId], [a].[DeleterUserId], [a].[DeletionTime], [a].[EmailAddress], [a].[EmailConfirmationCode], [a].[IsActive], [a].[IsDeleted], [a].[IsEmailConfirmed], [a].[IsLockoutEnabled], [a].[IsPhoneNumberConfirmed], [a].[IsTwoFactorEnabled], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[LockoutEndDateUtc], [a].[Name], [a].[NormalizedEmailAddress], [a].[NormalizedUserName], [a].[Password], [a].[PasswordResetCode], [a].[PhoneNumber], [a].[SecurityStamp], [a].[Surname], [a].[TenantId], [a].[UserName]
+FROM [AbpUsers] AS [a]
+WHERE (((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[IsDeleted] = CAST(0 AS bit))) AND ((@__ef_filter__p_1 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL))) AND ([a].[Id] = @__p_0)
+INFO  2022-11-26 15:52:55,824 [3    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:55,843 [14   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Boolean), @__ef_filter__p_1='?' (DbType = Boolean), @__p_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[AuthenticationSource], [a].[ConcurrencyStamp], [a].[CreationTime], [a].[CreatorUserId], [a].[DeleterUserId], [a].[DeletionTime], [a].[EmailAddress], [a].[EmailConfirmationCode], [a].[IsActive], [a].[IsDeleted], [a].[IsEmailConfirmed], [a].[IsLockoutEnabled], [a].[IsPhoneNumberConfirmed], [a].[IsTwoFactorEnabled], [a].[LastModificationTime], [a].[LastModifierUserId], [a].[LockoutEndDateUtc], [a].[Name], [a].[NormalizedEmailAddress], [a].[NormalizedUserName], [a].[Password], [a].[PasswordResetCode], [a].[PhoneNumber], [a].[SecurityStamp], [a].[Surname], [a].[TenantId], [a].[UserName]
+FROM [AbpUsers] AS [a]
+WHERE (((@__ef_filter__p_0 = CAST(1 AS bit)) OR ([a].[IsDeleted] = CAST(0 AS bit))) AND ((@__ef_filter__p_1 = CAST(1 AS bit)) OR ([a].[TenantId] IS NULL))) AND ([a].[Id] = @__p_0)
+INFO  2022-11-26 15:52:56,087 [6    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 584.999ms.
+INFO  2022-11-26 15:52:56,090 [6    ] c.Infrastructure.ControllerActionInvoker - Executed action IhaleProject.Web.Controllers.BirimController.Index (IhaleProject.Web.Mvc) in 611.451ms
+INFO  2022-11-26 15:52:56,093 [6    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'IhaleProject.Web.Controllers.BirimController.Index (IhaleProject.Web.Mvc)'
+INFO  2022-11-26 15:52:56,099 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/birim/index - - - 200 - text/html;+charset=utf-8 712.6354ms
+INFO  2022-11-26 15:52:56,106 [3    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/AbpServiceProxies/GetAll?v=638050747423231021 - -
+INFO  2022-11-26 15:52:56,113 [3    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2022-11-26 15:52:56,118 [3    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ContentResult GetAll(Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) on controller Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController (Abp.AspNetCore).
+DEBUG 2022-11-26 15:52:56,140 [5    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: wTk1U-jXX9mfSKWdCBgZyA
+INFO  2022-11-26 15:52:56,230 [5    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint '/signalr'
+INFO  2022-11-26 15:52:56,233 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/_framework/aspnetcore-browser-refresh.js - -
+INFO  2022-11-26 15:52:56,237 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/1.1 GET https://localhost:44312/signalr?id=wTk1U-jXX9mfSKWdCBgZyA - - - 101 - - 17220.0154ms
+INFO  2022-11-26 15:52:56,241 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 GET https://localhost:44312/_framework/aspnetcore-browser-refresh.js - - - 200 12010 application/javascript;+charset=utf-8 8.0793ms
+INFO  2022-11-26 15:52:56,355 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 POST https://localhost:44312/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2022-11-26 15:52:56,463 [14   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr/negotiate'
+INFO  2022-11-26 15:52:56,572 [14   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint '/signalr/negotiate'
+INFO  2022-11-26 15:52:56,668 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished HTTP/2 POST https://localhost:44312/signalr/negotiate text/plain;charset=UTF-8 0 - 200 273 application/json 252.7065ms
+INFO  2022-11-26 15:52:56,750 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET https://localhost:44312/signalr?id=cqacA_auVif50N8V1pXPMA - -
+INFO  2022-11-26 15:52:56,884 [9    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr'
+DEBUG 2022-11-26 15:52:56,891 [5    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"cqacA_auVif50N8V1pXPMA","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2022-11-26T15:52:56.8914204+03:00","Properties":{}}
+DEBUG 2022-11-26 15:52:56,891 [5    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: cqacA_auVif50N8V1pXPMA
+INFO  2022-11-26 15:52:57,964 [5    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:52:58,070 [5    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+INFO  2022-11-26 15:52:58,696 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/2 GET https://localhost:44312/AbpServiceProxies/GetAll?v=638050747423231021 - -
+INFO  2022-11-26 15:52:58,731 [14   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2022-11-26 15:52:58,737 [14   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ContentResult GetAll(Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) on controller Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController (Abp.AspNetCore).
+INFO  2022-11-26 15:53:03,207 [5    ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:53:03,224 [5    ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+INFO  2022-11-26 15:53:11,136 [15   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:53:11,157 [15   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+INFO  2022-11-26 15:53:16,293 [15   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:53:16,440 [15   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (9ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+INFO  2022-11-26 15:53:21,524 [15   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:53:21,559 [15   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
+INFO  2022-11-26 15:53:27,034 [16   ] osoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 6.0.4 initialized 'IhaleProjectDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.4' with options: None
+INFO  2022-11-26 15:53:27,075 [16   ] oft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__p_1='?' (DbType = Int32), @__Now_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_1) [a].[Id], [a].[CreationTime], [a].[CreatorUserId], [a].[IsAbandoned], [a].[JobArgs], [a].[JobType], [a].[LastTryTime], [a].[NextTryTime], [a].[Priority], [a].[TryCount]
+FROM [AbpBackgroundJobs] AS [a]
+WHERE ([a].[IsAbandoned] = CAST(0 AS bit)) AND ([a].[NextTryTime] <= @__Now_0)
+ORDER BY [a].[Priority] DESC, [a].[TryCount], [a].[NextTryTime]
