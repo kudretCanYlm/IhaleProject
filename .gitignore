@@ -254,3 +254,4 @@ paket-files/
 src/IhaleProject.Web.Mvc/secrets.json
 src/IhaleProject.Web.Host/secrets.json
 src/IhaleProject.Migrator/secrets.json
+/src/IhaleProject.Web.Mvc/App_Data/Logs/Logs.txt
