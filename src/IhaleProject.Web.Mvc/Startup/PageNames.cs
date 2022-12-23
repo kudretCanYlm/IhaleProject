@@ -8,5 +8,8 @@
         public const string Users = "Users";
         public const string Roles = "Roles";
         public const string Birim = "Birim";
-    }
+        public const string AlimTuru = "AlimTuru";
+        public const string AlimUsulu = "AlimUsulu";
+
+	}
 }
