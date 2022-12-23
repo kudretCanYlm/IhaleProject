@@ -66,7 +66,7 @@ namespace IhaleProject.Birim
         public async Task UpdateAsync(Guid id, UpdateBirimDto input)
         {
             var birim = await birimRepository.GetAsync(id);
-            birim.BirimAdi = input.BirimAdi.ToUpper();
+            birim.BirimAdi = input.BirimAdi.ToLower();
             await birimRepository.UpdateAsync(birim);
         }
     }
