@@ -61,6 +61,11 @@
     <text name="SuccessfullyRegistered">Başarıyla kayıt olundu</text>
     <text name="WaitingForEmailActivation">E-posta adresiniz etkinleştirilmeli.</text>
     <text name="Roles">Roller</text>
+	<!---->
+	<text name="Birim" >Birim</text>
+	<text name="AlimTuru" >Alım Türü</text>
+	<text name="AlimUsulu" >Alım Usulü</text>
+	<!---->
     <text name="DisplayName">Görünen ad</text>
     <text name="Edit">Düzenle</text>
     <text name="Delete">Sil</text>
