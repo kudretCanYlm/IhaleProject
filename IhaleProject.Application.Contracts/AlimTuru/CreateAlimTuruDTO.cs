@@ -7,7 +7,7 @@ namespace IhaleProject.Application.Contracts.AlimTuru
 		public string AlimTuru { get; set; }
 	}
 
-	public class CreateAlimTuruDTOValidator : AbstractValidator<UpdateAlimTuruDTO>
+	public class CreateAlimTuruDTOValidator : AbstractValidator<CreateAlimTuruDTO>
 	{
 		public CreateAlimTuruDTOValidator()
 		{
