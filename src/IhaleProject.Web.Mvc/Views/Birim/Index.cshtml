@@ -31,7 +31,7 @@
 						</div>
 					</div>
 					<div class="card-body">
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Yeni Birim Ekle</button>
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal">Yeni Birim Ekle</button>
 						<div class="table-responsive">
 							<table id="BirimlerTable" class="table table-striped table-bordered">
 							</table>
@@ -48,44 +48,49 @@
 @section scripts {
 	<script>
 
-		console.log("@Url.ActionLink("GetBirimler","Birim")")
+		BirimlerDataTableLoad();
 
-		var birimlerDataTable = $('#BirimlerTable');
+		function BirimlerDataTableLoad() {
+			var birimlerDataTable = $('#BirimlerTable');
 
-		birimlerDataTable.DataTable({
-			processing: true,
-			ajax: {
-				url: "@Url.ActionLink("GetBirimler","Birim")",
-				dataSrc: 'result.birims'
-			},
-			columns: [
-				{
-					data: "birimAdi",
-					title: "Birim"
+			birimlerDataTable.DataTable({
+				processing: true,
+				bDestroy: true,
+				ajax: {
+					url: "@Url.ActionLink("GetBirimler","Birim")",
+					dataSrc: 'result.birims'
 				},
-				{
-					data: "id",
-					title: "Sil",
-					render: (data) => {
-						return `<button onclick="WarningAlert('d','${data}')" id="del.${data}" class="btn btn-danger">sil</button>`
+				columns: [
+					{
+						data: "birimAdi",
+						title: "Birim"
+					},
+					{
+						data: "id",
+						title: "Sil",
+						render: (data) => {
+							return `<button onclick="WarningAlert('d','${data}')" id="del.${data}" class="btn btn-danger">sil</button>`
+						}
+
+					},
+					{
+						data: "id",
+						title: "Güncelle",
+						render: (data) => {
+							return `<button  id="upd.${data}" data-toggle="modal" data-target="#updateModal" class="btn btn-warning">guncelle</button>`
+						}
+
 					}
 
-				},
-				{
-					data: "id",
-					title: "Güncelle",
-					render: (data) => {
-						return `<button id="upd.${data}" class="btn btn-warning">guncelle</button>`
-					}
+				],
+				columnDefs: [{
+					"defaultContent": "-",
+					"targets": "_all"
+				}]
+			});
+		}
 
-				}
 
-			],
-			columnDefs: [{
-				"defaultContent": "-",
-				"targets": "_all"
-			}]
-		});
 
 		var alertTypes = {
 			delete: "d",
@@ -102,14 +107,14 @@
 
 
 			if (type == alertTypes.delete) {
-				alertProps.title="Silmek istediğinizden emin misiniz ?";
+				alertProps.title = "Silmek istediğinizden emin misiniz ?";
 				alertProps.icon = "warning";
 			}
 			else {
 				alertProps.title = "Güncellemek istediğinizden emin misiniz ?";
-				alertProps.icon="warning";
+				alertProps.icon = "warning";
 			}
-			
+
 			swal({
 				title: alertProps.title,
 				icon: alertProps.icon,
@@ -118,7 +123,14 @@
 			})
 				.then((isTrue) => {
 					if (!isTrue) {
-						$.post(`@Url.Action("Delete","Birim")/${id}`)
+						$.post(`@Url.Action("Delete","Birim")/${id}`, function (data) {
+
+						}).done(function () {
+							swal("Silindi");
+							BirimlerDataTableLoad();
+						}).fail(function () {
+							swal("Hata");
+						})
 					} else {
 						swal("iptal edildi")
 					}
