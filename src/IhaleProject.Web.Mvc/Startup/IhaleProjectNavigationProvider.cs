@@ -2,6 +2,7 @@
 using Abp.Authorization;
 using Abp.Localization;
 using IhaleProject.Authorization;
+using Microsoft.AspNetCore.Rewrite;
 
 namespace IhaleProject.Web.Startup
 {
@@ -45,7 +46,11 @@ namespace IhaleProject.Web.Startup
 						icon: "fas fa-users",
 						permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Users)
 					)
-				).AddItem(
+				).AddItem(new MenuItemDefinition(
+					"Parametreler",
+					L("Parametreler"),
+					icon: "fas fa-circle"
+					).AddItem(
 					new MenuItemDefinition(
 						PageNames.Birim,
 						L("Birim"),
@@ -54,24 +59,26 @@ namespace IhaleProject.Web.Startup
 						//permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Users
 						requiresAuthentication: false
 					)
-				).AddItem(
+					).AddItem(
 					new MenuItemDefinition(
 						PageNames.AlimTuru,
 						L("AlimTuru"),
 						url: "AlimTuru",
-						icon: "fa fa-money",
+						icon: "fa fa-cubes",
 						//permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Users)
 						requiresAuthentication: false
 					)
-				).AddItem(
+					).AddItem(
 					new MenuItemDefinition(
 						PageNames.AlimUsulu,
 						L("AlimUsulu"),
 						url: "AlimUsulu",
-						icon: "fa fa-credit-card-alt",
+						icon: "fa fa-cubes",
 						//permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Users)
 						requiresAuthentication: false
 					)
+				)
+
 				).AddItem(
 					new MenuItemDefinition(
 						PageNames.Roles,

@@ -65,6 +65,7 @@
 	<text name="Birim" >Birim</text>
 	<text name="AlimTuru" >Alım Türü</text>
 	<text name="AlimUsulu" >Alım Usulü</text>
+	<text name="Parametreler">Parametreler</text>
 	<!---->
     <text name="DisplayName">Görünen ad</text>
     <text name="Edit">Düzenle</text>
