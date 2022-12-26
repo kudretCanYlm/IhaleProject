@@ -17,7 +17,7 @@ namespace IhaleProject.Application.Contracts.AlimUsulu
 
 		Task<IEnumerable<AlimUsuluDTO>> GetAllAsync();
 
-		Task<IEnumerable<AlimUsuluDTO>> GetByFilter(Expression<Func<AlimUsuluEntity, bool>> filter);
+		//Task<IEnumerable<AlimUsuluDTO>> GetByFilter(Expression<Func<AlimUsuluEntity, bool>> filter);
 
 		Task<AlimUsuluDTO> CreateAsync(CreateAlimUsuluDTO input);
 

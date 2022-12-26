@@ -16,7 +16,7 @@ namespace IhaleProject.Application.Contracts.Birim
 
         Task<IEnumerable<BirimDto>> GetAllAsync();
 
-        Task<IEnumerable<BirimDto>> GetByFilter(Expression<Func<BirimEntity,bool>> filter);
+        //Task<IEnumerable<BirimDto>> GetByFilter(Expression<Func<BirimEntity,bool>> filter);
 
         Task<BirimDto> CreateAsync(CreateBirimDto input);
 

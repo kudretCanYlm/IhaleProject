@@ -1,4 +1,5 @@
-﻿using FluentValidation.Results;
+﻿using Abp.Web.Models;
+using FluentValidation.Results;
 using IhaleProject.Application.Contracts.Birim;
 using IhaleProject.Controllers;
 using IhaleProject.Web.Models.Birim;
@@ -30,6 +31,7 @@ namespace IhaleProject.Web.Controllers
         }
 
         [HttpGet]
+        //[WrapResult(wrapOnSuccess:false)]
         public async Task<JsonResult> GetBirimler()
         {
             var birimler = await birimAppService.GetAllAsync();
@@ -48,7 +50,7 @@ namespace IhaleProject.Web.Controllers
             return RedirectToAction(L(nameof(Index)));
         }
 
-        [HttpPost]
+		[HttpPost]
         public async Task<IActionResult> Create(CreateBirimDto createBirimDto)
         {
             //add vaidations

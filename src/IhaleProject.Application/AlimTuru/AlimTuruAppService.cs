@@ -45,12 +45,12 @@ namespace IhaleProject.AlimTuru
 			return alimTurleriDto;	
 		}
 
-		public async Task<IEnumerable<AlimTuruDTO>> GetByFilter(Expression<Func<AlimTuruEntity, bool>> filter)
-		{
-			var alimTurleri = await alimTuruRepository.GetAllListAsync(filter);
-			var alimTurleriDto = ObjectMapper.Map<IEnumerable<AlimTuruDTO>>(alimTurleri);
-			return alimTurleriDto;
-		}
+		//public async Task<IEnumerable<AlimTuruDTO>> GetByFilter(Expression<Func<AlimTuruEntity, bool>> filter)
+		//{
+		//	var alimTurleri = await alimTuruRepository.GetAllListAsync(filter);
+		//	var alimTurleriDto = ObjectMapper.Map<IEnumerable<AlimTuruDTO>>(alimTurleri);
+		//	return alimTurleriDto;
+		//}
 
 		public async Task<AlimTuruDTO> GetAsync(Guid id)
 		{

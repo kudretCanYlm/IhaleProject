@@ -46,12 +46,12 @@ namespace IhaleProject.Birim
             return birimlerDto;
         }
 
-        public async Task<IEnumerable<BirimDto>> GetByFilter(Expression<Func<BirimEntity,bool>> filter)
-        {
-            var birimler = await birimRepository.GetAllListAsync(filter);
-            var birimlerDto = ObjectMapper.Map<IEnumerable<BirimDto>>(birimler);
-            return birimlerDto;
-        }
+        //public async Task<IEnumerable<BirimDto>> GetByFilter(Expression<Func<BirimEntity,bool>> filter)
+        //{
+        //    var birimler = await birimRepository.GetAllListAsync(filter);
+        //    var birimlerDto = ObjectMapper.Map<IEnumerable<BirimDto>>(birimler);
+        //    return birimlerDto;
+        //}
 
         public async Task<BirimDto> GetAsync(Guid id)
         {

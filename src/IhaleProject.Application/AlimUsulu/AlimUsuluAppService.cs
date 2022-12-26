@@ -48,12 +48,12 @@ namespace IhaleProject.AlimUsulu
 			return ObjectMapper.Map<AlimUsuluDTO>(alimUsulu);
 		}
 
-		public async Task<IEnumerable<AlimUsuluDTO>> GetByFilter(Expression<Func<AlimUsuluEntity, bool>> filter)
-		{
-			var alimUsulleri = await alimUsuluRepository.GetAllListAsync(filter);
-			var alimUsulleriDto = ObjectMapper.Map<IEnumerable<AlimUsuluDTO>>(alimUsulleri);
-			return alimUsulleriDto;
-		}
+		//public async Task<IEnumerable<AlimUsuluDTO>> GetByFilter(Expression<Func<AlimUsuluEntity, bool>> filter)
+		//{
+		//	var alimUsulleri = await alimUsuluRepository.GetAllListAsync(filter);
+		//	var alimUsulleriDto = ObjectMapper.Map<IEnumerable<AlimUsuluDTO>>(alimUsulleri);
+		//	return alimUsulleriDto;
+		//}
 
 		public async Task UpdateAsync(Guid id, UpdateAlimUsuluDTO input)
 		{
