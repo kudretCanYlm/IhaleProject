@@ -2,9 +2,11 @@
 using IhaleProject.Application.Contracts.AlimTuru;
 using IhaleProject.Application.Contracts.AlimUsulu;
 using IhaleProject.Application.Contracts.Birim;
+using IhaleProject.Application.Contracts.Ihale;
 using IhaleProject.Domain.AlimTuru;
 using IhaleProject.Domain.AlimUsulu;
 using IhaleProject.Domain.Birim;
+using IhaleProject.Domain.Ihale;
 
 namespace IhaleProject
 {
@@ -26,6 +28,11 @@ namespace IhaleProject
             CreateMap<AlimUsuluEntity, AlimUsuluDTO>();
             CreateMap<CreateAlimUsuluDTO, AlimUsuluEntity>();
             CreateMap<UpdateAlimUsuluDTO, AlimUsuluEntity>();
+
+            //Ihale
+            CreateMap<IhaleEntity, IhaleDto>();
+            CreateMap<CreateIhaleDto, IhaleEntity>();
+            CreateMap<UpdateIhaleDto,IhaleEntity>();
         }
     }
 }

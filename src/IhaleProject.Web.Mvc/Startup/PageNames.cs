@@ -10,6 +10,7 @@
         public const string Birim = "Birim";
         public const string AlimTuru = "AlimTuru";
         public const string AlimUsulu = "AlimUsulu";
+        public const string Ihale = "Ihale";
 
 	}
 }

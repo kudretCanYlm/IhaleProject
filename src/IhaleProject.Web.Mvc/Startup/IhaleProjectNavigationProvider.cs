@@ -77,9 +77,17 @@ namespace IhaleProject.Web.Startup
 						//permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Users)
 						requiresAuthentication: false
 					)
+				))
+				.AddItem(
+				new MenuItemDefinition(
+					PageNames.Ihale,
+					L("Ihale"),
+					url: "Ihale",
+					icon: "fa fa-cubes",
+					requiresAuthentication: false
+					)
 				)
-
-				).AddItem(
+				.AddItem(
 					new MenuItemDefinition(
 						PageNames.Roles,
 						L("Roles"),
