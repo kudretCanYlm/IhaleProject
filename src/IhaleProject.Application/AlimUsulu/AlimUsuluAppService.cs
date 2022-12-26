@@ -58,7 +58,7 @@ namespace IhaleProject.AlimUsulu
 		public async Task UpdateAsync(Guid id, UpdateAlimUsuluDTO input)
 		{
 			var alimUsulu = await alimUsuluRepository.GetAsync(id);
-			alimUsulu.AlimUsulu = alimUsulu.AlimUsulu.ToLower();
+			alimUsulu.AlimUsulu = input.AlimUsulu.ToLower();
 			await alimUsuluRepository.UpdateAsync(alimUsulu);
 		}
 	}
