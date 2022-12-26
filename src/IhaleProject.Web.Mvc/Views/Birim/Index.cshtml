@@ -44,11 +44,13 @@
 </section>
 
 @await Html.PartialAsync("~/Views/Birim/_CreateModal.cshtml",Model)
+@await Html.PartialAsync("~/Views/Birim/_UpdateModal.cshtml",Model)
 
 @section scripts {
 	<script>
 
 		BirimlerDataTableLoad();
+		var updateForm = $("#updateform");
 
 		function BirimlerDataTableLoad() {
 			var birimlerDataTable = $('#BirimlerTable');
@@ -77,7 +79,7 @@
 						data: "id",
 						title: "Güncelle",
 						render: (data) => {
-							return `<button  id="upd.${data}" data-toggle="modal" data-target="#updateModal" class="btn btn-warning">guncelle</button>`
+							return `<button onclick="GetUpdateValue(event)" data-update-id="${data}" data-toggle="modal" data-target="#updateModal" class="update-btn btn btn-warning">guncelle</button>`
 						}
 
 					}
@@ -90,6 +92,27 @@
 			});
 		}
 
+		function GetUpdateValue(event) {
+
+			var id = event.target.getAttribute("data-update-id")
+
+			updateForm.submit(function (event) {
+				event.preventDefault();
+
+				WarningAlert("u", id);
+			});
+
+			$.get("@Url.ActionLink("GetBirim","Birim")" + "/" + id, function (data) {
+
+				var dataObj = data.result;
+
+
+				for (const key in dataObj) {
+					updateForm.find("input[name='" + key + "']").val(dataObj[key]);
+				}
+
+			})
+		}
 
 
 		var alertTypes = {
@@ -122,17 +145,46 @@
 				dangerMode: true,
 			})
 				.then((isTrue) => {
-					if (!isTrue) {
-						$.post(`@Url.Action("Delete","Birim")/${id}`, function (data) {
+					if (type == alertTypes.delete) {
+						if (!isTrue) {
+							$.post(`@Url.Action("Delete","Birim")/${id}`)
+							.done(function () {
+								swal("Silindi");
+								BirimlerDataTableLoad();
+							}).fail(function (err) {
+								console.log(err);
+								swal("Hata");
+							})
+						} else {
+							swal("iptal edildi")
+						}
+					}
+					else {
+						if (!isTrue) {
 
-						}).done(function () {
-							swal("Silindi");
-							BirimlerDataTableLoad();
-						}).fail(function () {
-							swal("Hata");
-						})
-					} else {
-						swal("iptal edildi")
+							var $inputs = $('#updateform :input');
+
+							var values = {};
+							$inputs.each(function () {
+								values[this.name] = $(this).val();
+							});
+
+							console.log(values);
+
+							//add post request
+							$.post(`@Url.Action("Update","Birim")/${id}`, values,)
+								.done(function () {
+									swal("Güncellendi");
+									BirimlerDataTableLoad();
+								})
+								.fail(function () {
+									swal("Hata");
+								})
+
+						}
+						else {
+							swal("iptal edildi")
+						}
 					}
 				});
 		}

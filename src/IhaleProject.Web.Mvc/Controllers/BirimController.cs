@@ -5,6 +5,7 @@ using IhaleProject.Controllers;
 using IhaleProject.Web.Models.Birim;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Formats.Asn1;
 using System.Threading.Tasks;
 
 namespace IhaleProject.Web.Controllers
@@ -24,14 +25,10 @@ namespace IhaleProject.Web.Controllers
 
 		public IActionResult Index()
 		{
-			//will add short fluent validation control
-
 			return View();
-
 		}
 
 		[HttpGet]
-		//[WrapResult(wrapOnSuccess:false)]
 		public async Task<JsonResult> GetBirimler()
 		{
 			var birimler = await birimAppService.GetAllAsync();
@@ -40,6 +37,14 @@ namespace IhaleProject.Web.Controllers
 			{
 				Birims = birimler
 			});
+		}
+
+		[HttpGet]
+		public async Task<JsonResult> GetBirim(Guid id)
+		{
+			var birim = await birimAppService.GetAsync(id);
+
+			return Json(birim);
 		}
 
 		[HttpPost]
@@ -76,30 +81,31 @@ namespace IhaleProject.Web.Controllers
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> Update([FromQuery]Guid id,[FromBody]UpdateBirimDto updateBirimDto)
+		public async Task<JsonResult> Update([FromRoute] Guid id, UpdateBirimDto updateBirimDto)
 		{
 
-            //add vaidations
-            var result = updateBirimValidator.Validate(updateBirimDto);
+			//add vaidations
+			var result = updateBirimValidator.Validate(updateBirimDto);
 
-            if (result.IsValid)
-            {
-                await birimAppService.UpdateAsync(id, updateBirimDto);
-            }
+			if (result.IsValid)
+			{
+				await birimAppService.UpdateAsync(id, updateBirimDto);
+			}
 
-            else
-            {
-                foreach (ValidationFailure failer in result.Errors)
-                {
+			else
+			{
+				foreach (ValidationFailure failer in result.Errors)
+				{
 
-                    ModelState.AddModelError(failer.PropertyName, failer.ErrorMessage);
+					ModelState.AddModelError(failer.PropertyName, failer.ErrorMessage);
 
-                }
+					return Json(new { ModelState });
+				}
 
-            }
+			}
 
-            return RedirectToAction("Index");
+			return Json(new { ModelState });
 
-        }
+		}
 	}
 }
