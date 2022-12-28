@@ -1,5 +1,6 @@
 ﻿using Abp.Application.Services;
 using IhaleProject.Application.Contracts.Birim;
+using IhaleProject.Domain.AlimTuru;
 using IhaleProject.Domain.AlimUsulu;
 using IhaleProject.Domain.Birim;
 using System;
@@ -16,6 +17,7 @@ namespace IhaleProject.Application.Contracts.AlimUsulu
 		Task<AlimUsuluDTO> GetAsync(Guid id);
 
 		Task<IEnumerable<AlimUsuluDTO>> GetAllAsync();
+		Task<AlimUsuluEntity> GetEntityAsync(Guid id);
 
 		//Task<IEnumerable<AlimUsuluDTO>> GetByFilter(Expression<Func<AlimUsuluEntity, bool>> filter);
 

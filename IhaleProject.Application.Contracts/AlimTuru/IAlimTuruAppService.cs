@@ -17,10 +17,11 @@ namespace IhaleProject.Application.Contracts.AlimTuru
         Task<AlimTuruDTO> GetAsync(Guid id);
 
         Task<IEnumerable<AlimTuruDTO>> GetAllAsync();
+		Task<AlimTuruEntity> GetEntityAsync(Guid id);
 
-        //Task<IEnumerable<AlimTuruDTO>> GetByFilter(Expression<Func<AlimTuruEntity, bool>> filter);
+		//Task<IEnumerable<AlimTuruDTO>> GetByFilter(Expression<Func<AlimTuruEntity, bool>> filter);
 
-        Task<AlimTuruDTO> CreateAsync(CreateAlimTuruDTO input);
+		Task<AlimTuruDTO> CreateAsync(CreateAlimTuruDTO input);
 
         Task UpdateAsync(Guid id, UpdateAlimTuruDTO input);
 

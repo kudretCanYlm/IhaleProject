@@ -59,6 +59,13 @@ namespace IhaleProject.AlimTuru
 			return ObjectMapper.Map<AlimTuruDTO>(alimTuru);
 		}
 
+		public async Task<AlimTuruEntity> GetEntityAsync(Guid id)
+		{
+			var alimTuru = await alimTuruRepository.GetAsync(id);
+			
+			return alimTuru;
+		}
+
 		// [Authorize()]
 		public async Task UpdateAsync(Guid id, UpdateAlimTuruDTO input)
 		{

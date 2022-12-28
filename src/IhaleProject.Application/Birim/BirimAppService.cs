@@ -60,10 +60,14 @@ namespace IhaleProject.Birim
             return ObjectMapper.Map<BirimDto>(birim);
         }
 
+		public async Task<BirimEntity> GetEntityAsync(Guid id)
+		{
+            var birim = await birimRepository.GetAsync(id);
+            return birim;
+		}
 
-
-        // [Authorize()]
-        public async Task UpdateAsync(Guid id, UpdateBirimDto input)
+		// [Authorize()]
+		public async Task UpdateAsync(Guid id, UpdateBirimDto input)
         {
             var birim = await birimRepository.GetAsync(id);
             birim.BirimAdi = input.BirimAdi.ToLower();

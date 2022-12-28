@@ -16,9 +16,9 @@ namespace IhaleProject.Application.Contracts.Ihale
 		public string DosyaUzantisi { get; set; }
 		public string base64String { get; set; }
 		public bool IhaleAktifMi { get; set; } = true;
-		BirimEntity Birim { get; set; }
-		AlimTuruEntity alimTuru { get; set; }
-		AlimUsuluEntity alimUsulu { get; set; }
+		public BirimEntity Birim { get; set; }
+		public AlimTuruEntity alimTuru { get; set; }
+		public AlimUsuluEntity alimUsulu { get; set; }
 	}
 
 	public class CreateIhaleDtoValidator:AbstractValidator<CreateIhaleDto>

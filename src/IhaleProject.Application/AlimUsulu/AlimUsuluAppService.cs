@@ -48,6 +48,12 @@ namespace IhaleProject.AlimUsulu
 			return ObjectMapper.Map<AlimUsuluDTO>(alimUsulu);
 		}
 
+		public async Task<AlimUsuluEntity> GetEntityAsync(Guid id)
+		{
+			var alimUsulu = await alimUsuluRepository.GetAsync(id);
+			return alimUsulu;
+		}
+
 		//public async Task<IEnumerable<AlimUsuluDTO>> GetByFilter(Expression<Func<AlimUsuluEntity, bool>> filter)
 		//{
 		//	var alimUsulleri = await alimUsuluRepository.GetAllListAsync(filter);
