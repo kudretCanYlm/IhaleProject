@@ -77,24 +77,25 @@ namespace IhaleProject.Web.Controllers
 
 			return RedirectToAction("Index");
 		}
+
+		[HttpGet]
+		public async Task<JsonResult> GetIhaleler()
+		{
+			var ihaleler = await ihaleAppService.GetAllAsync();
+
+			return Json(new IhaleListViewModel()
+			{
+				ihaleler = ihaleler
+			});
+		}
+
+		[HttpGet]
+		public async Task<JsonResult> GetIhale(Guid id)
+		{
+			var birim = await ihaleAppService.GetAsync(id);
+
+			return Json(birim);
+		}
 	}
-        [HttpGet]
-        public async Task<JsonResult> Getİhaleler()
-        {
-            var ihaleler = await ihaleAppService.GetAllAsync();
 
-            return Json(new IhaleListViewModel()
-            {
-                ihaleler = ihaleler
-            });
-        }
-
-        [HttpGet]
-        public async Task<JsonResult> GetBirim(Guid id)
-        {
-            var birim = await ihaleAppService.GetAsync(id);
-
-            return Json(birim);
-        }
-    }
 }
