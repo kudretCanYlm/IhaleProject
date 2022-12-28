@@ -2,12 +2,17 @@
 using IhaleProject.Application.Contracts.AlimTuru;
 using IhaleProject.Application.Contracts.AlimUsulu;
 using IhaleProject.Application.Contracts.Birim;
+using System.Threading.Tasks;
+using System;
 using IhaleProject.Application.Contracts.Ihale;
 using IhaleProject.Birim;
 using IhaleProject.Controllers;
 using IhaleProject.Web.Models.Ihale;
+using IhaleProject.Web.Models.Birim;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using IhaleProject.Migrations;
+using IhaleProject.Web.Models.Ihale;
 
 namespace IhaleProject.Web.Controllers
 {
@@ -30,8 +35,8 @@ namespace IhaleProject.Web.Controllers
 		}
 
 		public IActionResult Index()
-		{
-			return View();
+        {
+            return View();
 		}
 
 		public async Task<IActionResult> Create(IhalePostModel ihalePostModel)
@@ -73,4 +78,23 @@ namespace IhaleProject.Web.Controllers
 			return RedirectToAction("Index");
 		}
 	}
+        [HttpGet]
+        public async Task<JsonResult> Getİhaleler()
+        {
+            var ihaleler = await ihaleAppService.GetAllAsync();
+
+            return Json(new IhaleListViewModel()
+            {
+                ihaleler = ihaleler
+            });
+        }
+
+        [HttpGet]
+        public async Task<JsonResult> GetBirim(Guid id)
+        {
+            var birim = await ihaleAppService.GetAsync(id);
+
+            return Json(birim);
+        }
+    }
 }
