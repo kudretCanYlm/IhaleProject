@@ -5,14 +5,9 @@ using IhaleProject.Application.Contracts.Birim;
 using System.Threading.Tasks;
 using System;
 using IhaleProject.Application.Contracts.Ihale;
-using IhaleProject.Birim;
 using IhaleProject.Controllers;
 using IhaleProject.Web.Models.Ihale;
-using IhaleProject.Web.Models.Birim;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using IhaleProject.Migrations;
-using IhaleProject.Web.Models.Ihale;
 
 namespace IhaleProject.Web.Controllers
 {
@@ -41,6 +36,7 @@ namespace IhaleProject.Web.Controllers
 
 		public async Task<IActionResult> Create(IhalePostModel ihalePostModel)
 		{
+			
 			var createIhaleDto = ObjectMapper.Map<CreateIhaleDto>(ihalePostModel);
 
 			try
@@ -48,14 +44,13 @@ namespace IhaleProject.Web.Controllers
 				createIhaleDto.Birim = await birimAppService.GetEntityAsync(ihalePostModel.BirimId);
 				createIhaleDto.alimTuru = await alimTuruAppService.GetEntityAsync(ihalePostModel.AlimTuruId);
 				createIhaleDto.alimUsulu = await alimUsuluAppService.GetEntityAsync(ihalePostModel.AlimUsuluId);
-
 			}
 			catch 
 			{
 				return View("Index");
 			}
 
-
+			
 			//add vaidations
 			var result = createIhaleValidator.Validate(createIhaleDto);
 

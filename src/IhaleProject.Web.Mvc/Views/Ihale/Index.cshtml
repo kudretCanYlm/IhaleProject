@@ -31,7 +31,7 @@
 						</div>
 					</div>
 					<div class="card-body">
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal">Yeni İhale Ekle</button>
+						<button onclick="GetSelectValues('CreateIhale')" type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal">Yeni İhale Ekle</button>
 						<div class="table-responsive">
 							<table id="IhalelerTable" class="table table-striped table-bordered">
 							</table>
@@ -189,7 +189,70 @@
 				});
 		}
 
+		function GetSelectValues(formId) {
 
+			var form = $("#" + formId);
+			var birimSelect = $("#BirimSelect");
+			var alimTuruSelect = $("#AlimTuruSelect");
+			var alimUsuluSelect = $("#AlimUsuluSelect");
+
+
+			$.get("@Url.ActionLink("GetBirimler","Birim")", function (data) {
+
+				var dataObj = data.result.birims;
+
+				birimSelect.empty();
+				birimSelect.append($('<option></option>')
+					.text("Seçiniz")
+					.val(-1));
+
+				$.each(dataObj, function (index, item) {
+					birimSelect.append($('<option></option>')
+						.text(item.birimAdi)
+						.val(item.id));
+				});
+
+			})
+
+			$.get("@Url.ActionLink("GetAlimTurleri","AlimTuru")", function (data) {
+
+				var dataObj = data.result.alimTurleri;
+
+				alimTuruSelect.empty();
+				alimTuruSelect.append($('<option></option>')
+					.text("Seçiniz")
+					.val(-1));
+
+				$.each(dataObj, function (index, item) {
+					alimTuruSelect.append($('<option></option>')
+						.text(item.alimTuru)
+						.val(item.id));
+				});
+
+			})
+
+			$.get("@Url.ActionLink("GetAlimUsullleri","AlimUsulu")", function (data) {
+
+				var dataObj = data.result.alimUsulleri;
+
+				console.log(dataObj);
+
+				alimUsuluSelect.empty();
+				alimUsuluSelect.append($('<option></option>')
+					.text("Seçiniz")
+					.val(-1));
+
+				$.each(dataObj, function (index, item) {
+					alimUsuluSelect.append($('<option></option>')
+						.text(item.alimUsulu)
+						.val(item.id));
+				});
+
+			})
+
+
+
+		}
 
 	</script>
 }

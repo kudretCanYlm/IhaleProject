@@ -67,8 +67,8 @@ namespace IhaleProject.Web.Startup
 
             services.AddSignalR();
 
-            // Configure Abp and Dependency Injection
-            services.AddAbpWithoutCreatingServiceProvider<IhaleProjectWebMvcModule>(
+			// Configure Abp and Dependency Injection
+			services.AddAbpWithoutCreatingServiceProvider<IhaleProjectWebMvcModule>(
                 // Configure Log4Net logging
                 options => options.IocManager.IocContainer.AddFacility<LoggingFacility>(
                     f => f.UseAbpLog4Net().WithConfig(
