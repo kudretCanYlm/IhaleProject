@@ -32,7 +32,9 @@ namespace IhaleProject
 
             //Ihale
             CreateMap<IhaleEntity, IhaleDto>();
-            CreateMap<CreateIhaleDto, IhaleEntity>();
+            CreateMap<CreateIhaleDto, IhaleEntity>().
+                ForMember(x => x.Bytes, opt => opt.MapFrom(opt => Byte.Parse(opt.base64String)));
+
             CreateMap<UpdateIhaleDto,IhaleEntity>();
             CreateMap<IhalePostModel, CreateIhaleDto>()
                 .ForMember(x => x.base64String, opt => opt.MapFrom(opt => IhalePostModel.IFormFileToBase64(opt.File)))
