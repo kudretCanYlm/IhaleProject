@@ -16,5 +16,7 @@ namespace IhaleProject.Application.Contracts.Ihale
 		Task UpdateAsync(Guid id, UpdateIhaleDto input);
 
 		Task DeleteAsync(Guid id);
+
+		Task<IhaleFileDto> GetFile(Guid id);
 	}
 }

@@ -23,13 +23,13 @@ namespace IhaleProject.Domain.Ihale
 		public Guid alimUsuluId { get; set; }
 
 		[ForeignKey("BirimId")]
-		BirimEntity Birim { get; set; }
+		public BirimEntity Birim { get; set; }
 
 		[ForeignKey("alimTuruId")]
-		AlimTuruEntity alimTuru { get; set; }
+		public AlimTuruEntity alimTuru { get; set; }
 
 		[ForeignKey("alimUsuluId")]
-		AlimUsuluEntity alimUsulu { get; set; }
+		public AlimUsuluEntity alimUsulu { get; set; }
 
 
 	}

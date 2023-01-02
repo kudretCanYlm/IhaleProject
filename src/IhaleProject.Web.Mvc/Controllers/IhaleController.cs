@@ -87,9 +87,21 @@ namespace IhaleProject.Web.Controllers
 		[HttpGet]
 		public async Task<JsonResult> GetIhale(Guid id)
 		{
-			var birim = await ihaleAppService.GetAsync(id);
+			var ihale = await ihaleAppService.GetAsync(id);
 
-			return Json(birim);
+			return Json(ihale);
+		}
+
+		[HttpGet]
+		public async Task<FileContentResult> GetIhaleFile(Guid id)
+		{
+			var ihaleFile = await ihaleAppService.GetFile(id);
+
+			return new FileContentResult(ihaleFile.Bytes, ihaleFile.DosyaUzantisi)
+			{
+				FileDownloadName = ihaleFile.DosyaAdi
+			};
+
 		}
 	}
 

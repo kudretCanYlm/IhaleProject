@@ -14,6 +14,7 @@
 				<h1>İhaleler</h1>
 			</div>
 		</div>
+		
 	</div>
 </section>
 <section class="content">
@@ -64,8 +65,27 @@
 				},
 				columns: [
 					{
-						data: "İhaleler",
-						title: "İhaleler"
+						data: "ihaleNo",
+						title: "İhale No"
+					}, {
+						data: "ihaleAdi",
+						title: "İhale Adi"
+					}, {
+						data: "baslangicTarihi",
+						title: "Başlangiç Tarihi"
+					}, {
+						data: "bitisTarihi",
+						title: "Bitiş Tarihi"
+					},
+					{
+						data: "id",
+						title: "Dosya",
+						render: (data) => {
+							var link="@Url.ActionLink("GetIhaleFile","Ihale")"+"/"+data;
+
+							return `<a href="${link}"><button class="btn btn-danger">İndir</button></a>`
+						}
+
 					},
 					{
 						data: "id",
@@ -82,7 +102,7 @@
 							return `<button onclick="GetUpdateValue(event)" data-update-id="${data}" data-toggle="modal" data-target="#updateModal" class="update-btn btn btn-warning">guncelle</button>`
 						}
 
-					}
+					},
 
 				],
 				columnDefs: [{
@@ -253,6 +273,7 @@
 
 
 		}
+
 
 	</script>
 }
