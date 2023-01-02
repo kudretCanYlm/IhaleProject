@@ -14,7 +14,7 @@
 				<h1>İhaleler</h1>
 			</div>
 		</div>
-		
+
 	</div>
 </section>
 <section class="content">
@@ -67,10 +67,25 @@
 					{
 						data: "ihaleNo",
 						title: "İhale No"
-					}, {
+					},
+					{
 						data: "ihaleAdi",
 						title: "İhale Adi"
-					}, {
+					},
+					{
+						data: "birimAdi",
+						title: "Birim"
+					}, 
+					{
+						data: "alimTuruAdi",
+						title: "Alim Turu"
+					}, 
+					{
+						data: "alimUsuluAdi",
+						title: "Alim Usulu"
+					},
+
+					{
 						data: "baslangicTarihi",
 						title: "Başlangiç Tarihi"
 					}, {
@@ -81,7 +96,7 @@
 						data: "id",
 						title: "Dosya",
 						render: (data) => {
-							var link="@Url.ActionLink("GetIhaleFile","Ihale")"+"/"+data;
+							var link = "@Url.ActionLink("GetIhaleFile","Ihale")" + "/" + data;
 
 							return `<a href="${link}"><button class="btn btn-danger">İndir</button></a>`
 						}

@@ -1,4 +1,4 @@
-﻿@model IhaleProject.Application.Contracts.Ihale.UpdateIhaleDto
+﻿@model IhaleProject.Application.Contracts.Ihale.IhalePostModel
 @{
     Layout = null;
 }
@@ -14,9 +14,66 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label asp-for="IhaleAdi"></label>
-                        <input name="İhaleAdi" type="text" asp-for="IhaleAdi" class="form-control" />
-                        <span asp-validation-for="IhaleAdi"></span>
+						<div class="mb-3">
+							<label asp-for="IhaleNo">İhale No</label>
+							<input name="IhaleNo" type="number" asp-for="IhaleNo" class="form-control" />
+							<span asp-validation-for="IhaleNo"></span>
+						</div>
+						<div class="mb-3">
+							<label asp-for="IhaleAdi">İhale Adı</label>
+							<input name="IhaleAdi" type="text" asp-for="IhaleAdi" class="form-control" />
+							<span asp-validation-for="IhaleAdi"></span>
+						</div>
+						<div class="mb-3">
+							<label asp-for="BaslangicTarihi">İhale Başlangıç Tarihi</label>
+							<input name="BaslangicTarihi" type="date" asp-for="BaslangicTarihi" class="form-control" />
+							<span asp-validation-for="BaslangicTarihi"></span>
+						</div>
+						<div class="mb-3">
+							<label asp-for="BaslangicSaati">İhale Başlangıç Saati</label>
+							<input name="BaslangicSaati" type="time" asp-for="BaslangicSaati" class="form-control" />
+							<span asp-validation-for="BaslangicSaati"></span>
+						</div>
+						<div class="mb-3">
+							<label asp-for="BitisTarihi">İhale Bitiş Tarihi</label>
+							<input name="BitisTarihi" type="date" asp-for="BitisTarihi" class="form-control" />
+							<span asp-validation-for="BitisTarihi"></span>
+						</div>
+						<div class="mb-3">
+							<label asp-for="BitisSaati">İhale Bitiş Saati</label>
+							<input name="BitisSaati" type="time" asp-for="BitisSaati" class="form-control" />
+							<span asp-validation-for="BitisSaati"></span>
+						</div>
+						<div class="mb-3">
+							<label asp-for="File">Dosya</label>
+							<input name="File" type="file" asp-for="File" class="btn" />
+							<span asp-validation-for="File"></span>
+						</div>
+						<div class="mb-3">
+							<label asp-for="IhaleAktifMi">İhale Aktifliği</label>
+							<input name="IhaleAktifMi" type="checkbox" asp-for="IhaleAktifMi" class="" />
+						</div>
+						<div class="mb-3">
+							<label asp-for="BirimId">Birim</label>
+							<div class="form-select">
+								<select id="BirimSelect" asp-for="BirimId" class="btn btn-light w-100"></select>
+							</div>
+							<span asp-validation-for="BirimId"></span>
+						</div>
+						<div class="mb-3">
+							<label asp-for="AlimTuruId">Alım Türü</label>
+							<div class="form-select">
+								<select id="AlimTuruSelect" asp-for="AlimTuruId" class="btn btn-light w-100"></select>
+							</div>
+							<span asp-validation-for="AlimTuruId"></span>
+						</div>
+						<div class="mb-3">
+							<label asp-for="AlimUsuluId">Alım Usülü</label>
+							<div class="form-select">
+								<select id="AlimUsuluSelect" asp-for="AlimUsuluId" class="btn btn-light w-100"></select>
+							</div>
+							<span asp-validation-for="AlimUsuluId"></span>
+						</div>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary">Güncelle</button>
