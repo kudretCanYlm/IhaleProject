@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Abp" Version="7.3.0" />
+    <PackageReference Include="Abp.MailKit" Version="7.3.0" />
   </ItemGroup>
 
 </Project>
