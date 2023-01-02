@@ -1,0 +1,100 @@
+﻿@using IhaleProject.Application.Contracts.Ihale;
+@using IhaleProject.Web.Startup;
+@model IhaleDto;
+
+@{
+	ViewBag.Title = "Anasayfa";
+	ViewBag.CurrentPageName = PageNames.Anasayfa;
+}
+
+<section class="content-header">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-6">
+				<h1>Giriş yapmayanlar için Anasayfa</h1>
+			</div>
+		</div>
+		
+	</div>
+</section>
+<section class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="row">
+							<div class="col-md-6">
+							</div>
+							<div class="col-md-6">
+								@await Html.PartialAsync("~/Views/Roles/Index.AdvancedSearch.cshtml")
+							</div>
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+							<table id="AnasayfaTable" class="table table-striped table-bordered">
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+@section scripts {
+	<script>
+		AnasayfaDataTableLoad();
+		var updateForm = $("#updateform");
+
+		function AnasayfaDataTableLoad() {
+			var AnasayfaDataTable = $('#AnasayfaTable');
+
+			AnasayfaDataTable.DataTable({
+				processing: true,
+				bDestroy: true,
+				ajax: {
+					url: "@Url.ActionLink("GetIhaleler","Ihale")",
+					dataSrc: 'result.ihaleler'
+				},
+				columns: [
+					{
+						data: "ihaleNo",
+						title: "İhale No"
+					}, {
+						data: "ihaleAdi",
+						title: "İhale Adi"
+					}, {
+						data: "alimUsulu",
+						title: "Alım Usulu"
+					}, {
+						data: "alimTuru",
+						title: "Alım Türü"
+					}, {
+						data: "baslangicTarihi",
+						title: "Başlangiç Tarihi"
+					}, {
+						data: "bitisTarihi",
+						title: "Bitiş Tarihi"
+					},
+					{
+						data: "id",
+						title: "Dosya",
+						render: (data) => {
+							var link="@Url.ActionLink("GetIhaleFile","Ihale")"+"/"+data;
+
+							return `<a href="${link}"><button class="btn btn-danger">İndir</button></a>`
+						}
+
+					},
+				],
+				columnDefs: [{
+					"defaultContent": "-",
+					"targets": "_all"
+				}]
+			});
+		}
+	</script>
+}
+
