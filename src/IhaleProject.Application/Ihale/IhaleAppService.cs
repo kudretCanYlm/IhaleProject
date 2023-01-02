@@ -3,8 +3,10 @@ using IhaleProject.Domain.AlimTuru;
 using IhaleProject.Domain.AlimUsulu;
 using IhaleProject.Domain.Birim;
 using IhaleProject.Domain.Ihale;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace IhaleProject.Ihale
@@ -12,16 +14,10 @@ namespace IhaleProject.Ihale
 	public class IhaleAppService : IhaleProjectAppServiceBase, IIhaleAppService
 	{
 		private readonly IIhaleRepository ihaleRepository;
-		private readonly IAlimTuruRepository alimTuruRepository;
-		private readonly IBirimRepository birimRepository;
-		private readonly IAlimUsuluRepository alimUsuluRepository;
 
-		public IhaleAppService(IIhaleRepository ihaleRepository, IAlimTuruRepository alimTuruRepository, IBirimRepository birimRepository, IAlimUsuluRepository alimUsuluRepository)
+		public IhaleAppService(IIhaleRepository ihaleRepository)
 		{
 			this.ihaleRepository = ihaleRepository;
-			this.alimTuruRepository = alimTuruRepository;
-			this.birimRepository = birimRepository;
-			this.alimUsuluRepository = alimUsuluRepository;
 		}
 
 		public async Task<IhaleDto> CreateAsync(CreateIhaleDto input)
@@ -39,14 +35,7 @@ namespace IhaleProject.Ihale
 
 		public async Task<IEnumerable<IhaleDto>> GetAllAsync()
 		{
-			var ihaleler = await ihaleRepository.GetAllListAsync();
-
-			foreach (var ihale in ihaleler)
-			{
-				ihale.alimTuru = alimTuruRepository.FirstOrDefault(ihale.alimTuruId);
-				ihale.Birim = birimRepository.FirstOrDefault(ihale.BirimId);
-				ihale.alimUsulu = alimUsuluRepository.FirstOrDefault(ihale.alimUsuluId);
-			}
+			var ihaleler = await ihaleRepository.GetAllForIhaleDto();
 
 			var ihalelerDto = ObjectMapper.Map<IEnumerable<IhaleDto>>(ihaleler);
 			return ihalelerDto;

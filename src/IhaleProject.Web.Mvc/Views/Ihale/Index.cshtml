@@ -137,10 +137,11 @@
 				WarningAlert("u", id);
 			});
 
-			$.get("@Url.ActionLink("Getİhale","İhale")" + "/" + id, function (data) {
+			$.get("@Url.ActionLink("GetIhale","Ihale")" + "/" + id, function (data) {
 
 				var dataObj = data.result;
 
+				//GetSelectValues("updateform")
 
 				for (const key in dataObj) {
 					updateForm.find("input[name='" + key + "']").val(dataObj[key]);
@@ -225,6 +226,8 @@
 		}
 
 		function GetSelectValues(formId) {
+
+			//control is update
 
 			var form = $("#" + formId);
 			var birimSelect = $("#BirimSelect");

@@ -17,12 +17,13 @@ namespace IhaleProject.EntityFrameworkCore
 		{
             //will add table names
 			base.OnModelCreating(modelBuilder);
+            
 		}
 		public DbSet<BirimEntity> Birim { get; set; }
         public DbSet<AlimTuruEntity> AlimTuru { get; set; }
         public DbSet<AlimUsuluEntity> AlimUsulu { get; set; }
         public DbSet<IhaleEntity> Ihale { get; set; }
-
+        
         public IhaleProjectDbContext(DbContextOptions<IhaleProjectDbContext> options)
             : base(options)
         {

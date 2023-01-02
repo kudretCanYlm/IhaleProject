@@ -78,6 +78,8 @@ namespace IhaleProject.Web.Controllers
 		{
 			var ihaleler = await ihaleAppService.GetAllAsync();
 
+			int a = 4;
+
 			return Json(new IhaleListViewModel()
 			{
 				ihaleler = ihaleler

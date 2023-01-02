@@ -16,12 +16,12 @@
                     <div class="form-group">
 						<div class="mb-3">
 							<label asp-for="IhaleNo">İhale No</label>
-							<input name="IhaleNo" type="number" asp-for="IhaleNo" class="form-control" />
+							<input name="ihaleNo" type="number" asp-for="IhaleNo" class="form-control" />
 							<span asp-validation-for="IhaleNo"></span>
 						</div>
 						<div class="mb-3">
 							<label asp-for="IhaleAdi">İhale Adı</label>
-							<input name="IhaleAdi" type="text" asp-for="IhaleAdi" class="form-control" />
+							<input name="ihaleAdi" type="text" asp-for="IhaleAdi" class="form-control" />
 							<span asp-validation-for="IhaleAdi"></span>
 						</div>
 						<div class="mb-3">
@@ -56,21 +56,21 @@
 						<div class="mb-3">
 							<label asp-for="BirimId">Birim</label>
 							<div class="form-select">
-								<select id="BirimSelect" asp-for="BirimId" class="btn btn-light w-100"></select>
+								<select id="BirimSelectUpdate" asp-for="BirimId" class="btn btn-light w-100"></select>
 							</div>
 							<span asp-validation-for="BirimId"></span>
 						</div>
 						<div class="mb-3">
 							<label asp-for="AlimTuruId">Alım Türü</label>
 							<div class="form-select">
-								<select id="AlimTuruSelect" asp-for="AlimTuruId" class="btn btn-light w-100"></select>
+								<select id="AlimTuruSelectUpdate" asp-for="AlimTuruId" class="btn btn-light w-100"></select>
 							</div>
 							<span asp-validation-for="AlimTuruId"></span>
 						</div>
 						<div class="mb-3">
 							<label asp-for="AlimUsuluId">Alım Usülü</label>
 							<div class="form-select">
-								<select id="AlimUsuluSelect" asp-for="AlimUsuluId" class="btn btn-light w-100"></select>
+								<select id="AlimUsuluSelectUpdate" asp-for="AlimUsuluId" class="btn btn-light w-100"></select>
 							</div>
 							<span asp-validation-for="AlimUsuluId"></span>
 						</div>
