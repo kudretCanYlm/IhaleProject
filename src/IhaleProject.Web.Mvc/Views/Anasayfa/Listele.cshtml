@@ -1,0 +1,37 @@
+﻿@using IhaleProject.Application.Contracts.Ihale;
+@using IhaleProject.Web.Startup;
+@model IhaleDto;
+
+@{
+	ViewBag.Title = "Ihale";
+	ViewBag.CurrentPageName = PageNames.Ihale;
+}
+
+<section class="content-header">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-6">
+				<h1>Giriş yapmayanlar için Anasayfa</h1>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="row">
+							<div class="col-md-6">
+							</div>
+							<div class="col-md-6">
+								@await Html.PartialAsync("~/Views/Roles/Index.AdvancedSearch.cshtml")
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -27,15 +27,19 @@
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        @await Html.PartialAsync("_Header.cshtml")
-        @await Html.PartialAsync("_SideBar.cshtml")
-        <div class="content-wrapper">
-            @await Html.PartialAsync("_Alerts.cshtml")
-            @RenderBody()
-        </div>
-        @await Html.PartialAsync("_Footer.cshtml")
+@if (ViewContext.RouteData.Values["action"].ToString() != "Listele")
+        {
+            @await Html.PartialAsync("_Header.cshtml")
+            @await Html.PartialAsync("_SideBar.cshtml")
+            <div class="content-wrapper">
+                @await Html.PartialAsync("_Alerts.cshtml")
+                @RenderBody()
+            </div>
+            @await Html.PartialAsync("_Footer.cshtml")
+        }
+        @RenderBody()
     </div>
-
+       
     @await Html.PartialAsync("_Scripts.cshtml")
     @RenderSection("scripts", required: false)
     @WebResourceManager.RenderScripts()
