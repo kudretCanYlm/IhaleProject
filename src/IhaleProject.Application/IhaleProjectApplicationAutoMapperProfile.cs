@@ -2,10 +2,12 @@
 using IhaleProject.Application.Contracts.AlimTuru;
 using IhaleProject.Application.Contracts.AlimUsulu;
 using IhaleProject.Application.Contracts.Birim;
+using IhaleProject.Application.Contracts.Email;
 using IhaleProject.Application.Contracts.Ihale;
 using IhaleProject.Domain.AlimTuru;
 using IhaleProject.Domain.AlimUsulu;
 using IhaleProject.Domain.Birim;
+using IhaleProject.Domain.Email;
 using IhaleProject.Domain.Ihale;
 using System;
 using System.Text;
@@ -50,6 +52,8 @@ namespace IhaleProject
                 .ForMember(x => x.BaslangicTarihi, opt => opt.MapFrom(opt => DateTime.Parse(string.Format("{0}.{1}.{2} {3}:{4}:{5}", opt.BaslangicTarihi.Day , opt.BaslangicTarihi.Month, opt.BaslangicTarihi.Year, opt.BaslangicSaati.Hour , opt.BaslangicSaati.Minute, opt.BaslangicSaati.Second))))
                 .ForMember(x => x.BitisTarihi, opt => opt.MapFrom(opt => DateTime.Parse(string.Format("{0}.{1}.{2} {3}:{4}:{5}", opt.BitisTarihi.Day,opt.BitisTarihi.Month,opt.BitisTarihi.Year, opt.BitisSaati.Hour , opt.BitisSaati.Minute,opt.BitisTarihi.Second))));
 
+            //Email
+            CreateMap<CreateEmailDto, EmailEntity>();
 		}
 	}
 }

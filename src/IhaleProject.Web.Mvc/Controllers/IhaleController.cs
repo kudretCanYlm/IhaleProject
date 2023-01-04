@@ -8,6 +8,8 @@ using IhaleProject.Application.Contracts.Ihale;
 using IhaleProject.Controllers;
 using IhaleProject.Web.Models.Ihale;
 using Microsoft.AspNetCore.Mvc;
+using IhaleProject.Email;
+using IhaleProject.Application.Contracts.Email;
 
 namespace IhaleProject.Web.Controllers
 {
@@ -17,16 +19,18 @@ namespace IhaleProject.Web.Controllers
 		private readonly IBirimAppService birimAppService;
 		private readonly IAlimUsuluAppService alimUsuluAppService;
 		private readonly IAlimTuruAppService alimTuruAppService;
+		private readonly IEmailAppService emailAppService;
 
 		private readonly CreateIhaleDtoValidator createIhaleValidator=new CreateIhaleDtoValidator();
 		private readonly UpdateIhaleDtoValidator updateIhaleValidator= new UpdateIhaleDtoValidator();
 
-		public IhaleController(IIhaleAppService ihaleAppService, IBirimAppService birimAppService, IAlimUsuluAppService alimUsuluAppService, IAlimTuruAppService alimTuruAppService)
+		public IhaleController(IIhaleAppService ihaleAppService, IBirimAppService birimAppService, IAlimUsuluAppService alimUsuluAppService, IAlimTuruAppService alimTuruAppService, IEmailAppService emailAppService)
 		{
 			this.ihaleAppService = ihaleAppService;
 			this.birimAppService = birimAppService;
 			this.alimUsuluAppService = alimUsuluAppService;
 			this.alimTuruAppService = alimTuruAppService;
+			this.emailAppService = emailAppService;
 		}
 
 		public IActionResult Index()
@@ -57,6 +61,7 @@ namespace IhaleProject.Web.Controllers
 			if (result.IsValid)
 			{
 				await ihaleAppService.CreateAsync(createIhaleDto);
+				//await emailAppService.SendIhaleMailToAllUser(createIhaleDto.IhaleAdi);
 			}
 
 			else
@@ -77,8 +82,6 @@ namespace IhaleProject.Web.Controllers
 		public async Task<JsonResult> GetIhaleler()
 		{
 			var ihaleler = await ihaleAppService.GetAllAsync();
-
-			int a = 4;
 
 			return Json(new IhaleListViewModel()
 			{
