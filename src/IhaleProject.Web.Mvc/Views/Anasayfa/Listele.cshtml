@@ -6,17 +6,37 @@
 	ViewBag.Title = "Anasayfa";
 	ViewBag.CurrentPageName = PageNames.Anasayfa;
 }
+<header id="header" class="navbar navbar-light navbar-expand-lg">
+	<div class="header-top">
 
-<section class="content-header">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-6">
-				<h1>Giriş yapmayanlar için Anasayfa</h1>
+		<div class="container">
+			<div class="circle" style=""></div>
+			<a href="/" class="navbar-brand d-flex flex-row justify-content-start align-items-center" style="">
+				<img src="~/img/IsubuLogo.png" alt="ISUBÜ" class="mr-3">
+				<h4 class="text-muted font-weight-normal">Isparta Uygulamalı Bilimler Üniversitesi İhale Sayfası</h4>
+
+			</a>
+			<a href="javascript:void(0);" class="search-btn"><em class="icofont-search-2"></em></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="socialsdil d-none d-lg-block">
 			</div>
 		</div>
-		
 	</div>
-</section>
+	<div class="menu collapse navbar-collapse" id="menu">
+		<ul class="navbar-nav ml-auto mx-auto">
+			<li class="nav-item"><a href="http://kutuphane.isparta.edu.tr" target="_blank" class="nav-link">BİLGİ MERKEZİ</a></li>
+			<li class="nav-item"><a href="http://kutuphane.isparta.edu.tr" target="_blank" class="nav-link">BİLGİ MERKEZİ</a></li>
+			<li class="nav-item"><a href="https://aday.isparta.edu.tr/" target="_blank" class="nav-link">ADAY ÖĞRENCİ</a></li>
+			<li class="nav-item"><a href="/iletisim" class="nav-link">İLETİŞİM</a></li>
+			<li class="nav-item"><a href="http://uluslararasi.isparta.edu.tr/" target="_blank" class="nav-link">	
+				Giriş Sayfası
+			</a></li>
+		</ul>
+	</div>
+</header>
+
 <section class="content">
 	<div class="container-fluid">
 		<div class="row">
@@ -39,8 +59,22 @@
 					</div>
 				</div>
 			</div>
+			<div class="row m-2">
+				<div class="col-md-12 grid-margin stretch-card">
+					<div class="card">
+						<div class="card-body">
+							<h4 class="mb-3 card-title">İhalelerden mail yoluyla haberdar olmak ister misiniz?</h4>
+							<form class="forms-sample">
+								<div class="form-group">
+									<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Mail Adresiniz:">
+								</div>
+								<button type="submit" class="btn btn-primary mr-2">Mail Kaydet</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
 </section>
 
 @section scripts {
@@ -82,7 +116,7 @@
 						data: "id",
 						title: "Dosya",
 						render: (data) => {
-							var link="@Url.ActionLink("GetIhaleFile","Ihale")"+"/"+data;
+							var link = "@Url.ActionLink("GetIhaleFile","Ihale")" + "/" + data;
 
 							return `<a href="${link}"><button class="btn btn-danger">İndir</button></a>`
 						}
@@ -97,4 +131,5 @@
 		}
 	</script>
 }
+
 
