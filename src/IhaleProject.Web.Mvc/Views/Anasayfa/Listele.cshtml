@@ -17,11 +17,11 @@
 			<style>
 				.button{
 					padding: 220px;
-					font-size: 27px;
+					font-size: 55px;
 				}
 			</style>
 			<div style="text-align: right;">
-				<a href="~/Home/Index" class="button">Daire Başkanlığı Girişi</a>
+				<a href="~/Home/Index" class="btn btn-primary">Daire Başkanlığı Girişi</a>
 			</div>
 		</div>
 	</div>
@@ -48,13 +48,16 @@
 					</div>
 				</div>
 			</div>
-			<form style="border: 1px solid black;">
-				<label for="name">Ihalelerden Mail yoluyla haberdar olmak ister misiniz?</label><br>
-				<input type="email" id="mail" name="mail" placeholder="Mail adresinizi buraya girin."><br>
-				<div style="text-align: left;">
-					<a href="#" class="button">Abone ol</a>
+			<div class="tech-btm" style="background-color:aqua;" style="text-align:right;>
+				<label for="mailtext">Ihalelerden mail yoluyla haberdar olmak ister misiniz?</label><br>
+				<form method="post" >
+				<input type="email" id="mail" name="mail" placeholder="Mail adresinizi buraya girin.">
+					<div style="text-align: left;">
+						<br>
+					<a href="#" class="btn btn-secondary">Abone ol</a>
 				</div>
 			</form>
+			</div>
 		</div>
 	</div>
 </section>
