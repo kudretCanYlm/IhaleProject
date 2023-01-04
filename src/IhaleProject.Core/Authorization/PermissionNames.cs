@@ -8,5 +8,11 @@
         public const string Pages_Users_Activation = "Pages.Users.Activation";
 
         public const string Pages_Roles = "Pages.Roles";
-    }
+        //
+        public const string Pages_AlimTuru = "Pages.AlimTuru";
+        public const string Pages_AlimUsulu = "Pages.AlimUsulu";
+        public const string Pages_Birim = "Pages.Birim";
+        public const string Pages_Ihale = "Pages.Ihale";
+
+	}
 }

@@ -1,8 +1,11 @@
-﻿using Abp.Web.Models;
+﻿using Abp.AspNetCore.Mvc.Authorization;
+using Abp.Web.Models;
 using FluentValidation.Results;
 using IhaleProject.Application.Contracts.Birim;
+using IhaleProject.Authorization;
 using IhaleProject.Controllers;
 using IhaleProject.Web.Models.Birim;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Formats.Asn1;
@@ -10,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace IhaleProject.Web.Controllers
 {
-	//[AbpMvcAuthorize(PermissionNames.Pages_Users)]
+	[AbpMvcAuthorize(PermissionNames.Pages_Birim)]
 	public class BirimController : IhaleProjectControllerBase
 	{
 		private readonly IBirimAppService birimAppService;
@@ -29,6 +32,7 @@ namespace IhaleProject.Web.Controllers
 		}
 
 		[HttpGet]
+		[AllowAnonymous]
 		public async Task<JsonResult> GetBirimler()
 		{
 			var birimler = await birimAppService.GetAllAsync();
@@ -40,6 +44,7 @@ namespace IhaleProject.Web.Controllers
 		}
 
 		[HttpGet]
+		[AllowAnonymous]
 		public async Task<JsonResult> GetBirim(Guid id)
 		{
 			var birim = await birimAppService.GetAsync(id);

@@ -56,8 +56,7 @@ namespace IhaleProject.Web.Startup
 						L("Birim"),
 						url: "Birim",
 						icon: "fa fa-cubes",
-						//permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Users
-						requiresAuthentication: false
+						permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Birim)
 					)
 					).AddItem(
 					new MenuItemDefinition(
@@ -65,8 +64,7 @@ namespace IhaleProject.Web.Startup
 						L("AlimTuru"),
 						url: "AlimTuru",
 						icon: "fa fa-cubes",
-						//permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Users)
-						requiresAuthentication: false
+						permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_AlimTuru)
 					)
 					).AddItem(
 					new MenuItemDefinition(
@@ -74,8 +72,7 @@ namespace IhaleProject.Web.Startup
 						L("AlimUsulu"),
 						url: "AlimUsulu",
 						icon: "fa fa-cubes",
-						//permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Users)
-						requiresAuthentication: false
+						permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_AlimUsulu)
 					)
 				))
 				.AddItem(
@@ -84,7 +81,7 @@ namespace IhaleProject.Web.Startup
 					L("Ihale"),
 					url: "Ihale",
 					icon: "fa fa-cubes",
-					requiresAuthentication: false
+					permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Ihale)
 					)
 				)
 				.AddItem(

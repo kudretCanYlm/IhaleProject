@@ -16,6 +16,7 @@ using FluentValidation;
 
 namespace IhaleProject.Web.Controllers
 {
+	[AbpMvcAuthorize(PermissionNames.Pages_AlimUsulu)]
 	public class AlimUsuluController : IhaleProjectControllerBase
 	{
 		private readonly IAlimUsuluAppService alimUsuluAppService;

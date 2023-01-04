@@ -10,9 +10,12 @@ using IhaleProject.Web.Models.Ihale;
 using Microsoft.AspNetCore.Mvc;
 using IhaleProject.Email;
 using IhaleProject.Application.Contracts.Email;
+using Abp.AspNetCore.Mvc.Authorization;
+using IhaleProject.Authorization;
 
 namespace IhaleProject.Web.Controllers
 {
+	[AbpMvcAuthorize(PermissionNames.Pages_Ihale)]
 	public class IhaleController: IhaleProjectControllerBase
 	{
 		private readonly IIhaleAppService ihaleAppService;
@@ -92,7 +95,9 @@ namespace IhaleProject.Web.Controllers
 		[HttpGet]
 		public async Task<JsonResult> GetIhale(Guid id)
 		{
-			var ihale = await ihaleAppService.GetAsync(id);
+			var ihale = await ihaleAppService.GetUpdateModelAsync(id);
+
+			int a = 200;
 
 			return Json(ihale);
 		}

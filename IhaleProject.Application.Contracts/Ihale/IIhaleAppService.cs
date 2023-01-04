@@ -8,6 +8,7 @@ namespace IhaleProject.Application.Contracts.Ihale
 	public interface IIhaleAppService:IApplicationService
 	{
 		Task<IhaleDto> GetAsync(Guid id);
+		Task<IhalePostUpdateModel> GetUpdateModelAsync(Guid id);
 
 		Task<IEnumerable<IhaleDto>> GetAllAsync();
 

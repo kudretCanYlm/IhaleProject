@@ -55,6 +55,13 @@ namespace IhaleProject.Ihale
 			return ObjectMapper.Map<IhaleFileDto>(ihale);
 		}
 
+		public async Task<IhalePostUpdateModel> GetUpdateModelAsync(Guid id)
+		{
+			var ihale = await ihaleRepository.GetAsync(id);
+
+			return ObjectMapper.Map<IhalePostUpdateModel>(ihale);
+		}
+
 		public async Task UpdateAsync(Guid id, UpdateIhaleDto input)
 		{
 			var ihale = await ihaleRepository.GetAsync(id);

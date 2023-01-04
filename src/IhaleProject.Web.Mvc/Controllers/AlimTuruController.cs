@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace IhaleProject.Web.Controllers
 {
-	//[AbpMvcAuthorize(PermissionNames.Pages_Users)]
+	[AbpMvcAuthorize(PermissionNames.Pages_AlimTuru)]
 	public class AlimTuruController : IhaleProjectControllerBase
 	{
 		private readonly IAlimTuruAppService alimTuruAppService;
