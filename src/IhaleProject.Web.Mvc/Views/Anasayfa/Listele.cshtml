@@ -8,13 +8,22 @@
 }
 
 <section class="content-header">
-	<div class="container-fluid">
+	<div class="container-fluid" style="background-color:aquamarine;">
 		<div class="row">
 			<div class="col-sm-6">
+				<a href="#"><img src="~/img/IsubuLogo.png" alt="Isubü Logo" border="0" align="left"/></a>
 				<h1>Giriş yapmayanlar için Anasayfa</h1>
 			</div>
+			<style>
+				.button{
+					padding: 220px;
+					font-size: 27px;
+				}
+			</style>
+			<div style="text-align: right;">
+				<a href="~/Home/Index" class="button">Daire Başkanlığı Girişi</a>
+			</div>
 		</div>
-		
 	</div>
 </section>
 <section class="content">
@@ -39,6 +48,13 @@
 					</div>
 				</div>
 			</div>
+			<form style="border: 1px solid black;">
+				<label for="name">Ihalelerden Mail yoluyla haberdar olmak ister misiniz?</label><br>
+				<input type="email" id="mail" name="mail" placeholder="Mail adresinizi buraya girin."><br>
+				<div style="text-align: left;">
+					<a href="#" class="button">Abone ol</a>
+				</div>
+			</form>
 		</div>
 	</div>
 </section>
