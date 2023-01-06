@@ -25,6 +25,7 @@ namespace IhaleProject.EntityFrameworkCore
         public DbSet<AlimUsuluEntity> AlimUsulu { get; set; }
         public DbSet<IhaleEntity> Ihale { get; set; }
         public DbSet<EmailEntity> Email { get; set; }
+        public DbSet<EmailLogEntity> EmailLog { get; set; }
         
         public IhaleProjectDbContext(DbContextOptions<IhaleProjectDbContext> options)
             : base(options)

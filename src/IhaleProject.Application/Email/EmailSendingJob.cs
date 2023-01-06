@@ -1,6 +1,7 @@
 ﻿using Abp.BackgroundJobs;
 using Abp.Dependency;
 using Abp.Net.Mail;
+using IhaleProject.Domain.Email;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace IhaleProject.Email
 	public class EmailSendingJob : AsyncBackgroundJob<EmailSendingArgs>, ITransientDependency
 	{
 		private readonly IEmailSender _emailSender;
+		private readonly IEmailLogRepository emailLogRepository;
 
 		public EmailSendingJob(IEmailSender emailSender)
 		{
@@ -20,11 +22,29 @@ namespace IhaleProject.Email
 
 		public override async Task ExecuteAsync(EmailSendingArgs args)
 		{
-			await _emailSender.SendAsync(
-				args.EmailAddress,
-				args.Subject,
-				args.Body
-			);
+			try
+			{
+				await _emailSender.SendAsync(
+						args.EmailAddress,
+						args.Subject,
+						args.Body
+					);
+
+				var emailLog = new EmailLogEntity();
+
+				emailLog.EmailAddress = args.EmailAddress;
+				emailLog.Subject = args.Subject;
+				emailLog.Body = args.Body;
+
+
+				await emailLogRepository.InsertAsync(emailLog);
+			}
+			catch (Exception)
+			{
+
+
+			}
+
 		}
 	}
 }
