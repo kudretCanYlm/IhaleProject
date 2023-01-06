@@ -62,11 +62,11 @@
 					<div class="card">
 						<div class="card-body">
 							<h4 class="mb-3 card-title">İhalelerden mail yoluyla haberdar olmak ister misiniz? &emsp;</h4>
-							<form class="forms-sample">
+							<form id="emailForm" class="forms-sample">
 								<div class="form-group">
-									<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Mail Adresiniz:">
+									<input type="email" class="form-control" id="emailInput" placeholder="Mail Adresiniz:">
 								</div>
-								<button type="submit" href="~/Email/Post" class="btn btn-primary mr-2">&nbsp; Maili Kaydet &emsp;</button>
+								<button type="submit"  class="btn btn-primary mr-2">&nbsp; Maili Kaydet &emsp;</button>
 							</form>
 						</div>
 					</div>
@@ -87,7 +87,7 @@
 				processing: true,
 				bDestroy: true,
 				ajax: {
-					url: "@Url.ActionLink("GetIhaleler","Ihale")",
+					url: "@Url.ActionLink("GetYayindakiIhaleler","Ihale")",
 					dataSrc: 'result.ihaleler'
 				},
 				columns: [
@@ -126,6 +126,46 @@
 					"targets": "_all"
 				}]
 			});
+		}
+
+		$("#emailForm").submit(function(e){
+
+			e.preventDefault();
+			createMail();
+			
+		})
+
+		function createMail(){
+
+			var mail=$("#emailInput").val()
+
+			console.log(mail)
+
+			var link = "@Url.ActionLink("MailEkle","Anasayfa")";
+
+				swal({
+					title: "Göndermek istiyormusunuz ?",
+					icon: "warning",
+					buttons: ["İptal", "Onayla"],
+					dangerMode: true,
+				})
+					.then((isTrue) => {
+
+						if (isTrue) {
+							$.post(link,{email:mail})
+								.done(function () {
+									swal("Mail eklendi");
+								}).fail(function (err) {
+									console.log(err);
+									swal("Mail kullanılıyor");
+								})
+						} else {
+							swal("iptal edildi")
+						}
+
+
+					});
+
 		}
 	</script>
 }
