@@ -103,16 +103,7 @@ namespace IhaleProject.Ihale
 		{
 			var ihale = await ihaleRepository.GetAll().Include(x=>x.Birim).Include(x=>x.alimTuru).Include(x=>x.alimUsulu).Where(x=>x.Id==id).FirstAsync();
 
-			ihale.IhaleAdi = input.IhaleAdi;
-			ihale.IhaleNo = input.IhaleNo;
-			ihale.BaslangicTarihi = input.BaslangicTarihi;
-			ihale.BitisTarihi=input.BitisTarihi;
-			ihale.IhaleAktifMi=input.IhaleAktifMi;
-			ihale.Birim = input.Birim;
-			ihale.alimTuru = input.alimTuru;
-			ihale.alimUsulu= input.alimUsulu;
-
-			await ihaleRepository.UpdateAsync(ihale);
+			await ihaleRepository.UpdateAsync(ObjectMapper.Map(input,ihale));
 		}
 
 		public async Task<IEnumerable<IhaleArsivDto>> GetArsivliIhaleler()
