@@ -1674,11 +1674,49 @@ namespace IhaleProject.Migrations
                     b.ToTable("Birim");
                 });
 
+            modelBuilder.Entity("IhaleProject.Domain.Email.EmailEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("CreatorUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("DeleterUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("LastModifierUserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Email");
+                });
+
             modelBuilder.Entity("IhaleProject.Domain.Ihale.IhaleEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("ArsiveEklenmeTarihi")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("BaslangicTarihi")
                         .HasColumnType("datetime2");
@@ -1716,8 +1754,14 @@ namespace IhaleProject.Migrations
                     b.Property<bool>("IhaleAktifMi")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IhaleArsivliMi")
+                        .HasColumnType("bit");
+
                     b.Property<string>("IhaleNo")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IhaleState")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");

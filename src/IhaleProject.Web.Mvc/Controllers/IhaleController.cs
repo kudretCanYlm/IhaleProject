@@ -12,11 +12,14 @@ using IhaleProject.Email;
 using IhaleProject.Application.Contracts.Email;
 using Abp.AspNetCore.Mvc.Authorization;
 using IhaleProject.Authorization;
+using Microsoft.AspNetCore.Authorization;
+using System.ComponentModel.DataAnnotations;
+using FluentValidation;
 
 namespace IhaleProject.Web.Controllers
 {
 	[AbpMvcAuthorize(PermissionNames.Pages_Ihale)]
-	public class IhaleController: IhaleProjectControllerBase
+	public class IhaleController : IhaleProjectControllerBase
 	{
 		private readonly IIhaleAppService ihaleAppService;
 		private readonly IBirimAppService birimAppService;
@@ -24,8 +27,9 @@ namespace IhaleProject.Web.Controllers
 		private readonly IAlimTuruAppService alimTuruAppService;
 		private readonly IEmailAppService emailAppService;
 
-		private readonly CreateIhaleDtoValidator createIhaleValidator=new CreateIhaleDtoValidator();
-		private readonly UpdateIhaleDtoValidator updateIhaleValidator= new UpdateIhaleDtoValidator();
+		private readonly CreateIhaleDtoValidator createIhaleValidator = new CreateIhaleDtoValidator();
+		private readonly UpdateIhaleDtoValidator updateIhaleValidator = new UpdateIhaleDtoValidator();
+		private readonly IhalePostModelValidator ihalePostModelValidator = new IhalePostModelValidator();
 
 		public IhaleController(IIhaleAppService ihaleAppService, IBirimAppService birimAppService, IAlimUsuluAppService alimUsuluAppService, IAlimTuruAppService alimTuruAppService, IEmailAppService emailAppService)
 		{
@@ -37,54 +41,47 @@ namespace IhaleProject.Web.Controllers
 		}
 
 		public IActionResult Index()
-        {
-            return View();
+		{
+			return View();
 		}
 
 		public async Task<IActionResult> Create(IhalePostModel ihalePostModel)
 		{
-			
-			var createIhaleDto = ObjectMapper.Map<CreateIhaleDto>(ihalePostModel);
 
-			try
-			{
-				createIhaleDto.Birim = await birimAppService.GetEntityAsync(ihalePostModel.BirimId);
-				createIhaleDto.alimTuru = await alimTuruAppService.GetEntityAsync(ihalePostModel.AlimTuruId);
-				createIhaleDto.alimUsulu = await alimUsuluAppService.GetEntityAsync(ihalePostModel.AlimUsuluId);
-			}
-			catch 
-			{
-				return View("Index");
-			}
-
-			
-			//add vaidations
-			var result = createIhaleValidator.Validate(createIhaleDto);
+			var result = ihalePostModelValidator.Validate(ihalePostModel);
 
 			if (result.IsValid)
 			{
-				await ihaleAppService.CreateAsync(createIhaleDto);
-				//await emailAppService.SendIhaleMailToAllUser(createIhaleDto.IhaleAdi);
-			}
+				var createIhaleDto = ObjectMapper.Map<CreateIhaleDto>(ihalePostModel);
 
-			else
-			{
-				foreach (ValidationFailure failer in result.Errors)
+				try
 				{
+					createIhaleDto.Birim = await birimAppService.GetEntityAsync(ihalePostModel.BirimId);
+					createIhaleDto.alimTuru = await alimTuruAppService.GetEntityAsync(ihalePostModel.AlimTuruId);
+					createIhaleDto.alimUsulu = await alimUsuluAppService.GetEntityAsync(ihalePostModel.AlimUsuluId);
 
-					ModelState.AddModelError(failer.PropertyName, failer.ErrorMessage);
-
+					await ihaleAppService.CreateAsync(createIhaleDto);
+				}
+				catch
+				{
+					return RedirectToAction("Index");
 				}
 
+				
+				await emailAppService.SendIhaleMailToAllUser(createIhaleDto.IhaleAdi);
+
+				return RedirectToAction("Index");
 			}
 
 			return RedirectToAction("Index");
+
 		}
 
 		[HttpGet]
-		public async Task<JsonResult> GetIhaleler()
+		[AllowAnonymous]
+		public async Task<JsonResult> GetYayindakiIhaleler()
 		{
-			var ihaleler = await ihaleAppService.GetAllAsync();
+			var ihaleler = await ihaleAppService.GetYayindakiIlanlar();
 
 			return Json(new IhaleListViewModel()
 			{
@@ -93,6 +90,7 @@ namespace IhaleProject.Web.Controllers
 		}
 
 		[HttpGet]
+		[AllowAnonymous]
 		public async Task<JsonResult> GetIhale(Guid id)
 		{
 			var ihale = await ihaleAppService.GetUpdateModelAsync(id);
@@ -103,6 +101,7 @@ namespace IhaleProject.Web.Controllers
 		}
 
 		[HttpGet]
+		[AllowAnonymous]
 		public async Task<FileContentResult> GetIhaleFile(Guid id)
 		{
 			var ihaleFile = await ihaleAppService.GetFile(id);
@@ -113,6 +112,22 @@ namespace IhaleProject.Web.Controllers
 			};
 
 		}
+
+		[HttpPost]
+		public async Task<ActionResult> YayindanKaldir(Guid id)
+		{
+			try
+			{
+				await ihaleAppService.YayindanKaldir(id);
+				return Ok();
+			}
+			catch (Exception)
+			{
+
+				return BadRequest();
+			}
+		}
+
 	}
 
 }

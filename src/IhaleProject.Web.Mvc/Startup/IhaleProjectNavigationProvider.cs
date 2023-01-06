@@ -3,6 +3,7 @@ using Abp.Authorization;
 using Abp.Localization;
 using IhaleProject.Authorization;
 using Microsoft.AspNetCore.Rewrite;
+using System.Drawing;
 
 namespace IhaleProject.Web.Startup
 {
@@ -75,7 +76,13 @@ namespace IhaleProject.Web.Startup
 						permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_AlimUsulu)
 					)
 				))
+
 				.AddItem(
+				new MenuItemDefinition(
+					"İhale İşlemleri",
+					L("IhaleIslemleri"),
+					icon: "fas fa-circle"
+					).AddItem(
 				new MenuItemDefinition(
 					PageNames.Ihale,
 					L("Ihale"),
@@ -83,7 +90,43 @@ namespace IhaleProject.Web.Startup
 					icon: "fa fa-cubes",
 					permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Ihale)
 					)
+				).AddItem(
+				new MenuItemDefinition(
+					PageNames.Arsiv,
+					L("Arsiv"),
+					url: "Arsiv",
+					icon: "fa fa-cubes",
+					permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Arsiv)
+					)
 				)
+				.AddItem(
+				new MenuItemDefinition(
+					PageNames.TumYayinlar,
+					L("TumYayinlar"),
+					url: "TumYayinlar",
+					icon: "fa fa-cubes",
+					permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_TumYayinlar)
+					)
+				)
+				.AddItem(
+				new MenuItemDefinition(
+					PageNames.KaldirilmisYayinlar,
+					L("KaldirilmisYayinlar"),
+					url: "KaldirilmisYayinlar",
+					icon: "fa fa-cubes",
+					permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_KaldirilmisYayinlar)
+					)
+				).AddItem(
+				new MenuItemDefinition(
+					PageNames.SuresiBitmisYayinlar,
+					L("SuresiBitmisYayinlar"),
+					url: "SuresiBitmisYayinlar",
+					icon: "fa fa-cubes",
+					permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_SuresiBitmisYayinlar)
+					)
+				)
+				)
+
 				.AddItem(
 					new MenuItemDefinition(
 						PageNames.Roles,

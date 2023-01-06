@@ -61,7 +61,6 @@ namespace IhaleProject.Web.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Create(CreateAlimTuruDTO createAlimTuruDTO)
 		{
-			//add vaidations
 			var result = createAlimTuruValidator.Validate(createAlimTuruDTO);
 
 			if (result.IsValid)
@@ -69,25 +68,14 @@ namespace IhaleProject.Web.Controllers
 				await alimTuruAppService.CreateAsync(createAlimTuruDTO);
 			}
 
-			else
-			{
-				foreach (ValidationFailure failer in result.Errors)
-				{
-
-					ModelState.AddModelError(failer.PropertyName, failer.ErrorMessage);
-
-				}
-
-			}
 
 			return RedirectToAction("Index");
 		}
 
 		[HttpPost]
-		public async Task<JsonResult> Update([FromRoute] Guid id, UpdateAlimTuruDTO updateAlimTuruDTO)
+		public async Task<IActionResult> Update([FromRoute] Guid id, UpdateAlimTuruDTO updateAlimTuruDTO)
 		{
 
-			//add vaidations
 			var result = updateAlimTuruValidator.Validate(updateAlimTuruDTO);
 
 			if (result.IsValid)
@@ -95,19 +83,7 @@ namespace IhaleProject.Web.Controllers
 				await alimTuruAppService.UpdateAsync(id, updateAlimTuruDTO);
 			}
 
-			else
-			{
-				foreach (ValidationFailure failer in result.Errors)
-				{
-
-					ModelState.AddModelError(failer.PropertyName, failer.ErrorMessage);
-
-					return Json(new { ModelState });
-				}
-
-			}
-
-			return Json(new { ModelState });
+			return Ok();
 
 		}
 

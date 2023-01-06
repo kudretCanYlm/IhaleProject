@@ -60,7 +60,7 @@
 				processing: true,
 				bDestroy: true,
 				ajax: {
-					url: "@Url.ActionLink("GetIhaleler","Ihale")",
+					url: "@Url.ActionLink("GetYayindakiIhaleler","Ihale")",
 					dataSrc: 'result.ihaleler'
 				},
 				columns: [
@@ -75,11 +75,11 @@
 					{
 						data: "birimAdi",
 						title: "Birim"
-					}, 
+					},
 					{
 						data: "alimTuruAdi",
 						title: "Alim Turu"
-					}, 
+					},
 					{
 						data: "alimUsuluAdi",
 						title: "Alim Usulu"
@@ -118,6 +118,14 @@
 						}
 
 					},
+					{
+						data: "id",
+						title: "Yayından Kaldır",
+						render: (data) => {
+							return `<button onclick="YayindanKaldir('${data}')"   class="update-btn btn btn-danger">Kaldır</button>`
+						}
+
+					}
 
 				],
 				columnDefs: [{
@@ -132,16 +140,26 @@
 			var id = event.target.getAttribute("data-update-id")
 
 			updateForm.submit(function (event) {
-				event.preventDefault();
-
-				WarningAlert("u", id);
+				if (updateForm.valid()) {
+					event.preventDefault();
+					WarningAlert("u", id);
+				}
 			});
 
 			$.get("@Url.ActionLink("GetIhale","Ihale")" + "/" + id, function (data) {
 
 				var dataObj = data.result;
 
-				//GetSelectValues("updateform")
+				console.log(dataObj);
+
+
+
+				GetSelectValues("updateform", { BirimSelect: dataObj.birimId, AlimTuruSelect: dataObj.alimTuruId, AlimUsuluSelect: dataObj.alimUsuluId });
+
+				if (dataObj.ihaleAktifMi == true)
+					updateForm.find("input[name='ihaleAktifMi']").attr("checked", true)
+				else
+					updateForm.find("input[name='ihaleAktifMi']").attr("checked", false)
 
 				for (const key in dataObj) {
 					updateForm.find("input[name='" + key + "']").val(dataObj[key]);
@@ -154,6 +172,40 @@
 		var alertTypes = {
 			delete: "d",
 			update: "u"
+		}
+
+		function YayindanKaldir(id){
+
+			
+
+				var link = "@Url.ActionLink("YayindanKaldir","Ihale")" + "/" + id;
+
+				swal({
+					title: "Yayından kaldırmak istiyormusunuz ?",
+					icon: "warning",
+					buttons: ["İptal", "Onayla"],
+					dangerMode: true,
+				})
+					.then((isTrue) => {
+
+						if (isTrue) {
+							$.post(link)
+								.done(function () {
+									swal("Yayından Kaldırıldı");
+									İhalelerDataTableLoad();
+								}).fail(function (err) {
+									console.log(err);
+									swal("Hata");
+								})
+						} else {
+							swal("iptal edildi")
+						}
+
+
+
+
+					});
+
 		}
 
 		function WarningAlert(type, id) {
@@ -183,7 +235,7 @@
 				.then((isTrue) => {
 					if (type == alertTypes.delete) {
 						if (!isTrue) {
-							$.post(`@Url.Action("Delete","İhale")/${id}`)
+							$.post(`@Url.Action("Delete","Ihale")/${id}`)
 								.done(function () {
 									swal("Silindi");
 									İhalelerDataTableLoad();
@@ -225,14 +277,16 @@
 				});
 		}
 
-		function GetSelectValues(formId) {
+		function GetSelectValues(formId, selectedDefaluts = { BirimSelect: "-1", AlimTuruSelect: "-1", AlimUsuluSelect: "-1" }) {
 
 			//control is update
 
 			var form = $("#" + formId);
-			var birimSelect = $("#BirimSelect");
-			var alimTuruSelect = $("#AlimTuruSelect");
-			var alimUsuluSelect = $("#AlimUsuluSelect");
+
+
+			var birimSelect = form.find("#BirimSelect");
+			var alimTuruSelect = form.find("#AlimTuruSelect");
+			var alimUsuluSelect = form.find("#AlimUsuluSelect");
 
 
 			$.get("@Url.ActionLink("GetBirimler","Birim")", function (data) {
@@ -240,15 +294,16 @@
 				var dataObj = data.result.birims;
 
 				birimSelect.empty();
-				birimSelect.append($('<option></option>')
-					.text("Seçiniz")
-					.val(-1));
 
 				$.each(dataObj, function (index, item) {
 					birimSelect.append($('<option></option>')
 						.text(item.birimAdi)
 						.val(item.id));
 				});
+
+
+				$("#BirimSelect option[value=" + selectedDefaluts.BirimSelect + "]").attr('selected', 'selected');
+
 
 			})
 
@@ -257,15 +312,15 @@
 				var dataObj = data.result.alimTurleri;
 
 				alimTuruSelect.empty();
-				alimTuruSelect.append($('<option></option>')
-					.text("Seçiniz")
-					.val(-1));
 
 				$.each(dataObj, function (index, item) {
+
 					alimTuruSelect.append($('<option></option>')
 						.text(item.alimTuru)
 						.val(item.id));
 				});
+
+				$("#AlimTuruSelect option[value=" + selectedDefaluts.AlimTuruSelect + "]").attr('selected', 'selected');
 
 			})
 
@@ -276,15 +331,18 @@
 				console.log(dataObj);
 
 				alimUsuluSelect.empty();
-				alimUsuluSelect.append($('<option></option>')
-					.text("Seçiniz")
-					.val(-1));
 
 				$.each(dataObj, function (index, item) {
+
+
 					alimUsuluSelect.append($('<option></option>')
 						.text(item.alimUsulu)
 						.val(item.id));
 				});
+
+
+				$("#AlimUsuluSelect option[value=" + selectedDefaluts.AlimUsuluSelect + "]").attr('selected', 'selected');
+
 
 			})
 

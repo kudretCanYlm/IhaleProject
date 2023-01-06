@@ -7,6 +7,7 @@ using IhaleProject.Domain.Birim;
 using IhaleProject.Domain.AlimTuru;
 using IhaleProject.Domain.AlimUsulu;
 using IhaleProject.Domain.Ihale;
+using IhaleProject.Domain.Email;
 
 namespace IhaleProject.EntityFrameworkCore
 {
@@ -23,6 +24,7 @@ namespace IhaleProject.EntityFrameworkCore
         public DbSet<AlimTuruEntity> AlimTuru { get; set; }
         public DbSet<AlimUsuluEntity> AlimUsulu { get; set; }
         public DbSet<IhaleEntity> Ihale { get; set; }
+        public DbSet<EmailEntity> Email { get; set; }
         
         public IhaleProjectDbContext(DbContextOptions<IhaleProjectDbContext> options)
             : base(options)

@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Formats.Asn1;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace IhaleProject.Web.Controllers
@@ -63,7 +64,6 @@ namespace IhaleProject.Web.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Create(CreateBirimDto createBirimDto)
 		{
-			//add vaidations
 			var result = createBirimValidator.Validate(createBirimDto);
 
 			if (result.IsValid)
@@ -71,46 +71,22 @@ namespace IhaleProject.Web.Controllers
 				await birimAppService.CreateAsync(createBirimDto);
 			}
 
-			else
-			{
-				foreach (ValidationFailure failer in result.Errors)
-				{
-
-					ModelState.AddModelError(failer.PropertyName, failer.ErrorMessage);
-
-				}
-
-			}
-
 			return RedirectToAction("Index");
 		}
 
 		[HttpPost]
-		public async Task<JsonResult> Update([FromRoute] Guid id, UpdateBirimDto updateBirimDto)
+		public async Task<IActionResult> Update([FromRoute] Guid id, UpdateBirimDto updateBirimDto)
 		{
 
-			//add vaidations
 			var result = updateBirimValidator.Validate(updateBirimDto);
 
 			if (result.IsValid)
 			{
 				await birimAppService.UpdateAsync(id, updateBirimDto);
+				
 			}
 
-			else
-			{
-				foreach (ValidationFailure failer in result.Errors)
-				{
-
-					ModelState.AddModelError(failer.PropertyName, failer.ErrorMessage);
-
-					return Json(new { ModelState });
-				}
-
-			}
-
-			return Json(new { ModelState });
-
+			return Ok();
 		}
 	}
 }

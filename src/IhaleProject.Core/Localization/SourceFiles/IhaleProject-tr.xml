@@ -67,6 +67,11 @@
 		<text name="AlimUsulu" >Alım Usulü</text>
 		<text name="Parametreler">Parametreler</text>
 		<text name="Ihale">İhale</text>
+		<text name="Arsiv">Arsiv</text>
+		<text name="TumYayinlar">Tüm Yayinlar</text>
+		<text name="KaldirilmisYayinlar">Kaldırılmış Yayınlar</text>
+		<text name="IhaleIslemleri">İhale İşlemleri</text>
+		<text name="SuresiBitmisYayinlar">Süresi Bitmiş Yayınlar</text>
 		<!---->
 		<text name="DisplayName">Görünen ad</text>
 		<text name="Edit">Düzenle</text>

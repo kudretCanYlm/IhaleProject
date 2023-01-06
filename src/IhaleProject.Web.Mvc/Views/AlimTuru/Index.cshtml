@@ -97,9 +97,10 @@
 			var id = event.target.getAttribute("data-update-id")
 
 			updateForm.submit(function (event) {
-				event.preventDefault();
-
-				WarningAlert("u", id);
+				if (updateForm.valid()) {
+					event.preventDefault();
+					WarningAlert("u", id);
+				}
 			});
 
 			$.get("@Url.ActionLink("GetAlimTuru","AlimTuru")" + "/" + id, function (data) {
@@ -139,16 +140,16 @@
 			swal({
 				title: alertProps.title,
 				icon: alertProps.icon,
-				buttons: ["Onayla", "İptal"],
+				buttons: ["İptal", "Onayla"],
 				dangerMode: true,
 			})
 				.then((isTrue) => {
 					if (type == alertTypes.delete) {
-						if (!isTrue) {
+						if (isTrue) {
 							console.log(id)
 							$.post(`@Url.Action("Delete","AlimTuru")/${id}`)
 								.done(function () {
-									
+
 									swal("Silindi");
 									AlimTuruDataTableLoad();
 								}).fail(function (err) {

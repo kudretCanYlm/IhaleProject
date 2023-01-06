@@ -17,6 +17,10 @@ namespace IhaleProject.Authorization
             context.CreatePermission(PermissionNames.Pages_AlimTuru, L("AlimTuru"));
             context.CreatePermission(PermissionNames.Pages_AlimUsulu, L("AlimUsulu"));
             context.CreatePermission(PermissionNames.Pages_Ihale, L("Ihale"));
+            context.CreatePermission(PermissionNames.Pages_Arsiv, L("Arsiv"));
+            context.CreatePermission(PermissionNames.Pages_TumYayinlar, L("TumYayinlar"));
+            context.CreatePermission(PermissionNames.Pages_KaldirilmisYayinlar, L("KaldirilmisYayinlar"));
+            context.CreatePermission(PermissionNames.Pages_SuresiBitmisYayinlar, L("SuresiBitmisYayinlar"));
         }
 
         private static ILocalizableString L(string name)

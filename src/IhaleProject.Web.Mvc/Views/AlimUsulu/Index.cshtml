@@ -98,9 +98,10 @@
 			var id = event.target.getAttribute("data-update-id")
 
 			updateForm.submit(function (event) {
-				event.preventDefault();
-
-				WarningAlert("u", id);
+				if (updateForm.valid()) {
+					event.preventDefault();
+					WarningAlert("u", id);
+				}
 			});
 
 			$.get("@Url.ActionLink("GetAlimUsul","AlimUsulu")" + "/" + id, function (data) {
@@ -140,12 +141,12 @@
 			swal({
 				title: alertProps.title,
 				icon: alertProps.icon,
-				buttons: ["Onayla", "İptal"],
+				buttons: ["İptal", "Onayla"],
 				dangerMode: true,
 			})
 				.then((isTrue) => {
 					if (type == alertTypes.delete) {
-						if (!isTrue) {
+						if (isTrue) {
 							$.post(`@Url.Action("Delete","AlimUsulu")/${id}`)
 								.done(function () {
 									swal("Silindi");
@@ -174,7 +175,7 @@
 								.done(function () {
 									swal("Güncellendi");
 									AlimUsuluDataTableLoad();
-									console.log(id+"Buraya girdi")
+									console.log(id + "Buraya girdi")
 								})
 								.fail(function () {
 									swal("Hata");

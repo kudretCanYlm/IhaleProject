@@ -13,11 +13,13 @@ namespace IhaleProject.Domain.Ihale
 		public string IhaleAdi { get; set; }
 		public DateTime BaslangicTarihi { get; set; }
 		public DateTime BitisTarihi { get; set; }
-
+		public IhaleStateEnum IhaleState { get; set; } = IhaleStateEnum.Aktif;
 		public string DosyaAdi { get; set; }
 		public string DosyaUzantisi { get; set; }
-		public byte[] Bytes { get; set; }
+		public byte[]? Bytes { get; set; }
 		public bool IhaleAktifMi { get; set; }
+		public bool IhaleArsivliMi { get; set; } = false;
+		public DateTime? ArsiveEklenmeTarihi { get; set; }
 		public Guid BirimId { get; set; }
 		public Guid alimTuruId { get; set; }
 		public Guid alimUsuluId { get; set; }

@@ -1,6 +1,5 @@
 ﻿@using IhaleProject.Application.Contracts.Birim;
 @using IhaleProject.Web.Startup;
-@model CreateBirimDto;
 
 @{
 	ViewBag.Title = "Birim";
@@ -43,14 +42,15 @@
 	</div>
 </section>
 @*silmede iptale basınca hata veriyor*@
-@await Html.PartialAsync("~/Views/Birim/_CreateModal.cshtml",Model)
-@await Html.PartialAsync("~/Views/Birim/_UpdateModal.cshtml",Model)
+@await Html.PartialAsync("~/Views/Birim/_CreateModal.cshtml")
+@await Html.PartialAsync("~/Views/Birim/_UpdateModal.cshtml")
 
 @section scripts {
 	<script>
 
 		BirimlerDataTableLoad();
 		var updateForm = $("#updateform");
+
 
 		function BirimlerDataTableLoad() {
 			var birimlerDataTable = $('#BirimlerTable');
@@ -96,10 +96,16 @@
 
 			var id = event.target.getAttribute("data-update-id")
 
-			updateForm.submit(function (event) {
-				event.preventDefault();
 
-				WarningAlert("u", id);
+
+			updateForm.submit(function (event) {
+				
+
+				if (updateForm.valid())
+				{
+					event.preventDefault();
+					WarningAlert("u", id);
+				}
 			});
 
 			$.get("@Url.ActionLink("GetBirim","Birim")" + "/" + id, function (data) {
@@ -110,7 +116,7 @@
 				for (const key in dataObj) {
 					updateForm.find("input[name='" + key + "']").val(dataObj[key]);
 				}
-
+				updateForm.valid()
 			})
 		}
 
@@ -141,20 +147,20 @@
 			swal({
 				title: alertProps.title,
 				icon: alertProps.icon,
-				buttons: ["Onayla", "İptal"],
+				buttons: ["İptal", "Onayla"],
 				dangerMode: true,
 			})
 				.then((isTrue) => {
 					if (type == alertTypes.delete) {
-						if (!isTrue) {
+						if (isTrue) {
 							$.post(`@Url.Action("Delete","Birim")/${id}`)
-							.done(function () {
-								swal("Silindi");
-								BirimlerDataTableLoad();
-							}).fail(function (err) {
-								console.log(err);
-								swal("Hata");
-							})
+								.done(function (data) {
+
+									swal("Silindi");
+									BirimlerDataTableLoad();
+								}).fail(function (err) {
+									swal("Hata");
+								})
 						} else {
 							swal("iptal edildi")
 						}

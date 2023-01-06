@@ -13,6 +13,10 @@
         public const string Pages_AlimUsulu = "Pages.AlimUsulu";
         public const string Pages_Birim = "Pages.Birim";
         public const string Pages_Ihale = "Pages.Ihale";
+        public const string Pages_Arsiv = "Pages.Arsiv";
+        public const string Pages_TumYayinlar = "Pages.TumYayinlar";
+        public const string Pages_KaldirilmisYayinlar = "Pages.KaldirilmisYayinlar";
+        public const string Pages_SuresiBitmisYayinlar = "Pages.SuresiBitmisYayinlar";
 
 	}
 }

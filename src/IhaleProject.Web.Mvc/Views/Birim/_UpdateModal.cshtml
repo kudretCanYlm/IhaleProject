@@ -1,8 +1,8 @@
-﻿@model IhaleProject.Application.Contracts.Birim.UpdateBirimDto
+﻿@model IhaleProject.Application.Contracts.Birim.CreateBirimDto
 @{
     Layout = null;
 }
-<form id="updateform" method="post">
+<form id="updateform" method="post" asp-action="Update" asp-controller="Birim" >
     <div id="updateModal" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -16,7 +16,7 @@
                     <div class="form-group">
                         <label asp-for="BirimAdi"></label>
                         <input name="birimAdi" type="text" asp-for="BirimAdi" class="form-control" />
-                        <span asp-validation-for="BirimAdi"></span>
+                        <span data-valmsg-for="birimAdi" asp-validation-for="BirimAdi"></span>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary">Güncelle</button>

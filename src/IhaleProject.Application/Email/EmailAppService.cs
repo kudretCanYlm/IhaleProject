@@ -15,7 +15,7 @@ namespace IhaleProject.Email
 	{
 		private readonly IBackgroundJobManager backgroundJobManager;
 		private readonly IEmailRepository emailRepository;
-		
+
 
 		public EmailAppService(IBackgroundJobManager backgroundJobManager, IEmailRepository emailRepository)
 		{
@@ -39,16 +39,20 @@ namespace IhaleProject.Email
 		{
 			var users = await emailRepository.GetAllListAsync();
 
-			foreach (var user in users)
+
+			if (users.Any())
 			{
-				await backgroundJobManager.EnqueueAsync<EmailSendingJob, EmailSendingArgs>(
-					new EmailSendingArgs
-					{
-						EmailAddress=user.Email,
-						Subject="Yeni İhale Bildirimi",
-						Body=ihaleAdi+" ihalesi sisteme eklendi"
-					}
-					);
+				foreach (var user in users)
+				{
+					await backgroundJobManager.EnqueueAsync<EmailSendingJob, EmailSendingArgs>(
+						new EmailSendingArgs
+						{
+							EmailAddress = user.Email,
+							Subject = "Yeni İhale Bildirimi",
+							Body = ihaleAdi + " ihalesi sisteme eklendi"
+						}
+						);
+				}
 			}
 
 
