@@ -1,0 +1,79 @@
+﻿@using IhaleProject.Web.Startup
+@{
+	ViewBag.Title = L("HomePage");
+	ViewBag.CurrentPageName = PageNames.Home;
+}
+<div class="content-header">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1 class="m-0 text-dark">Aktif İhaleler</h1>
+			</div>
+		</div>
+	</div>
+</div>
+<section class="content">
+	<div class="col-12">
+		<div class="card">
+			<div class="card-body">
+				<div class="table-responsive">
+					<table id="AnasayfaTable" class="table table-striped table-bordered">
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+@section scripts {
+	<script>
+		AnasayfaDataTableLoad();
+
+
+		function AnasayfaDataTableLoad() {
+			var AnasayfaDataTable = $('#AnasayfaTable');
+
+			AnasayfaDataTable.DataTable({
+				processing: true,
+				bDestroy: true,
+				searching: true,
+				ordering: true,
+				ajax: {
+					url: "@Url.ActionLink("GetYayindakiIhaleler","Ihale")",
+					dataSrc: 'result.ihaleler'
+				},
+				columns: [
+					{
+						data: "ihaleNo",
+						title: "İhale No"
+					}, {
+						data: "ihaleAdi",
+						title: "İhale Adi"
+					},
+					{
+						data: "birimAdi",
+						title: "Birim adı"
+					},
+					{
+						data: "alimUsuluAdi",
+						title: "Alım Usulu"
+					},
+					{
+						data: "alimTuruAdi",
+						title: "Alım Türü"
+					}, {
+						data: "baslangicTarihi",
+						title: "Başlangiç Tarihi"
+					}, {
+						data: "bitisTarihi",
+						title: "Bitiş Tarihi"
+					},
+				],
+				columnDefs: [{
+					"defaultContent": "-",
+					"targets": "_all"
+				}]
+			});
+		}
+	</script>
+}
