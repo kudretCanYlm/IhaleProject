@@ -1,4 +1,4 @@
-﻿@model IhaleProject.Application.Contracts.Ihale.IhalePostModel
+﻿@model IhaleProject.Application.Contracts.Ihale.IhalePostModelNoFile
 @{
     Layout = null;
 }
@@ -45,32 +45,27 @@
 							<span data-valmsg-for="bitisSaati" asp-validation-for="BitisSaati"></span>
 						</div>
 						<div class="mb-3">
-							<label asp-for="File">Dosya</label>
-							<input name="File" type="file" asp-for="File" class="btn" />
-							<span data-valmsg-for="File" asp-validation-for="File"></span>
-						</div>
-						<div class="mb-3">
 							<label asp-for="IhaleAktifMi">İhale Aktifliği</label>
 							<input name="ihaleAktifMi" type="checkbox" asp-for="IhaleAktifMi" class="" />
 						</div>
 						<div class="mb-3">
 							<label asp-for="BirimId">Birim</label>
 							<div class="form-select">
-								<select id="BirimSelect" asp-for="BirimId" class="btn btn-light w-100"></select>
+								<select id="BirimSelect" name="birimId" asp-for="BirimId" class="btn btn-light w-100"></select>
 							</div>
 							<span asp-validation-for="BirimId"></span>
 						</div>
 						<div class="mb-3">
 							<label asp-for="AlimTuruId">Alım Türü</label>
 							<div class="form-select">
-								<select id="AlimTuruSelect" asp-for="AlimTuruId" class="btn btn-light w-100"></select>
+								<select id="AlimTuruSelect" name="alimTuruId" asp-for="AlimTuruId" class="btn btn-light w-100"></select>
 							</div>
 							<span asp-validation-for="AlimTuruId"></span>
 						</div>
 						<div class="mb-3">
 							<label asp-for="AlimUsuluId">Alım Usülü</label>
 							<div class="form-select">
-								<select id="AlimUsuluSelect" asp-for="AlimUsuluId" class="btn btn-light w-100"></select>
+								<select id="AlimUsuluSelect" name="alimUsuluId" asp-for="AlimUsuluId" class="btn btn-light w-100"></select>
 							</div>
 							<span asp-validation-for="AlimUsuluId"></span>
 						</div>

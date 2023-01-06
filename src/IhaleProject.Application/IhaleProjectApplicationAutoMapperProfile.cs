@@ -43,7 +43,15 @@ namespace IhaleProject
 			CreateMap<CreateIhaleDto, IhaleEntity>().
 				ForMember(x => x.Bytes, opt => opt.MapFrom(opt => Convert.FromBase64String(opt.base64String)));
 
+
+			CreateMap<IhalePostModelNoFile, UpdateIhaleDto>()
+				.ForMember(x => x.BaslangicTarihi, opt => opt.MapFrom(opt => DateTime.Parse(string.Format("{0}.{1}.{2} {3}:{4}:{5}", opt.BaslangicTarihi.Day, opt.BaslangicTarihi.Month, opt.BaslangicTarihi.Year, opt.BaslangicSaati.Hour, opt.BaslangicSaati.Minute, opt.BaslangicSaati.Second))))
+				.ForMember(x => x.BitisTarihi, opt => opt.MapFrom(opt => DateTime.Parse(string.Format("{0}.{1}.{2} {3}:{4}:{5}", opt.BitisTarihi.Day, opt.BitisTarihi.Month, opt.BitisTarihi.Year, opt.BitisSaati.Hour, opt.BitisSaati.Minute, opt.BitisTarihi.Second))));
+
+
 			CreateMap<UpdateIhaleDto, IhaleEntity>();
+
+
 			CreateMap<IhalePostModel, CreateIhaleDto>()
 				.ForMember(x => x.base64String, opt => opt.MapFrom(opt => IhalePostModel.IFormFileToBase64(opt.File)))
 				.ForMember(x => x.DosyaAdi, opt => opt.MapFrom(opt => opt.File.FileName))

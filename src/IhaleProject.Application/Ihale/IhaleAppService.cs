@@ -101,7 +101,17 @@ namespace IhaleProject.Ihale
 
 		public async Task UpdateAsync(Guid id, UpdateIhaleDto input)
 		{
-			var ihale = await ihaleRepository.GetAsync(id);
+			var ihale = await ihaleRepository.GetAll().Include(x=>x.Birim).Include(x=>x.alimTuru).Include(x=>x.alimUsulu).Where(x=>x.Id==id).FirstAsync();
+
+			ihale.IhaleAdi = input.IhaleAdi;
+			ihale.IhaleNo = input.IhaleNo;
+			ihale.BaslangicTarihi = input.BaslangicTarihi;
+			ihale.BitisTarihi=input.BitisTarihi;
+			ihale.IhaleAktifMi=input.IhaleAktifMi;
+			ihale.Birim = input.Birim;
+			ihale.alimTuru = input.alimTuru;
+			ihale.alimUsulu= input.alimUsulu;
+
 			await ihaleRepository.UpdateAsync(ihale);
 		}
 

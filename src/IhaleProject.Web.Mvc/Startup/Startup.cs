@@ -25,6 +25,7 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using IhaleProject.Application.Contracts.Birim;
 using IhaleProject.Application.Contracts.AlimTuru;
+using IhaleProject.Application.Contracts.Ihale;
 
 namespace IhaleProject.Web.Startup
 {
@@ -69,6 +70,12 @@ namespace IhaleProject.Web.Startup
 			
 			services.AddFluentValidation(fv
 				=> fv.RegisterValidatorsFromAssemblyContaining<UpdateAlimTuruDTOValidator>());
+
+			services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateIhaleDtoValidator>());
+			services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<UpdateIhaleDtoValidator>());
+			services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<UpdateIhaleDtoValidator>());
+			services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<IhalePostModelValidator>());
+			services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<IhalePostModelNoFileValidator>());
 
 
 			IdentityRegistrar.Register(services);

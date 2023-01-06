@@ -247,13 +247,13 @@
 
 							console.log(values);
 
-							//add post request
-							$.post(`@Url.Action("Update","İhale")/${id}`, values,)
+							
+							$.post(`@Url.Action("Update","Ihale")/${id}`, values,)
 								.done(function () {
 									swal("Güncellendi");
 									İhalelerDataTableLoad();
 								})
-								.fail(function () {
+								.fail(function (data) {
 									swal("Hata");
 								})
 

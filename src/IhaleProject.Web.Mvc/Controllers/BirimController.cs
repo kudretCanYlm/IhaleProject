@@ -78,6 +78,8 @@ namespace IhaleProject.Web.Controllers
 		public async Task<IActionResult> Update([FromRoute] Guid id, UpdateBirimDto updateBirimDto)
 		{
 
+			var a = 4;
+
 			var result = updateBirimValidator.Validate(updateBirimDto);
 
 			if (result.IsValid)

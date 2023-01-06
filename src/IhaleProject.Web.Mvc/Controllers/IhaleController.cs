@@ -30,6 +30,7 @@ namespace IhaleProject.Web.Controllers
 		private readonly CreateIhaleDtoValidator createIhaleValidator = new CreateIhaleDtoValidator();
 		private readonly UpdateIhaleDtoValidator updateIhaleValidator = new UpdateIhaleDtoValidator();
 		private readonly IhalePostModelValidator ihalePostModelValidator = new IhalePostModelValidator();
+		private readonly IhalePostModelNoFileValidator ihalePostModelNoFileValidator = new IhalePostModelNoFileValidator();
 
 		public IhaleController(IIhaleAppService ihaleAppService, IBirimAppService birimAppService, IAlimUsuluAppService alimUsuluAppService, IAlimTuruAppService alimTuruAppService, IEmailAppService emailAppService)
 		{
@@ -67,7 +68,7 @@ namespace IhaleProject.Web.Controllers
 					return RedirectToAction("Index");
 				}
 
-				
+
 				await emailAppService.SendIhaleMailToAllUser(createIhaleDto.IhaleAdi);
 
 				return RedirectToAction("Index");
@@ -126,6 +127,35 @@ namespace IhaleProject.Web.Controllers
 
 				return BadRequest();
 			}
+		}
+
+		[HttpPost, AllowAnonymous]
+		public async Task<ActionResult> Update([FromRoute] Guid id, IhalePostModelNoFile ihalePostModel)
+		{
+			var result = ihalePostModelNoFileValidator.Validate(ihalePostModel);
+
+			if (result.IsValid)
+			{
+				var updateIhaleDto = ObjectMapper.Map<UpdateIhaleDto>(ihalePostModel);
+
+				try
+				{
+					updateIhaleDto.Birim = await birimAppService.GetEntityAsync(ihalePostModel.BirimId);
+					updateIhaleDto.alimTuru = await alimTuruAppService.GetEntityAsync(ihalePostModel.AlimTuruId);
+					updateIhaleDto.alimUsulu = await alimUsuluAppService.GetEntityAsync(ihalePostModel.AlimUsuluId);
+
+					await ihaleAppService.UpdateAsync(id, updateIhaleDto);
+
+					return Ok();
+				}
+				catch
+				{
+					return BadRequest();
+				}
+
+			}
+
+			return BadRequest();
 		}
 
 	}
