@@ -21,7 +21,7 @@ namespace IhaleProject.Web.Startup
                     L("Home"),
                     url: "Home/Index",
                     icon: "fa fa-square",
-                    permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Home)
+                    permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Ihale)
                     )
                 )
 
