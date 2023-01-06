@@ -59,6 +59,8 @@
 			İhalelerDataTable.DataTable({
 				processing: true,
 				bDestroy: true,
+				searching: true,
+				ordering:true,
 				ajax: {
 					url: "@Url.ActionLink("GetYayindakiIhaleler","Ihale")",
 					dataSrc: 'result.ihaleler'
@@ -99,14 +101,6 @@
 							var link = "@Url.ActionLink("GetIhaleFile","Ihale")" + "/" + data;
 
 							return `<a href="${link}"><button class="btn btn-danger">İndir</button></a>`
-						}
-
-					},
-					{
-						data: "id",
-						title: "Sil",
-						render: (data) => {
-							return `<button onclick="WarningAlert('d','${data}')" id="del.${data}" class="btn btn-danger">sil</button>`
 						}
 
 					},

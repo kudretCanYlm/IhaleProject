@@ -59,6 +59,8 @@
 			AlimUsuluDataTable.DataTable({
 				processing: true,
 				bDestroy: true,
+				searching: true,
+				ordering: true,
 				ajax: {
 					url: "@Url.ActionLink("GetAlimUsullleri","AlimUsulu")",
 					dataSrc: 'result.alimUsulleri'

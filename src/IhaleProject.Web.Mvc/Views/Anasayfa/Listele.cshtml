@@ -28,9 +28,11 @@
 		<ul class="navbar-nav ml-auto mx-auto">
 			<li class="nav-item"><a href="https://isparta.edu.tr/" class="nav-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;ÜNİVERSİTEMİZ</a></li>
 			<li class="nav-item"><a href="https://bidb.isparta.edu.tr/tr/iletisim" class="nav-link">İLETİŞİM &emsp;&emsp;&emsp;</a></li>
-			<li class="btn btn-secondary"><a href="~/Home/Index" target="_blank" class="nav-link">
+			<li class="btn btn-secondary">
+				<a href="~/Home/Index" target="_blank" class="nav-link">
 					&emsp; Daire Başkanlıkları Giriş Sayfası &emsp;
-			</a></li>
+				</a>
+			</li>
 		</ul>
 	</div>
 </header>
@@ -40,15 +42,7 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="card">
-					<div class="card-header">
-						<div class="row">
-							<div class="col-md-6">
-							</div>
-							<div class="col-md-6">
-								@await Html.PartialAsync("~/Views/Roles/Index.AdvancedSearch.cshtml")
-							</div>
-						</div>
-					</div>
+					
 					<div class="card-body">
 						<div class="table-responsive">
 							<table id="AnasayfaTable" class="table table-striped table-bordered">
@@ -66,7 +60,7 @@
 								<div class="form-group">
 									<input type="email" class="form-control" id="emailInput" placeholder="Mail Adresiniz:">
 								</div>
-								<button type="submit"  class="btn btn-primary mr-2">&nbsp; Maili Kaydet &emsp;</button>
+								<button type="submit" class="btn btn-primary mr-2">&nbsp; Maili Kaydet &emsp;</button>
 							</form>
 						</div>
 					</div>
@@ -78,7 +72,7 @@
 @section scripts {
 	<script>
 		AnasayfaDataTableLoad();
-		var updateForm = $("#updateform");
+
 
 		function AnasayfaDataTableLoad() {
 			var AnasayfaDataTable = $('#AnasayfaTable');
@@ -86,6 +80,8 @@
 			AnasayfaDataTable.DataTable({
 				processing: true,
 				bDestroy: true,
+				searching: true,
+				ordering: true,
 				ajax: {
 					url: "@Url.ActionLink("GetYayindakiIhaleler","Ihale")",
 					dataSrc: 'result.ihaleler'
@@ -97,10 +93,16 @@
 					}, {
 						data: "ihaleAdi",
 						title: "İhale Adi"
-					}, {
+					},
+					{
+						data: "birimAdi",
+						title: "Birim adı"
+					},
+					{
 						data: "alimUsuluAdi",
 						title: "Alım Usulu"
-					}, {
+					},
+					{
 						data: "alimTuruAdi",
 						title: "Alım Türü"
 					}, {
@@ -128,43 +130,43 @@
 			});
 		}
 
-		$("#emailForm").submit(function(e){
+		$("#emailForm").submit(function (e) {
 
 			e.preventDefault();
 			createMail();
-			
+
 		})
 
-		function createMail(){
+		function createMail() {
 
-			var mail=$("#emailInput").val()
+			var mail = $("#emailInput").val()
 
 			console.log(mail)
 
 			var link = "@Url.ActionLink("MailEkle","Anasayfa")";
 
-				swal({
-					title: "Göndermek istiyormusunuz ?",
-					icon: "warning",
-					buttons: ["İptal", "Onayla"],
-					dangerMode: true,
-				})
-					.then((isTrue) => {
+			swal({
+				title: "Göndermek istiyormusunuz ?",
+				icon: "warning",
+				buttons: ["İptal", "Onayla"],
+				dangerMode: true,
+			})
+				.then((isTrue) => {
 
-						if (isTrue) {
-							$.post(link,{email:mail})
-								.done(function () {
-									swal("Mail eklendi");
-								}).fail(function (err) {
-									console.log(err);
-									swal("Mail kullanılıyor");
-								})
-						} else {
-							swal("iptal edildi")
-						}
+					if (isTrue) {
+						$.post(link, { email: mail })
+							.done(function () {
+								swal("Mail eklendi");
+							}).fail(function (err) {
+								console.log(err);
+								swal("Mail kullanılıyor");
+							})
+					} else {
+						swal("iptal edildi")
+					}
 
 
-					});
+				});
 
 		}
 	</script>

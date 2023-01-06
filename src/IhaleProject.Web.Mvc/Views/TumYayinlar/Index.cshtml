@@ -52,6 +52,8 @@
 			TumYayinlarDataTable.DataTable({
 				processing: true,
 				bDestroy: true,
+				searching: true,
+				ordering:true,
 				ajax: {
 					url: "@Url.ActionLink("GetTumYayinlar","TumYayinlar")",
 					dataSrc: 'result.tumIhaleler'

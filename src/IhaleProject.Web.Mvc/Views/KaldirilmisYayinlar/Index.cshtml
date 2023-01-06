@@ -52,6 +52,8 @@
 			KaldirilmisYayinlarDataTable.DataTable({
 				processing: true,
 				bDestroy: true,
+				searching: true,
+				ordering: true,
 				ajax: {
 					url: "@Url.ActionLink("GetKaldirilmisYayinlar","KaldirilmisYayinlar")",
 					dataSrc: 'result.kaldirilmisIhaleler'
@@ -155,7 +157,7 @@
 
 
 		}
-		
+
 		function TekrarYayinla(id) {
 
 			var link = "@Url.ActionLink("TekrarAktifEt","KaldirilmisYayinlar")" + "/" + id;

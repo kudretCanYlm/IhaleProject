@@ -58,6 +58,8 @@
 			birimlerDataTable.DataTable({
 				processing: true,
 				bDestroy: true,
+				searching: true,
+				ordering: true,
 				ajax: {
 					url: "@Url.ActionLink("GetBirimler","Birim")",
 					dataSrc: 'result.birims'
