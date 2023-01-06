@@ -21,7 +21,7 @@ namespace IhaleProject.Web.Startup
                     L("Home"),
                     url: "Home/Index",
                     icon: "fa fa-square",
-                    permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Ihale)
+                    permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Home)
                     )
                 )
 
@@ -126,15 +126,15 @@ namespace IhaleProject.Web.Startup
 					)
 				)
 
-				//.AddItem(
-				//	new MenuItemDefinition(
-				//		PageNames.Tenants,
-				//		L("Tenants"),
-				//		url: "Tenants",
-				//		icon: "fas fa-building",
-				//		permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Tenants)
-				//	)
-				//)
+				.AddItem(
+					new MenuItemDefinition(
+						PageNames.Tenants,
+						L("Tenants"),
+						url: "Tenants",
+						icon: "fas fa-building",
+						permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Tenants)
+					)
+				)
 				;
 		}
 
