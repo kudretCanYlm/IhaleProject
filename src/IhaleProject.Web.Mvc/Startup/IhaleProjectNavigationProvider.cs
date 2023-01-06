@@ -15,7 +15,17 @@ namespace IhaleProject.Web.Startup
 		public override void SetNavigation(INavigationProviderContext context)
 		{
 			context.Manager.MainMenu
-				.AddItem(
+                .AddItem(
+                new MenuItemDefinition(
+                    "Anasayfa",
+                    L("Home"),
+                    url: "Home/Index",
+                    icon: "fa fa-square",
+                    permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Ihale)
+                    )
+                )
+
+                .AddItem(
 				new MenuItemDefinition(
 					"İhale İşlemleri",
 					L("IhaleIslemleri"),

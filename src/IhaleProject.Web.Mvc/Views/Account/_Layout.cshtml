@@ -28,7 +28,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="/"><b>IhaleProject</b></a>
+            <a href="/"><b>İhale Sayfası Daire Başkanlıkları Girişi</b></a>
         </div>
         <div class="card">
             @if (MultiTenancyConfig.IsEnabled)
@@ -40,13 +40,10 @@
             <div class="card-body login-card-body">
                 @RenderBody()
             </div>
-            <div class="card-footer">
-                <vc:account-languages></vc:account-languages>
-            </div>
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
-                <small>&copy; @DateTime.Now.Year IhaleProject. <b>Version </b> @AppVersionHelper.Version [@AppVersionHelper.ReleaseDate.ToString("yyyyMMdd")]</small>
+                <small>&copy; @DateTime.Now.Year IhaleProject. <b>Version: </b> @AppVersionHelper.Version [@AppVersionHelper.ReleaseDate.ToString("yyyy.MM.dd")]</small>
             </div>
         </div>
     </div>

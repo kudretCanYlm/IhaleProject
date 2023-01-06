@@ -72,6 +72,8 @@
 		<text name="KaldirilmisYayinlar">Kaldırılmış Yayınlar</text>
 		<text name="IhaleIslemleri">İhale İşlemleri</text>
 		<text name="SuresiBitmisYayinlar">Süresi Bitmiş Yayınlar</text>
+		<text name="Home">Anasayfa</text>
+		
 		<!---->
 		<text name="DisplayName">Görünen ad</text>
 		<text name="Edit">Düzenle</text>
