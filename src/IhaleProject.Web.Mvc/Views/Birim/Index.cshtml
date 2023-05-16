@@ -1,0 +1,198 @@
+﻿@using IhaleProject.Application.Contracts.Birim;
+@using IhaleProject.Web.Startup;
+
+@{
+	ViewBag.Title = "Birim";
+	ViewBag.CurrentPageName = PageNames.Birim;
+}
+
+<section class="content-header">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-6">
+				<h1>Birimler</h1>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-header">
+						
+					</div>
+					<div class="card-body">
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal">Yeni Birim Ekle</button>
+						<div class="table-responsive">
+							<table id="BirimlerTable" class="table table-striped table-bordered">
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+@*silmede iptale basınca hata veriyor*@
+@await Html.PartialAsync("~/Views/Birim/_CreateModal.cshtml")
+@await Html.PartialAsync("~/Views/Birim/_UpdateModal.cshtml")
+
+@section scripts {
+	<script>
+
+		BirimlerDataTableLoad();
+		var updateForm = $("#updateform");
+
+
+		function BirimlerDataTableLoad() {
+			var birimlerDataTable = $('#BirimlerTable');
+
+			birimlerDataTable.DataTable({
+				processing: true,
+				bDestroy: true,
+				searching: true,
+				ordering: true,
+				ajax: {
+					url: "@Url.ActionLink("GetBirimler","Birim")",
+					dataSrc: 'result.birims'
+				},
+				columns: [
+					{
+						data: "birimAdi",
+						title: "Birim"
+					},
+					{
+						data: "id",
+						title: "Sil",
+						render: (data) => {
+							return `<button onclick="WarningAlert('d','${data}')" id="del.${data}" class="btn btn-danger">sil</button>`
+						}
+
+					},
+					{
+						data: "id",
+						title: "Güncelle",
+						render: (data) => {
+							return `<button onclick="GetUpdateValue(event)" data-update-id="${data}" data-toggle="modal" data-target="#updateModal" class="update-btn btn btn-warning">guncelle</button>`
+						}
+
+					}
+
+				],
+				columnDefs: [{
+					"defaultContent": "-",
+					"targets": "_all"
+				}]
+			});
+		}
+
+		function GetUpdateValue(event) {
+
+			var id = event.target.getAttribute("data-update-id")
+
+
+
+			updateForm.submit(function (event) {
+				
+
+				if (updateForm.valid())
+				{
+					event.preventDefault();
+					WarningAlert("u", id);
+				}
+			});
+
+			$.get("@Url.ActionLink("GetBirim","Birim")" + "/" + id, function (data) {
+
+				var dataObj = data.result;
+
+
+				for (const key in dataObj) {
+					updateForm.find("input[name='" + key + "']").val(dataObj[key]);
+				}
+				updateForm.valid()
+			})
+		}
+
+
+		var alertTypes = {
+			delete: "d",
+			update: "u"
+		}
+
+		function WarningAlert(type, id) {
+
+			var alertProps = {
+				title: "",
+				icon: "",
+
+			}
+
+
+			if (type == alertTypes.delete) {
+				alertProps.title = "Silmek istediğinizden emin misiniz ?";
+				alertProps.icon = "warning";
+			}
+			else {
+				alertProps.title = "Güncellemek istediğinizden emin misiniz ?";
+				alertProps.icon = "warning";
+			}
+
+			swal({
+				title: alertProps.title,
+				icon: alertProps.icon,
+				buttons: ["İptal", "Onayla"],
+				dangerMode: true,
+			})
+				.then((isTrue) => {
+					if (type == alertTypes.delete) {
+						if (isTrue) {
+							$.post(`@Url.Action("Delete","Birim")/${id}`)
+								.done(function (data) {
+
+									swal("Silindi");
+									BirimlerDataTableLoad();
+								}).fail(function (err) {
+									swal("Hata");
+								})
+						} else {
+							swal("iptal edildi")
+						}
+					}
+					else {
+						if (!isTrue) {
+
+							var $inputs = $('#updateform :input');
+
+							var values = {};
+							$inputs.each(function () {
+								values[this.name] = $(this).val();
+							});
+
+							console.log(values);
+
+							//add post request
+							$.post(`@Url.Action("Update","Birim")/${id}`, values,)
+								.done(function () {
+									swal("Güncellendi");
+									BirimlerDataTableLoad();
+								})
+								.fail(function () {
+									swal("Hata");
+								})
+
+						}
+						else {
+							swal("iptal edildi")
+						}
+					}
+				});
+		}
+
+
+
+	</script>
+}
+

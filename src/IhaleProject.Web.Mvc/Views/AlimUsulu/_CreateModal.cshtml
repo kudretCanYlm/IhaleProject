@@ -1,0 +1,29 @@
+﻿@model IhaleProject.Application.Contracts.AlimUsulu.CreateAlimUsuluDTO
+@{
+    Layout = null;
+}
+<form method="post" asp-action="Create" asp-controller="AlimUsulu">
+    <div id="createModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Alim Usulu Ekleme</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label asp-for="AlimUsulu"></label>
+                        <input type="text" asp-for="AlimUsulu" class="form-control" />
+                        <span asp-validation-for="AlimUsulu"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Kaydet</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,188 @@
+﻿@using IhaleProject.Web.Startup;
+@{
+	ViewBag.Title = PageNames.KaldirilmisYayinlar;
+	ViewBag.CurrentPageName = PageNames.KaldirilmisYayinlar;
+}
+
+<section class="content-header">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-6">
+				<h1>Kaldırılmış Yayınlar</h1>
+			</div>
+		</div>
+
+	</div>
+</section>
+<section class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-header">
+						
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+							<table id="KaldirilmisYayinlarTable" class="table table-striped table-bordered">
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+@section scripts {
+	<script>
+
+		KaldirilmisYayinlarTableDataTableLoad();
+
+
+		function KaldirilmisYayinlarTableDataTableLoad() {
+			var KaldirilmisYayinlarDataTable = $('#KaldirilmisYayinlarTable');
+
+			KaldirilmisYayinlarDataTable.DataTable({
+				processing: true,
+				bDestroy: true,
+				searching: true,
+				ordering: true,
+				ajax: {
+					url: "@Url.ActionLink("GetKaldirilmisYayinlar","KaldirilmisYayinlar")",
+					dataSrc: 'result.kaldirilmisIhaleler'
+				},
+				columns: [
+					{
+						data: "ihaleNo",
+						title: "İhale No"
+					},
+					{
+						data: "ihaleAdi",
+						title: "İhale Adi"
+					},
+					{
+						data: "birimAdi",
+						title: "Birim"
+					},
+					{
+						data: "alimTuruAdi",
+						title: "Alim Turu"
+					},
+					{
+						data: "alimUsuluAdi",
+						title: "Alim Usulu"
+					},
+
+					{
+						data: "baslangicTarihi",
+						title: "Başlangiç Tarihi"
+					},
+					{
+						data: "bitisTarihi",
+						title: "Bitiş Tarihi"
+					}
+					,
+					{
+						data: "id",
+						title: "Dosya",
+						render: (data) => {
+							var link = "@Url.ActionLink("GetIhaleFile","Ihale")" + "/" + data;
+
+							return `<a href="${link}"><button class="btn btn-danger">İndir</button></a>`
+						}
+
+					},
+					{
+						data: "id",
+						title: "Arşive Ekle",
+						render: (data) => {
+							var link = "@Url.ActionLink("GetIhaleFile","Ihale")" + "/" + data;
+
+							return `<a><button onclick="AddToArsiv('${data}')" class="btn btn-warning">Ekle</button></a>`
+						}
+
+					},
+					{
+						data: "id",
+						title: "Tekrar Aktif Et",
+						render: (data) => {
+
+							return `<a ><button onclick="TekrarYayinla('${data}')" class="btn btn-warning">Aktif Et</button></a>`
+						}
+
+					},
+
+				],
+				columnDefs: [{
+					"defaultContent": "-",
+					"targets": "_all"
+				}]
+			});
+		}
+
+		function AddToArsiv(id) {
+
+			var link = "@Url.ActionLink("ArsiveEkle","KaldirilmisYayinlar")" + "/" + id;
+
+			swal({
+				title: "Arşive eklemek istiyormusunuz ?",
+				icon: "warning",
+				buttons: ["İptal", "Onayla"],
+				dangerMode: true,
+			})
+				.then((isTrue) => {
+
+					if (isTrue) {
+						$.post(link)
+							.done(function () {
+								swal("Arşive Eklendi");
+								KaldirilmisYayinlarTableDataTableLoad();
+							}).fail(function (err) {
+								console.log(err);
+								swal("Hata");
+							})
+					} else {
+						swal("iptal edildi")
+					}
+
+
+				});
+
+
+		}
+
+		function TekrarYayinla(id) {
+
+			var link = "@Url.ActionLink("TekrarAktifEt","KaldirilmisYayinlar")" + "/" + id;
+
+			swal({
+				title: "Tekrar yayınlamak istiyormusunuz ?",
+				icon: "warning",
+				buttons: ["İptal", "Onayla"],
+				dangerMode: true,
+			})
+				.then((isTrue) => {
+
+					if (isTrue) {
+						$.post(link)
+							.done(function () {
+								swal("Tektar Yayınlandı");
+								KaldirilmisYayinlarTableDataTableLoad();
+							}).fail(function (err) {
+								console.log(err);
+								swal("Hata");
+							})
+					} else {
+						swal("iptal edildi")
+					}
+
+
+				});
+
+
+		}
+
+
+	</script>
+}

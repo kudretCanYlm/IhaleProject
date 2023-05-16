@@ -186,5 +186,26 @@
       "destination": "wwwroot/libs/push.js"
     }
     //other libs end
+    ,
+    {
+      "provider": "cdnjs",
+      "library": "datatables-buttons@2.3.3",
+      "destination": "wwwroot/lib/datatables-buttons/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "Buttons@2.0.0",
+      "destination": "wwwroot/lib/Buttons/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "datatables.net-buttons@2.3.3",
+      "destination": "wwwroot/lib/datatables.net-buttons/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "sweetalert@2.1.2",
+      "destination": "wwwroot/lib/sweetalert/"
+    }
   ]
 }

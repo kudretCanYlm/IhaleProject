@@ -1,15 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Abp.AspNetCore.Mvc.Authorization;
-using IhaleProject.Controllers;
+﻿using IhaleProject.Controllers;
+using Microsoft.AspNetCore.Mvc;
 
 namespace IhaleProject.Web.Controllers
 {
-    [AbpMvcAuthorize]
-    public class AboutController : IhaleProjectControllerBase
-    {
-        public ActionResult Index()
-        {
-            return View();
-        }
+	public class AboutController : IhaleProjectControllerBase
+	{
+		public IActionResult Index()
+		{
+			return View();
+		}
 	}
 }

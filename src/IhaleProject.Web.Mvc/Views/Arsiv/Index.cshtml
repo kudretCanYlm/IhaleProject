@@ -1,0 +1,112 @@
+﻿@using IhaleProject.Web.Startup;
+@{
+	ViewBag.Title = "Arşivler";
+	ViewBag.CurrentPageName = PageNames.Arsiv;
+}
+
+<section class="content-header">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-6">
+				<h1>Arşivler</h1>
+			</div>
+		</div>
+
+	</div>
+</section>
+<section class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-header">
+						
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+							<table id="ArsivlerTable" class="table table-striped table-bordered">
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+@section scripts {
+	<script>
+
+		ArsivlerTableDataTableLoad();
+
+
+		function ArsivlerTableDataTableLoad() {
+			var ArsivlerDataTable = $('#ArsivlerTable');
+
+			ArsivlerDataTable.DataTable({
+				processing: true,
+				bDestroy: true,
+				searching: true,
+				ordering: true,
+				ajax: {
+					url: "@Url.ActionLink("GetArsivler","Arsiv")",
+					dataSrc: 'result.arsivler'
+				},
+				columns: [
+					{
+						data: "ihaleNo",
+						title: "İhale No"
+					},
+					{
+						data: "ihaleAdi",
+						title: "İhale Adi"
+					},
+					{
+						data: "birimAdi",
+						title: "Birim"
+					},
+					{
+						data: "alimTuruAdi",
+						title: "Alim Turu"
+					},
+					{
+						data: "alimUsuluAdi",
+						title: "Alim Usulu"
+					},
+
+					{
+						data: "baslangicTarihi",
+						title: "Başlangiç Tarihi"
+					}
+					, 
+					{
+						data: "bitisTarihi",
+						title: "Bitiş Tarihi"
+					}
+					, 
+					{
+						data: "arsiveEklenmeTarihi",
+						title: "Arşive eklenme Tarihi"
+					},
+					{
+						data: "id",
+						title: "Dosya",
+						render: (data) => {
+							var link = "@Url.ActionLink("GetIhaleFile","Ihale")" + "/" + data;
+
+							return `<a href="${link}"><button class="btn btn-danger">İndir</button></a>`
+						}
+
+					}
+
+				],
+				columnDefs: [{
+					"defaultContent": "-",
+					"targets": "_all"
+				}]
+			});
+		}
+	</script>
+}
+
